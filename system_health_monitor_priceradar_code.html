@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar Admin - System Health Monitor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b border-primary/10 bg-white dark:bg-background-dark px-6 py-3 lg:px-20">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">radar</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">PriceRadar Admin</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-primary text-sm font-semibold border-b-2 border-primary pb-1" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary" href="#">Crawlers</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary" href="#">Infrastructure</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary" href="#">Logs</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<label class="hidden sm:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg bg-slate-100 dark:bg-slate-800">
+<div class="text-slate-500 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-500" placeholder="Search logs or nodes..."/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-primary/90">
+<span class="material-symbols-outlined text-sm">refresh</span>
+<span>Refresh</span>
+</button>
+<button class="flex items-center gap-2 rounded-lg h-10 px-4 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 text-sm font-bold hover:bg-slate-200">
+<span class="material-symbols-outlined text-sm">settings_remote</span>
+<span class="hidden sm:inline">System Maintenance</span>
+</button>
+</div>
+<div class="size-10 rounded-full border-2 border-primary/20 bg-cover bg-center" data-alt="User profile avatar icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtNoOBQdClalcYz7ro2M58KUNRmoamU6ft74y8Dcs9GLitQpx2W--zIUqnvmiuC36IOYlr5NOOQ1gH8hYqmpMZJOysNQFsPTrmk9hV9V80lEXr1A2gHhVGzfln8GZ2fpfztdyJarhQtkx2hmBICapknfadRIKwLvoMoMJ9quUwcNEWqIyv4sUUqZ32_vYTqNpr9GyJMwEzoPow7pehI0v7lckDGJL4dL9BKROOavzzZ1bhwusnOzI0t3PTanX6GsNqm_igwLm6QiRq')"></div>
+</div>
+</header>
+<main class="flex-1 px-6 py-8 lg:px-20 flex flex-col gap-8">
+<!-- Page Title -->
+<div class="flex flex-col gap-1">
+<h1 class="text-slate-900 dark:text-slate-100 text-3xl font-black tracking-tight">System Health Monitor</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base">Real-time infrastructure performance and crawler fleet status.</p>
+</div>
+<!-- High Level Status Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider">Crawler Fleet</p>
+<span class="material-symbols-outlined text-emerald-500">check_circle</span>
+</div>
+<p class="text-2xl font-bold text-slate-900 dark:text-white">Operational</p>
+<div class="mt-2 flex items-center gap-1.5">
+<div class="h-1.5 w-full bg-emerald-100 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full w-[98%]"></div>
+</div>
+<span class="text-[10px] font-bold text-emerald-600">98%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider">API Gateway</p>
+<span class="material-symbols-outlined text-amber-500">warning</span>
+</div>
+<p class="text-2xl font-bold text-slate-900 dark:text-white">Degraded</p>
+<div class="mt-2 flex items-center gap-1.5">
+<div class="h-1.5 w-full bg-amber-100 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full w-[72%]"></div>
+</div>
+<span class="text-[10px] font-bold text-amber-600">72%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider">Main Database</p>
+<span class="material-symbols-outlined text-emerald-500">check_circle</span>
+</div>
+<p class="text-2xl font-bold text-slate-900 dark:text-white">Operational</p>
+<div class="mt-2 flex items-center gap-1.5">
+<div class="h-1.5 w-full bg-emerald-100 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full w-[100%]"></div>
+</div>
+<span class="text-[10px] font-bold text-emerald-600">100%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider">Search Index</p>
+<span class="material-symbols-outlined text-emerald-500">check_circle</span>
+</div>
+<p class="text-2xl font-bold text-slate-900 dark:text-white">Operational</p>
+<div class="mt-2 flex items-center gap-1.5">
+<div class="h-1.5 w-full bg-emerald-100 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full w-[94%]"></div>
+</div>
+<span class="text-[10px] font-bold text-emerald-600">94%</span>
+</div>
+</div>
+</div>
+<!-- Performance Charts Row -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Main Line Chart -->
+<div class="lg:col-span-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Infrastructure Performance (24h)</h3>
+<div class="flex gap-4 text-xs font-semibold">
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full bg-primary"></span>
+<span class="text-slate-500">CPU Usage</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full bg-emerald-400"></span>
+<span class="text-slate-500">Memory Load</span>
+</div>
+</div>
+</div>
+<!-- Placeholder for Chart -->
+<div class="h-64 w-full bg-slate-50 dark:bg-slate-800/50 rounded-lg flex items-end justify-between px-4 py-4 overflow-hidden relative">
+<svg class="absolute inset-0 h-full w-full" preserveaspectratio="none">
+<path d="M0 180 Q 100 150, 200 190 T 400 140 T 600 160 T 800 120 L 800 256 L 0 256 Z" fill="url(#grad1)" fill-opacity="0.1" stroke="#1c74e9" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<path d="M0 200 Q 100 210, 200 180 T 400 190 T 600 170 T 800 210 L 800 256 L 0 256 Z" fill="none" stroke="#34d399" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#1c74e9;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#1c74e9;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="z-10 w-full flex justify-between items-end h-full pt-10 text-[10px] text-slate-400 uppercase font-bold">
+<span>00:00</span>
+<span>04:00</span>
+<span>08:00</span>
+<span>12:00</span>
+<span>16:00</span>
+<span>20:00</span>
+<span>Now</span>
+</div>
+</div>
+</div>
+<!-- Resource Allocation (Circular Charts) -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm flex flex-col justify-between">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6">Resource Allocation</h3>
+<div class="flex flex-col gap-8">
+<!-- Storage Chart -->
+<div class="flex items-center gap-6">
+<div class="relative size-24 shrink-0">
+<svg class="size-full -rotate-90">
+<circle class="text-slate-100 dark:text-slate-800" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-lg font-black text-slate-900 dark:text-white">75%</span>
+</div>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Storage Usage</p>
+<p class="text-xs text-slate-500">1.2TB of 1.6TB used</p>
+<p class="text-xs font-bold text-primary mt-1">Expanding in 14d</p>
+</div>
+</div>
+<!-- DB Pool Chart -->
+<div class="flex items-center gap-6">
+<div class="relative size-24 shrink-0">
+<svg class="size-full -rotate-90">
+<circle class="text-slate-100 dark:text-slate-800" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-emerald-500" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="188.4" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-lg font-black text-slate-900 dark:text-white">25%</span>
+</div>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">DB Connections</p>
+<p class="text-xs text-slate-500">125/500 active pools</p>
+<p class="text-xs font-bold text-emerald-500 mt-1">Healthy</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Crawler & Feed Health Section -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+<div class="px-6 py-5 border-b border-slate-200 dark:border-slate-800 flex flex-wrap justify-between items-center gap-4">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Crawler &amp; Feed Health</h3>
+<div class="flex gap-2">
+<span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">142 Active Instances</span>
+<span class="bg-emerald-500/10 text-emerald-600 text-xs font-bold px-3 py-1 rounded-full">99.9% Success Rate</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-wider border-b border-slate-100 dark:border-slate-800">
+<th class="px-6 py-4">Crawler Source</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4">Active Threads</th>
+<th class="px-6 py-4">Avg. Latency</th>
+<th class="px-6 py-4">Error Rate</th>
+<th class="px-6 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">shopping_cart</span>
+</div>
+<span class="text-sm font-semibold">Amazon North America</span>
+</div>
+</td>
+<td class="px-6 py-4"><span class="flex items-center gap-2 text-xs font-bold text-emerald-600"><span class="size-2 rounded-full bg-emerald-500"></span> Active</span></td>
+<td class="px-6 py-4 text-sm">48</td>
+<td class="px-6 py-4 text-sm">342ms</td>
+<td class="px-6 py-4 text-sm">0.02%</td>
+<td class="px-6 py-4 text-right"><button class="text-primary text-sm font-bold hover:underline">Config</button></td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">storefront</span>
+</div>
+<span class="text-sm font-semibold">Walmart Global Feed</span>
+</div>
+</td>
+<td class="px-6 py-4"><span class="flex items-center gap-2 text-xs font-bold text-emerald-600"><span class="size-2 rounded-full bg-emerald-500"></span> Active</span></td>
+<td class="px-6 py-4 text-sm">32</td>
+<td class="px-6 py-4 text-sm">518ms</td>
+<td class="px-6 py-4 text-sm">0.14%</td>
+<td class="px-6 py-4 text-right"><button class="text-primary text-sm font-bold hover:underline">Config</button></td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">devices</span>
+</div>
+<span class="text-sm font-semibold">BestBuy API V3</span>
+</div>
+</td>
+<td class="px-6 py-4"><span class="flex items-center gap-2 text-xs font-bold text-amber-500"><span class="size-2 rounded-full bg-amber-500 animate-pulse"></span> Throttled</span></td>
+<td class="px-6 py-4 text-sm">12</td>
+<td class="px-6 py-4 text-sm">1240ms</td>
+<td class="px-6 py-4 text-sm">4.82%</td>
+<td class="px-6 py-4 text-right"><button class="text-primary text-sm font-bold hover:underline">Config</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Incident Log & Footer -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+<!-- Real-time Incident Log -->
+<div class="flex flex-col gap-4">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Real-time Incident Log</h3>
+<div class="space-y-3">
+<div class="bg-white dark:bg-slate-900 border-l-4 border-amber-500 p-4 rounded-r-lg shadow-sm flex gap-4">
+<span class="material-symbols-outlined text-amber-500">warning</span>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<p class="text-sm font-bold">API Gateway Response Latency High</p>
+<span class="text-[10px] text-slate-400 font-bold uppercase">2m ago</span>
+</div>
+<p class="text-xs text-slate-500">Average response time exceeded 800ms threshold in Region US-East-1.</p>
+<div class="mt-2 flex items-center gap-2">
+<span class="bg-slate-100 dark:bg-slate-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase text-slate-600">Auto-recovery</span>
+<span class="text-[10px] text-emerald-600 font-bold italic">Scaling up cluster...</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 border-l-4 border-emerald-500 p-4 rounded-r-lg shadow-sm flex gap-4">
+<span class="material-symbols-outlined text-emerald-500">verified</span>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<p class="text-sm font-bold">Database Backup Completed</p>
+<span class="text-[10px] text-slate-400 font-bold uppercase">45m ago</span>
+</div>
+<p class="text-xs text-slate-500">Full system snapshot successfully uploaded to S3-Glacier.</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 border-l-4 border-slate-300 p-4 rounded-r-lg shadow-sm flex gap-4 opacity-70">
+<span class="material-symbols-outlined text-slate-400">info</span>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<p class="text-sm font-bold">Crawler Config Updated</p>
+<span class="text-[10px] text-slate-400 font-bold uppercase">2h ago</span>
+</div>
+<p class="text-xs text-slate-500">User 'Admin_Alex' modified Amazon-NA retry policy.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- System Info & Versioning -->
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-6 flex flex-col justify-center items-center text-center gap-4">
+<div class="size-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-4xl">dns</span>
+</div>
+<div>
+<h4 class="text-xl font-black text-slate-900 dark:text-white">PriceRadar Admin v2.4.0</h4>
+<p class="text-sm text-slate-500 mt-2">Environment: <span class="text-primary font-bold">Production-Main</span></p>
+<p class="text-xs text-slate-400 mt-1">Last successful deployment: Aug 24, 2024 (Hash: 8f2a1b9)</p>
+</div>
+<div class="grid grid-cols-2 gap-4 w-full mt-4">
+<div class="bg-white dark:bg-slate-900 p-3 rounded-lg border border-primary/10">
+<p class="text-xs text-slate-400 font-bold uppercase">Up-time</p>
+<p class="text-lg font-bold text-slate-900 dark:text-white">124d 14h</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-3 rounded-lg border border-primary/10">
+<p class="text-xs text-slate-400 font-bold uppercase">Regions</p>
+<p class="text-lg font-bold text-slate-900 dark:text-white">12 Global</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

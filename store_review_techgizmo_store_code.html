@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TechGizmo Store Review - PriceRadar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.unfilled {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined text-xl">radar</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">PriceRadar</h1>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-400" href="#">Deals</a>
+<a class="text-sm font-semibold text-primary" href="#">Stores</a>
+<a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-400" href="#">Reviews</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4">
+<div class="relative hidden max-w-xs flex-1 sm:block">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+<span class="material-symbols-outlined text-xl">search</span>
+</span>
+<input class="block w-full rounded-lg border-none bg-slate-100 py-2 pl-10 pr-3 text-sm placeholder-slate-500 focus:ring-2 focus:ring-primary dark:bg-slate-800" placeholder="Search stores or products" type="text"/>
+</div>
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="mx-auto w-full max-w-7xl grow px-4 py-6 sm:px-6 lg:px-8">
+<!-- Breadcrumbs -->
+<nav class="mb-6 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:text-primary" href="#">Stores</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="font-medium text-slate-900 dark:text-slate-200">TechGizmo Store</span>
+</nav>
+<!-- Store Profile Header -->
+<div class="mb-8 overflow-hidden rounded-xl bg-white p-6 shadow-sm border border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+<div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+<div class="flex items-start gap-6">
+<div class="h-24 w-24 flex-shrink-0 rounded-xl bg-slate-50 p-2 ring-1 ring-slate-200 dark:bg-slate-800 dark:ring-slate-700">
+<img alt="Store Logo" class="h-full w-full object-contain" data-alt="TechGizmo minimalist tech store logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD89Rk2vXirgyqUGUr61ADneMIG2qJagcjx9bjtqV_75hhZx_AL9gSRfS2LIn7zsbv01F5b89-yTcWexjQwnr1Q3vSn6q98TD76uiJz5ryg-AkuoIUb4g9BKbt8ZtCy96v7TThOzKMiyMcITwI2mYvRon43MH6hIzh3cqIYYhK8LomE2HtILoNgg890f3JN9V-w7Wrw_D5naGRMtrUhX2dqjVVboory51yqOcP4xQ2orM-1ZkAPKUJhwxOAR_K3eTki2LToCulSaHhA"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="text-3xl font-bold text-slate-900 dark:text-white">TechGizmo Store</h2>
+<span class="material-symbols-outlined text-primary" title="Verified Retailer">verified</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400">Premium Electronics &amp; Consumer Tech Retailer</p>
+<div class="mt-3 flex items-center gap-4">
+<div class="flex items-center gap-1">
+<span class="text-2xl font-black text-slate-900 dark:text-white">4.6</span>
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined unfilled">star</span>
+</div>
+<span class="ml-1 text-sm text-slate-500 dark:text-slate-400">(1,240 reviews)</span>
+</div>
+<div class="h-4 w-px bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex items-center gap-2">
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Trust Score</span>
+<span class="rounded bg-primary/10 px-2 py-0.5 text-lg font-bold text-primary">9.2/10</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-3 sm:flex-row">
+<button class="flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-2.5 font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-xl">open_in_new</span>
+                            Visit Store
+                        </button>
+<button class="flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-6 py-2.5 font-bold text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+                            Follow
+                        </button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+<!-- Left Content: Reviews and Metrics -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Store Performance Metrics -->
+<section class="rounded-xl bg-white p-6 shadow-sm border border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+<h3 class="mb-6 text-xl font-bold text-slate-900 dark:text-white">Store Performance</h3>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+<div class="flex flex-col items-center text-center">
+<div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-900/30">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<span class="text-sm font-semibold text-slate-500 dark:text-slate-400">Shipping Speed</span>
+<span class="mt-1 text-lg font-bold text-slate-900 dark:text-white">Fast (2-3 days)</span>
+<div class="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+<div class="h-full bg-primary" style="width: 95%"></div>
+</div>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-green-50 text-green-600 dark:bg-green-900/30">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<span class="text-sm font-semibold text-slate-500 dark:text-slate-400">Customer Service</span>
+<span class="mt-1 text-lg font-bold text-slate-900 dark:text-white">Excellent</span>
+<div class="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+<div class="h-full bg-primary" style="width: 88%"></div>
+</div>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<span class="text-sm font-semibold text-slate-500 dark:text-slate-400">Product Authenticity</span>
+<span class="mt-1 text-lg font-bold text-slate-900 dark:text-white">Guaranteed</span>
+<div class="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+<div class="h-full bg-primary" style="width: 100%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews List -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Customer Reviews</h3>
+<button class="text-sm font-bold text-primary hover:underline">Write a Review</button>
+</div>
+<!-- Review Card 1 -->
+<div class="rounded-xl bg-white p-6 shadow-sm border border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="font-bold text-primary">JD</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Jason D.</p>
+<div class="flex items-center gap-2">
+<div class="flex text-yellow-400 text-sm">
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+<span class="text-xs font-medium text-green-600 bg-green-50 px-1.5 py-0.5 rounded dark:bg-green-900/20 dark:text-green-400">Verified Purchase</span>
+</div>
+</div>
+</div>
+<span class="text-xs text-slate-400">2 days ago</span>
+</div>
+<p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Extremely fast shipping! Ordered a new workstation on Monday and it arrived by Wednesday. The packaging was very secure, double-boxed with plenty of protection. Highly recommended for high-end electronics.
+                            </p>
+<div class="mt-4 flex items-center gap-4 border-t border-slate-100 pt-4 dark:border-slate-800">
+<button class="flex items-center gap-1 text-sm text-slate-500 hover:text-primary">
+<span class="material-symbols-outlined text-[18px] unfilled">thumb_up</span> Helpful (12)
+                                </button>
+<button class="flex items-center gap-1 text-sm text-slate-500 hover:text-red-500">
+<span class="material-symbols-outlined text-[18px] unfilled">flag</span> Report
+                                </button>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="rounded-xl bg-white p-6 shadow-sm border border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="font-bold text-primary">SL</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Sarah L.</p>
+<div class="flex items-center gap-2">
+<div class="flex text-yellow-400 text-sm">
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined unfilled text-[16px]">star</span>
+</div>
+<span class="text-xs font-medium text-green-600 bg-green-50 px-1.5 py-0.5 rounded dark:bg-green-900/20 dark:text-green-400">Verified Purchase</span>
+</div>
+</div>
+</div>
+<span class="text-xs text-slate-400">1 week ago</span>
+</div>
+<p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Great prices compared to other retailers. Had a minor issue with the billing address but their customer service chat resolved it in minutes. The only reason for 4 stars is that the tracking link took 24 hours to go live.
+                            </p>
+<div class="mt-4 flex items-center gap-4 border-t border-slate-100 pt-4 dark:border-slate-800">
+<button class="flex items-center gap-1 text-sm text-slate-500 hover:text-primary">
+<span class="material-symbols-outlined text-[18px] unfilled">thumb_up</span> Helpful (5)
+                                </button>
+<button class="flex items-center gap-1 text-sm text-slate-500 hover:text-red-500">
+<span class="material-symbols-outlined text-[18px] unfilled">flag</span> Report
+                                </button>
+</div>
+</div>
+<button class="w-full rounded-lg border border-slate-200 bg-white py-3 font-bold text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400 dark:hover:bg-slate-800">
+                            Load More Reviews
+                        </button>
+</section>
+</div>
+<!-- Sidebar Content -->
+<div class="space-y-8">
+<!-- Top Deals Section -->
+<section>
+<h3 class="mb-4 text-xl font-bold text-slate-900 dark:text-white">Top Deals</h3>
+<div class="space-y-4">
+<!-- Product Card 1 -->
+<div class="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+<div class="aspect-square w-full overflow-hidden bg-slate-50 dark:bg-slate-800">
+<img alt="Product" class="h-full w-full object-cover group-hover:scale-105 transition-transform" data-alt="Sleek modern wireless noise-canceling headphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClvneEwu79BAImCLw7aihQRFD_w2VnabT8nx4al-nqciVrD7lkCicik_VgYnWjNMiL34CNyKbOxBRcJXI8RuS9aT0YGZhHuyang7QdyY81FffpHnbFCI-3norkDufzdDgJ1FJJRyBO_kRszdUqK0PNNhJHCTjhIM4jZZr34cpgzNpn78zNwUxpyCKyoioiZrojJKM-MJ-ZHBQnjB0fINeiNzeC6R_Tztl07nYUpn0Lt-7oYrLlee-KcydE1Z_sBghwBDud-Yly5ozf"/>
+<div class="absolute top-2 right-2 rounded-full bg-red-500 px-2 py-1 text-xs font-bold text-white">-25%</div>
+</div>
+<div class="p-4">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">AudioTech</p>
+<h4 class="font-bold text-slate-900 dark:text-white">Pro Wireless Headphones</h4>
+<div class="mt-2 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xl font-black text-primary">$149.99</span>
+<span class="text-xs text-slate-400 line-through">$199.99</span>
+</div>
+<button class="rounded-lg bg-primary/10 p-2 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+<div class="aspect-square w-full overflow-hidden bg-slate-50 dark:bg-slate-800">
+<img alt="Product" class="h-full w-full object-cover group-hover:scale-105 transition-transform" data-alt="High-resolution compact mirrorless digital camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp9smHO3RAoSej3fGfaofjZeVF8DSV04V1sjsjvWuEDarKEU5Ea806kSTkGLlu6zbeTN-pVf0X7ult9oSQEydcoIFvsMEB_WPKAxXsEdLax3dXUQ2RkuOv_irsW6H2lqEw6lxstbMrR_4xhRBZadrapMNElOnvBaToUv_bc-ZxV9HCyY-lKqzD-4ZCthvISTO9KVKcjosp6O_eU7d1jRH4G-JnpPNDT4kAjLpM_t7aU7Muz3dioMKhQhaAYn2fRZVSr5uJuTDg_Xlj"/>
+<div class="absolute top-2 right-2 rounded-full bg-red-500 px-2 py-1 text-xs font-bold text-white">Hot Deal</div>
+</div>
+<div class="p-4">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">VisionPro</p>
+<h4 class="font-bold text-slate-900 dark:text-white">Compact 4K Digital Camera</h4>
+<div class="mt-2 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xl font-black text-primary">$899.00</span>
+<span class="text-xs text-slate-400 line-through">$1,049.00</span>
+</div>
+<button class="rounded-lg bg-primary/10 p-2 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Store Policies -->
+<section class="rounded-xl bg-white p-6 shadow-sm border border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+<h3 class="mb-4 text-lg font-bold text-slate-900 dark:text-white">Store Policies</h3>
+<div class="space-y-4">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Shipping</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Free standard shipping on orders over $50. International shipping available to 40+ countries.</p>
+</div>
+</div>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary">assignment_return</span>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Returns</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">30-day hassle-free returns. Pre-paid labels provided for defective items.</p>
+</div>
+</div>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary">payments</span>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Payments</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">All major credit cards, PayPal, and Apple Pay accepted.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-12 border-t border-slate-200 bg-white py-12 dark:border-slate-800 dark:bg-background-dark">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<div class="flex h-6 w-6 items-center justify-center rounded bg-primary text-white">
+<span class="material-symbols-outlined text-base">radar</span>
+</div>
+<span class="text-lg font-bold text-slate-900 dark:text-white">PriceRadar</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">Helping you find the best deals from the most trusted stores worldwide.</p>
+</div>
+<div>
+<h4 class="mb-4 text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white">Explore</h4>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Best Deals</a></li>
+<li><a class="hover:text-primary" href="#">Top Stores</a></li>
+<li><a class="hover:text-primary" href="#">Review Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="mb-4 text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white">Business</h4>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Claim Your Store</a></li>
+<li><a class="hover:text-primary" href="#">Advertising</a></li>
+<li><a class="hover:text-primary" href="#">Merchant Tools</a></li>
+</ul>
+</div>
+<div>
+<h4 class="mb-4 text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white">Legal</h4>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-12 border-t border-slate-100 pt-8 text-center text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400">
+                    © 2024 PriceRadar. All rights reserved.
+                </div>
+</div>
+</footer>
+</div>
+</body></html>

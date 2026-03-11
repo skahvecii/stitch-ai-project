@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>PriceRadar - Price Verification</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-10">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">PriceRadar</h2>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4">
+<span class="text-sm font-medium text-slate-500">Onboarding Wizard</span>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAZRtykr2nJ0FgRhDykINz9jKXyVtAQop7ZAz33Fbs7s-8I1pPs0f__ibV3YW_YtSfRHgIQ1gWFXnWmcW-rxWeR1HZlIcFOGBopRrTYfPmXnuFvLm_xvb1akUIVAP9CPbDCgxOXJx6c8u-nsAHXnp1aUW0SzxTdd9IspPAFB3b0CxjtQJX4mlCnM8EbEbJuGizwV69VcViySmbyf_lructycYyUT8b-3CGmEx1qpNb5SZVjqjaRWjapZcjzEs-rWzN7usayhO7UzKc");'></div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-10 px-4">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<!-- Progress Stepper -->
+<div class="flex flex-col gap-3 px-4 mb-8">
+<div class="flex gap-6 justify-between items-end">
+<div>
+<h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Price Verification</h1>
+<p class="text-slate-500 text-sm font-medium leading-normal">Step 3 of 4: Ensure your feed matches your live store.</p>
+</div>
+<p class="text-primary text-sm font-bold leading-normal">75% Complete</p>
+</div>
+<div class="rounded-full bg-slate-200 dark:bg-slate-800 h-3 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Main Content Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden mb-8">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="max-w-xl">
+<h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">Verification Accuracy Check</h2>
+<p class="text-slate-500 text-sm">
+                                        We've crawled your live site to verify that the mapped feed data matches. This step ensures your PriceRadar dashboard remains accurate before going live.
+                                    </p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex flex-col items-end">
+<span class="text-xs font-bold uppercase tracking-wider text-slate-400">Accuracy Score</span>
+<span class="text-3xl font-bold text-primary">98%</span>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg font-semibold transition-colors">
+<span class="material-symbols-outlined text-sm">refresh</span>
+                                        Refresh Data
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Verification Samples List -->
+<div class="p-0">
+<div class="bg-slate-50 dark:bg-slate-800/50 px-6 py-3 border-b border-slate-200 dark:border-slate-800 grid grid-cols-12 gap-4">
+<div class="col-span-6 text-xs font-bold text-slate-500 uppercase">Product Sample</div>
+<div class="col-span-2 text-xs font-bold text-slate-500 uppercase text-center">Feed Price</div>
+<div class="col-span-2 text-xs font-bold text-slate-500 uppercase text-center">Live Site</div>
+<div class="col-span-2 text-xs font-bold text-slate-500 uppercase text-right">Status</div>
+</div>
+<!-- Row 1 -->
+<div class="px-6 py-5 border-b border-slate-200 dark:border-slate-800 grid grid-cols-12 gap-4 items-center hover:bg-slate-50/50 dark:hover:bg-slate-800/20">
+<div class="col-span-6 flex items-center gap-3">
+<div class="w-12 h-12 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-700">
+<img alt="Product thumbnail" class="w-full h-full object-cover" data-alt="E-commerce product thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYV1Nh8LviIMNID_tSYzxHvOWr0rZgt-x9php6e-kmm5JVlqm_B0ZIruoLGjTUR3X7KJsjBq1RPndIYrdI3u5a6ncX-YYSROv5WV1Di4BFrh-4uvbSxHiYt3rrrnzNr-255cb8Bhb-bJjU2Z6KbJNC2dQCHWcBQl6u1tE0jOSEpWG51el-TPTtSw49mIJ-oDDz9W8IpN_kgTjzL29tU5vS-E7XgpefS8DApGfcus0yRbCFU-BSiX1Ly5S010Z_tfaLaWkOUv87y9o0"/>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Premium Leather Sneakers</p>
+<p class="text-xs text-slate-500">SKU: FTW-992-BLK</p>
+</div>
+</div>
+<div class="col-span-2 text-sm font-medium text-slate-700 dark:text-slate-300 text-center">$120.00</div>
+<div class="col-span-2 text-sm font-medium text-slate-700 dark:text-slate-300 text-center">$120.00</div>
+<div class="col-span-2 flex justify-end">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-bold">
+<span class="material-symbols-outlined text-base">check_circle</span>
+                                        Matched
+                                    </span>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="px-6 py-5 border-b border-slate-200 dark:border-slate-800 grid grid-cols-12 gap-4 items-center hover:bg-slate-50/50 dark:hover:bg-slate-800/20">
+<div class="col-span-6 flex items-center gap-3">
+<div class="w-12 h-12 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-700">
+<img alt="Product thumbnail" class="w-full h-full object-cover" data-alt="Modern backpack product image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6JnD8O8D0_RIlvg7bHuS63cXvD8aR-Azu553XGgS8UUIuQwiY_MKsM4lAYXe87FskPUI0JAsoE9bkjmSUb2ZNI9gJpIP9Or_sHV9wgFYbMYEI5OozEUopgXlkRCJqjuBR6ug-nY2xMsMi1TPcZI5RCaRzadFYsWF8XlljCd5jrH_MLFfyqKCL1PKukpftaWUUKdeuoeih3Migi_rLDcZj7Za84YK5_mUkIVHlLEfo3K31E1EPGzcR8uBNfaPEqIzIWQAHSuoXWgoO"/>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Tech Commuter Backpack</p>
+<p class="text-xs text-slate-500">SKU: ACC-812-GRY</p>
+</div>
+</div>
+<div class="col-span-2 text-sm font-medium text-slate-700 dark:text-slate-300 text-center">$85.00</div>
+<div class="col-span-2 text-sm font-medium text-slate-700 dark:text-slate-300 text-center">$85.00</div>
+<div class="col-span-2 flex justify-end">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-bold">
+<span class="material-symbols-outlined text-base">check_circle</span>
+                                        Matched
+                                    </span>
+</div>
+</div>
+<!-- Row 3 (Mismatch) -->
+<div class="px-6 py-5 border-b border-slate-200 dark:border-slate-800 grid grid-cols-12 gap-4 items-center hover:bg-slate-50/50 dark:hover:bg-slate-800/20 bg-orange-50/30 dark:bg-orange-900/5">
+<div class="col-span-6 flex items-center gap-3">
+<div class="w-12 h-12 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-700">
+<img alt="Product thumbnail" class="w-full h-full object-cover" data-alt="Blue ceramic mug product image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZzXLFiip8JQ-F24vu5rAH5V3NOORd11L5vmM4uO_LtIBnxTck39-1vgrhW4p_m8D9MjmHiW--lLpcCygXX9GG9ImMu6ea5n5E6a_XL4PDjhGxFt1qKCoZ6D_LWIcoFgmi7E3wAbW3ZCNn7hgH1Ocw4UHnOe47br9izSHhB8kFS8-ZR0eUfcKHpfeOJPyTPxgm6We9GqwDbHmFgWVTEXQWAiuyh-1wn9H3PPfTJmU7IVkPoP-PkxvcOsi0s7m92-BpGMzyg3fLoUYK"/>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Minimalist Ceramic Mug</p>
+<p class="text-xs text-slate-500">SKU: HOM-104-BLU</p>
+</div>
+</div>
+<div class="col-span-2 text-sm font-medium text-slate-700 dark:text-slate-300 text-center">$24.99</div>
+<div class="col-span-2 text-sm font-bold text-orange-600 dark:text-orange-400 text-center">$19.99</div>
+<div class="col-span-2 flex justify-end">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-orange-100 dark:bg-orange-500/10 text-orange-700 dark:text-orange-400 text-xs font-bold">
+<span class="material-symbols-outlined text-base">warning</span>
+                                        Mismatch
+                                    </span>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="px-6 py-5 border-b border-slate-200 dark:border-slate-800 grid grid-cols-12 gap-4 items-center hover:bg-slate-50/50 dark:hover:bg-slate-800/20">
+<div class="col-span-6 flex items-center gap-3">
+<div class="w-12 h-12 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-700">
+<img alt="Product thumbnail" class="w-full h-full object-cover" data-alt="Noise cancelling headphones product image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-oxZ5YnkFrsZXuDCG9Vas62jNSCfGz8ygI4Cr78AY371p0jhRAzR5k7MBuI8MivvgLs0NhgMj4U7f9UQHgc0NfBM7QCLg0XUnX7FDe7yGbvhpB47ACwkKsUHjY49FL7WuezsHvq7mphXz_NYwWJvPM9DgcgQVYk0TwAKB-CNoOPe7P7I4NED7VJGRXFI9PzkoXUhCQeqzl0TWgJpjsPj4HKj--qndZMn1ROxTwJyguKuKdA9X9ofjAS_bbi_VVjrAl8LiKf-pXgku"/>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">QuietTune ANC Headphones</p>
+<p class="text-xs text-slate-500">SKU: AUD-223-BLK</p>
+</div>
+</div>
+<div class="col-span-2 text-sm font-medium text-slate-700 dark:text-slate-300 text-center">$299.00</div>
+<div class="col-span-2 text-sm font-medium text-slate-700 dark:text-slate-300 text-center">$299.00</div>
+<div class="col-span-2 flex justify-end">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-bold">
+<span class="material-symbols-outlined text-base">check_circle</span>
+                                        Matched
+                                    </span>
+</div>
+</div>
+</div>
+<!-- Info Alert -->
+<div class="m-6 p-4 rounded-lg bg-primary/5 border border-primary/20 flex gap-3">
+<span class="material-symbols-outlined text-primary">info</span>
+<div class="text-sm text-slate-700 dark:text-slate-300">
+<p class="font-semibold text-primary mb-1">How verification works</p>
+<p>We compare the <span class="font-bold">Price</span> field from your uploaded CSV/XML feed against the price displayed on your live product pages. If a mismatch occurs, please check your Feed Mapping or ensure your feed file is up to date.</p>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="flex items-center justify-between gap-4 px-4">
+<button class="flex items-center gap-2 px-6 py-3 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg font-bold text-slate-700 dark:text-slate-300 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+                            Back to Feed Mapping
+                        </button>
+<button class="flex items-center gap-2 px-8 py-3 bg-primary hover:bg-primary/90 rounded-lg font-bold text-white transition-all shadow-md">
+                            Continue to Final Review
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Trust Bar -->
+<div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col items-center gap-4">
+<p class="text-xs text-slate-400 font-bold uppercase tracking-widest">Trusted by 5,000+ Retailers</p>
+<div class="flex gap-8 grayscale opacity-40">
+<div class="h-6 w-20 bg-slate-300 dark:bg-slate-700 rounded"></div>
+<div class="h-6 w-20 bg-slate-300 dark:bg-slate-700 rounded"></div>
+<div class="h-6 w-20 bg-slate-300 dark:bg-slate-700 rounded"></div>
+</div>
+</div>
+</div>
+</main>
+<footer class="py-10 text-center">
+<p class="text-xs text-slate-400">© 2024 PriceRadar Technologies Inc. All rights reserved.</p>
+</footer>
+</div>
+</div>
+</body></html>

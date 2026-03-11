@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar | Programmatic SEO Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-y-auto">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="h-10 w-10 rounded-lg bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none">PriceRadar</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider font-semibold">Admin Console</p>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">storefront</span>
+<span class="text-sm font-medium">Stores</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">rss_feed</span>
+<span class="text-sm font-medium">Feeds</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">description</span>
+<span class="text-sm font-medium">Crawler Logs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">alt_route</span>
+<span class="text-sm font-medium">Feed Mapping</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">search</span>
+<span class="text-sm font-bold">SEO Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">bar_chart</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark">
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-10 px-8 py-6">
+<div class="flex items-center justify-between gap-4 max-w-7xl mx-auto">
+<div>
+<h2 class="text-2xl font-extrabold tracking-tight">Programmatic SEO Settings</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Configure automated rules for search engine optimization across the entire catalog.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-semibold hover:bg-slate-200 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">sync</span>
+                            Sync Sitemap
+                        </button>
+<button class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors">
+                            Save Changes
+                        </button>
+</div>
+</div>
+</header>
+<div class="max-w-7xl mx-auto p-8">
+<!-- Navigation Tabs -->
+<div class="border-b border-slate-200 dark:border-slate-800 mb-8 overflow-x-auto">
+<div class="flex gap-8">
+<button class="pb-4 border-b-2 border-primary text-primary text-sm font-bold whitespace-nowrap">URL Templates</button>
+<button class="pb-4 border-b-2 border-transparent text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-slate-700 whitespace-nowrap">Meta Tag Rules</button>
+<button class="pb-4 border-b-2 border-transparent text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-slate-700 whitespace-nowrap">Schema Markup</button>
+<button class="pb-4 border-b-2 border-transparent text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-slate-700 whitespace-nowrap">Internal Linking</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Config Forms -->
+<div class="lg:col-span-2 space-y-8">
+<!-- URL Templates Section -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800">
+<h3 class="text-lg font-bold">URL Structure Templates</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Define how dynamic pages are routed and named.</p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-800/50">
+<tr>
+<th class="px-6 py-3 text-xs font-bold text-slate-500 uppercase">Page Type</th>
+<th class="px-6 py-3 text-xs font-bold text-slate-500 uppercase">URL Structure</th>
+<th class="px-6 py-3 text-xs font-bold text-slate-500 uppercase text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+<tr>
+<td class="px-6 py-4 text-sm font-semibold">Product</td>
+<td class="px-6 py-4 text-sm font-mono text-primary">/product/{{slug}}</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:underline text-sm font-bold">Edit</button>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm font-semibold">Category</td>
+<td class="px-6 py-4 text-sm font-mono text-primary">/category/{{category-name}}-price</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:underline text-sm font-bold">Edit</button>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm font-semibold">Deal</td>
+<td class="px-6 py-4 text-sm font-mono text-primary">/deal/{{deal-id}}</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:underline text-sm font-bold">Edit</button>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm font-semibold">Store</td>
+<td class="px-6 py-4 text-sm font-mono text-primary">/store/{{store-slug}}</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:underline text-sm font-bold">Edit</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Meta Tag Rules Builder -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6">
+<div class="mb-6">
+<h3 class="text-lg font-bold">Meta Tag Rule Builder</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Use dynamic variables to construct high-intent SEO tags.</p>
+</div>
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-bold mb-2">SEO Title Template</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm" type="text" value="Buy {{product_name}} at the best price - Starting from {{min_price}} in {{current_year}}"/>
+<div class="mt-2 flex flex-wrap gap-2">
+<span class="text-[10px] px-2 py-1 bg-primary/10 text-primary rounded font-mono cursor-pointer hover:bg-primary/20 transition-colors">{{product_name}}</span>
+<span class="text-[10px] px-2 py-1 bg-primary/10 text-primary rounded font-mono cursor-pointer hover:bg-primary/20 transition-colors">{{min_price}}</span>
+<span class="text-[10px] px-2 py-1 bg-primary/10 text-primary rounded font-mono cursor-pointer hover:bg-primary/20 transition-colors">{{current_year}}</span>
+<span class="text-[10px] px-2 py-1 bg-primary/10 text-primary rounded font-mono cursor-pointer hover:bg-primary/20 transition-colors">{{store_count}}</span>
+<span class="text-[10px] px-2 py-1 bg-primary/10 text-primary rounded font-mono cursor-pointer hover:bg-primary/20 transition-colors">{{brand_name}}</span>
+</div>
+</div>
+<div>
+<label class="block text-sm font-bold mb-2">Meta Description Template</label>
+<textarea class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm" rows="3">Compare {{product_name}} prices across {{store_count}} stores. Get the latest deals, reviews, and specs for {{product_name}} starting at only {{min_price}}. Updated: {{current_year}}.</textarea>
+</div>
+</div>
+</section>
+<!-- Schema Toggle Settings -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6">
+<div class="mb-6">
+<h3 class="text-lg font-bold">Schema.org Structured Data</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Manage JSON-LD markup automation for rich snippets.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="p-4 border border-slate-200 dark:border-slate-800 rounded-lg flex items-center justify-between">
+<div>
+<p class="text-sm font-bold">Product</p>
+<p class="text-[11px] text-slate-500">Enable Offers &amp; Specs</p>
+</div>
+<div class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+<span class="translate-x-5 inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</div>
+</div>
+<div class="p-4 border border-slate-200 dark:border-slate-800 rounded-lg flex items-center justify-between">
+<div>
+<p class="text-sm font-bold">AggregateRating</p>
+<p class="text-[11px] text-slate-500">Enable Review Snippets</p>
+</div>
+<div class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+<span class="translate-x-5 inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</div>
+</div>
+<div class="p-4 border border-slate-200 dark:border-slate-800 rounded-lg flex items-center justify-between">
+<div>
+<p class="text-sm font-bold">BreadcrumbList</p>
+<p class="text-[11px] text-slate-500">Improve Navigation UI</p>
+</div>
+<div class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-200 dark:bg-slate-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+<span class="translate-x-0 inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Preview Panel -->
+<div class="lg:col-span-1">
+<div class="sticky top-[136px] space-y-6">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="p-4 bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary">visibility</span>
+<h4 class="text-sm font-bold uppercase tracking-wide">Live SERP Preview</h4>
+</div>
+</div>
+<div class="p-6">
+<div class="mb-4">
+<div class="flex items-center gap-2 mb-1">
+<div class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">public</span>
+</div>
+<p class="text-xs text-slate-600 dark:text-slate-400">priceradar.com › product › iphone-15-pro</p>
+</div>
+<h5 class="text-xl text-[#1a0dab] dark:text-blue-400 hover:underline cursor-pointer font-normal leading-tight">Buy iPhone 15 Pro at the best price - Starting from $999 in 2024</h5>
+<p class="text-sm text-[#4d5156] dark:text-slate-400 mt-2 line-clamp-3">
+                                            Compare iPhone 15 Pro prices across 12 stores. Get the latest deals, reviews, and specs for iPhone 15 Pro starting at only $999. Updated: 2024.
+                                        </p>
+<div class="flex items-center gap-2 mt-2">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px]">star_half</span>
+</div>
+<span class="text-xs text-slate-500">Rating: 4.5 · 1,240 reviews · Price range: $999.00 - $1,199.00</span>
+</div>
+</div>
+<div class="pt-6 border-t border-slate-100 dark:border-slate-800">
+<h6 class="text-xs font-bold text-slate-500 uppercase mb-4">Preview Configuration</h6>
+<div class="space-y-3">
+<div>
+<label class="block text-[10px] text-slate-500 uppercase font-bold">Mock Data: Product</label>
+<select class="mt-1 w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded p-1 text-xs">
+<option>iPhone 15 Pro</option>
+<option>Samsung Galaxy S24</option>
+<option>Sony WH-1000XM5</option>
+</select>
+</div>
+<button class="w-full py-2 bg-slate-100 dark:bg-slate-800 rounded text-xs font-bold hover:bg-slate-200 transition-colors">Generate New Preview</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bulk Actions Card -->
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-6">
+<h4 class="text-sm font-bold text-primary flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-lg">bolt</span>
+                                    Bulk Management
+                                </h4>
+<p class="text-xs text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">Changes made to templates will affect approximately 124,502 indexed pages.</p>
+<button class="w-full py-3 bg-primary text-white rounded-lg text-sm font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+                                    Apply Rules Everywhere
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

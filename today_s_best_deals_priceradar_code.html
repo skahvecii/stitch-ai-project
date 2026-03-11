@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Today's Best Deals &amp; Biggest Price Drops | PriceRadar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">radar</span>
+<h2 class="text-slate-900 dark:text-white text-xl font-black tracking-tight">PriceRadar</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-primary font-semibold text-sm" href="#">Deals</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Price Tracker</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Categories</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Stores</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4">
+<div class="relative max-w-xs w-full hidden sm:block">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+<span class="material-symbols-outlined text-xl">search</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-2 border-none bg-slate-100 dark:bg-slate-800 rounded-lg text-sm placeholder-slate-500 focus:ring-2 focus:ring-primary" placeholder="Search products or brands..." type="text"/>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Sign Up</button>
+<div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500">person</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Hero Section -->
+<section class="mb-10">
+<h1 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white leading-tight tracking-tight mb-4">
+                Today's Best Deals &amp; <span class="text-primary font-black">Biggest Price Drops</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed">
+                We monitor 100+ stores to find you the lowest prices on top-rated electronics, fashion, and more. Stop overpaying and start saving today.
+            </p>
+</section>
+<!-- Category Filters -->
+<div class="flex flex-wrap gap-2 mb-10 overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-5 py-2 bg-primary text-white rounded-full text-sm font-semibold whitespace-nowrap">All Deals</button>
+<button class="px-5 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium transition-colors whitespace-nowrap">Smartphones</button>
+<button class="px-5 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium transition-colors whitespace-nowrap">Laptops</button>
+<button class="px-5 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium transition-colors whitespace-nowrap">Audio &amp; Headphones</button>
+<button class="px-5 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium transition-colors whitespace-nowrap">Gaming Gear</button>
+<button class="px-5 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium transition-colors whitespace-nowrap">Home Office</button>
+</div>
+<!-- Featured Deal of the Hour -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-2xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-500 fill-1">bolt</span>
+                    Featured Deal of the Hour
+                </h2>
+<div class="flex items-center gap-2 text-sm font-bold text-slate-500 dark:text-slate-400">
+<span>Ends in:</span>
+<span class="bg-orange-100 text-orange-600 px-2 py-1 rounded">00:42:15</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col lg:flex-row gap-8 items-center">
+<div class="w-full lg:w-2/5 aspect-video bg-slate-100 dark:bg-slate-900 rounded-lg overflow-hidden relative">
+<div class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Flash Sale</div>
+<img alt="Samsung Galaxy S23 Ultra" class="w-full h-full object-contain p-4" data-alt="High-end smartphone display showing camera lenses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Epj-yq-L3JngHRMjUqXaq6wCLK6SscY9ii-rqJBYyvmg0w59tW24lhDRyFHAfwrt6I8pMfb6ZIyud89sfZ1vTI9E114PaGGbAKqt-VCeQ2LL5Vnn0d1Vng01H2N-5MbHneo3IDtGkL7wbrX-buDf_0qnQlpB1mjkRQBmrpVHHMMtTr0NE9Bm0HqLwFEr_ffRHo938dAyxyHB91gyR5UTOk-BdCXl3W9JZpCtRFE3rmiUGStRUW6Kw12Skud1t0kEbUm5kV4BC8yd"/>
+</div>
+<div class="flex-1 space-y-4">
+<div class="space-y-1">
+<span class="text-primary font-bold text-sm tracking-widest uppercase">Samsung</span>
+<h3 class="text-3xl font-black text-slate-900 dark:text-white">Galaxy S23 Ultra (512GB) - Phantom Black</h3>
+<div class="flex items-center gap-3 mt-2">
+<span class="bg-green-100 text-green-700 text-sm font-bold px-2 py-0.5 rounded">-25% OFF</span>
+<span class="flex items-center gap-1 text-green-600 text-sm font-medium">
+<span class="material-symbols-outlined text-sm">verified</span>
+                                Lowest Price in 30 Days
+                            </span>
+</div>
+</div>
+<div class="flex items-baseline gap-4">
+<span class="text-4xl font-black text-slate-900 dark:text-white">$899.99</span>
+<span class="text-xl text-slate-400 line-through">$1,199.99</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                        The ultimate flagship experience. Featuring a 200MP camera, built-in S Pen, and the fastest Snapdragon processor yet. Available at Amazon, Best Buy, and Walmart.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="flex-1 md:flex-none bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-bold flex items-center justify-center gap-2 transition-all">
+                            Compare 12 Stores <span class="material-symbols-outlined text-xl">trending_down</span>
+</button>
+<button class="flex-1 md:flex-none border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 px-8 py-3 rounded-lg font-bold transition-all">Track Price</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Deals Grid -->
+<section class="mb-16">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Trending Price Drops</h2>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:underline" href="#">View All Deals <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow group">
+<div class="aspect-square relative p-4 bg-slate-50 dark:bg-slate-900/50">
+<img alt="Sony Headphones" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="Over-ear wireless noise cancelling headphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK851P_LK2nRDWEHNXGx_1bOKnV5_fDi7aukaaDxo5xEQYglB4ZNKXmbhPlwsC4w8Kv2RASyL8AXUNaoZK32Age4WssySpMRJk6SlnV-TzJrrSkhHaTzxw9I8_2U9ZKhmr7DFhAV4Uz3YDCpUPVpNyRXrp07dtYO_F5CYrzkRs1oCivLxeD0G430Gl-kahHxuqzgI79UiO4MVcHZfYFd9izB0gH7y0KYBkukvo6MBOmGDh-ReeM4HggFBMaMMiN9Uw9hn_qX35MSyV"/>
+<span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-black px-2 py-1 rounded uppercase">-40%</span>
+<button class="absolute top-3 right-3 bg-white/80 dark:bg-slate-800/80 p-1.5 rounded-full shadow-sm hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-5 space-y-3">
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Sony</p>
+<h4 class="text-base font-bold text-slate-900 dark:text-white line-clamp-1">WH-1000XM5 Wireless Headphones</h4>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl font-black text-slate-900 dark:text-white">$238.00</span>
+<span class="text-sm text-slate-400 line-through">$399.99</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="text-[11px] font-bold text-green-600 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded w-fit flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">analytics</span> Lowest Price in 30 Days
+                            </span>
+<p class="text-[11px] text-slate-500 font-medium">Available at 8 stores (Amazon, B&amp;H, Target...)</p>
+</div>
+<button class="w-full bg-primary text-white py-2.5 rounded-lg font-bold text-sm hover:bg-primary/90 transition-colors">Compare Prices</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow group">
+<div class="aspect-square relative p-4 bg-slate-50 dark:bg-slate-900/50">
+<img alt="Dell XPS Laptop" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="Sleek silver laptop on minimalist desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7YtTC3OtG3yZ5Ho3aJy-YHhgTpzpt-1KDZ9lX_m1J_Xv5K7EE6rF2hvXDZjCZI1xfG7GINnsgRaMBjD4xU0ECQJOs5ZRR774qoDCrX3Fn3b0xt90dGB-b1EUT4Vb6Ogosg9dnzzxPtnkulVCkO4griQYA6B8SK0KkQTNQ9j8TQp0rs_QqLcy-smqwYYv_EsIpOdVpT9KWo_cpVLZZKKq68zn3LmcJ5jcpMEHUmJZEVVgtHqubz8iy4S5t3BwKoXAb-JzqH5oLmz2Q"/>
+<span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-black px-2 py-1 rounded uppercase">-15%</span>
+<button class="absolute top-3 right-3 bg-white/80 dark:bg-slate-800/80 p-1.5 rounded-full shadow-sm hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-5 space-y-3">
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Dell</p>
+<h4 class="text-base font-bold text-slate-900 dark:text-white line-clamp-1">XPS 13 Laptop - Intel Core i7</h4>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl font-black text-slate-900 dark:text-white">$1,099.00</span>
+<span class="text-sm text-slate-400 line-through">$1,299.00</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="text-[11px] font-bold text-slate-500 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded w-fit flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">local_shipping</span> Free Shipping
+                            </span>
+<p class="text-[11px] text-slate-500 font-medium">Available at 4 stores (Dell, Costco...)</p>
+</div>
+<button class="w-full bg-primary text-white py-2.5 rounded-lg font-bold text-sm hover:bg-primary/90 transition-colors">Compare Prices</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow group">
+<div class="aspect-square relative p-4 bg-slate-50 dark:bg-slate-900/50">
+<img alt="Nintendo Switch" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="Red and blue gaming console controller" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbjCub1uXinDZZo_9R6qIs6kNiMIMXk6JgonOnjQ_0aS6QKIrOtaDWzbrF2csn4W6HOc1fTkH5mtGJaJ2amAz-N7faYy79yZKx7i2UDAbV3hxUH521eJBsLjiejYmHrWJZrikfE_tq1_u19Y10zGE5DbbO8giOBfxjmD8idH-SylgS1FkkKSXulKt_4-NhWAg4mFPeDCNWTZrZAWaZ6ysK2m7IAPV2BVqS0BX4w_ORmP5UbvKtLQSOETix-mzORhof4wFwCjCgdYlX"/>
+<span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-black px-2 py-1 rounded uppercase">-20%</span>
+</div>
+<div class="p-5 space-y-3">
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Nintendo</p>
+<h4 class="text-base font-bold text-slate-900 dark:text-white line-clamp-1">Switch OLED Model - White</h4>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl font-black text-slate-900 dark:text-white">$299.99</span>
+<span class="text-sm text-slate-400 line-through">$349.99</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="text-[11px] font-bold text-orange-600 bg-orange-50 dark:bg-orange-900/20 px-2 py-1 rounded w-fit flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_down</span> Dropping Fast
+                            </span>
+<p class="text-[11px] text-slate-500 font-medium">Available at 15 stores</p>
+</div>
+<button class="w-full bg-primary text-white py-2.5 rounded-lg font-bold text-sm hover:bg-primary/90 transition-colors">Compare Prices</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow group">
+<div class="aspect-square relative p-4 bg-slate-50 dark:bg-slate-900/50">
+<img alt="Nike Shoes" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="Red athletic running sneaker against neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7yjvE0g-QCEB9Dn92X4v1a_rMtnSQVyUlpobG9NngngyStU5QFKy3-MSi9c-wt70c_1KyeP6lfmNk7AANU53EfenuCGH-dGSaD_QDmJSSlx5Utj5W1l0tj7RDw4455-2wolXEqBn0LSZwjs8I0m6AOMJvSkuYLcSJfr2eOLY1aY1gbMK_X4TzM1FRQ8r7zJi2ATRGWB258rDCVbB6_m0DiDPZqN3PUe_uOE2thd3nVtyuzBuqd0Nwrs-ypdlQZ9Xf_Aufs_7SqYRn"/>
+<span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-black px-2 py-1 rounded uppercase">-55%</span>
+</div>
+<div class="p-5 space-y-3">
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Nike</p>
+<h4 class="text-base font-bold text-slate-900 dark:text-white line-clamp-1">Air Max 270 React Sneakers</h4>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl font-black text-slate-900 dark:text-white">$67.50</span>
+<span class="text-sm text-slate-400 line-through">$150.00</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="text-[11px] font-bold text-green-600 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded w-fit flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> Best Price
+                            </span>
+<p class="text-[11px] text-slate-500 font-medium">Available at 6 stores</p>
+</div>
+<button class="w-full bg-primary text-white py-2.5 rounded-lg font-bold text-sm hover:bg-primary/90 transition-colors">Compare Prices</button>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="flex items-center gap-2 px-8 py-3 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">
+                    Load More Deals <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</section>
+<!-- SEO Content Section -->
+<section class="border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-6">
+<h2 class="text-3xl font-black text-slate-900 dark:text-white">How we find the best deals</h2>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        At PriceRadar, our goal is to bring transparency to online shopping. We use proprietary algorithms that scan over 100 major retailers—including Amazon, Walmart, Best Buy, and specialty shops—every hour. 
+                    </p>
+<div class="space-y-4">
+<div class="flex gap-4">
+<div class="size-10 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">history</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Price History Analysis</h4>
+<p class="text-sm text-slate-500">We don't just show the discount; we verify it against the product's 90-day pricing history to ensure it's a genuine deal.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="size-10 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Multi-Store Comparison</h4>
+<p class="text-sm text-slate-500">A deal is only good if it's the lowest available. We compare shipping costs and taxes across all available retailers.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<h2 class="text-3xl font-black text-slate-900 dark:text-white">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<details class="group bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 p-4" open="">
+<summary class="list-none flex items-center justify-between cursor-pointer font-bold text-slate-900 dark:text-white">
+<span>How often are prices updated?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-3 text-sm text-slate-500 leading-relaxed">
+                                Our scanners check the web 24/7. Major categories like electronics and gaming are updated every 15-30 minutes to capture flash sales and limited-time price drops as they happen.
+                            </p>
+</details>
+<details class="group bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 p-4">
+<summary class="list-none flex items-center justify-between cursor-pointer font-bold text-slate-900 dark:text-white">
+<span>Is PriceRadar free to use?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-3 text-sm text-slate-500 leading-relaxed">
+                                Yes, PriceRadar is 100% free for shoppers. We may earn a small commission when you purchase through some of our links, which helps us keep our price-tracking engines running.
+                            </p>
+</details>
+<details class="group bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 p-4">
+<summary class="list-none flex items-center justify-between cursor-pointer font-bold text-slate-900 dark:text-white">
+<span>Can I set price alerts?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-3 text-sm text-slate-500 leading-relaxed">
+                                Absolutely! Simply click the "Track Price" button on any product page, and we'll send you an email or push notification the moment the price drops below your target.
+                            </p>
+</details>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-12">
+<div class="col-span-2 lg:col-span-2 space-y-6">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">radar</span>
+<h2 class="text-slate-900 dark:text-white text-xl font-black tracking-tight">PriceRadar</h2>
+</div>
+<p class="text-slate-500 text-sm max-w-xs leading-relaxed">
+                        Helping millions of shoppers save time and money by finding the best deals across the entire internet.
+                    </p>
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">rss_feed</span></a>
+</div>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 dark:text-white mb-6 uppercase text-xs tracking-widest">Product</h5>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Best Deals</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Price Tracker</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Browser Extension</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Mobile App</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 dark:text-white mb-6 uppercase text-xs tracking-widest">Company</h5>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Press</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 dark:text-white mb-6 uppercase text-xs tracking-widest">Legal</h5>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-slate-100 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+<p>© 2024 PriceRadar Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<span>Monitored stores: 124</span>
+<span>Last updated: 2 mins ago</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

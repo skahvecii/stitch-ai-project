@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<header class="flex items-center justify-between border-b border-primary/10 bg-white dark:bg-slate-900 px-6 py-4 lg:px-20">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center rounded-lg bg-primary p-2 text-white">
+<span class="material-symbols-outlined">monitoring</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">PriceRadar <span class="text-primary font-medium">Merchant</span></h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 p-2 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-700" data-alt="User profile placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTrUT50ypqPXy-sC8bYdpCE4FtoOOFMVVAz7MFzMKyqpKkU7Gl5WJz0-CfOvciIG2DqrZdsY89h0ZZXIfz-aCRiuLwNDD16e0pIvm23JouvEv_bFfMnHZAbREpwcUuEmFu4qeAa4adnBfPNhkZbOl3y0Slb56m83kIV7Y2t-EM-KLgDd7q7uxM2XHDAKP8CI-OX95Ltl1AXfNki_Lr1X-2Z3ZRrY2scLjUr6RO5zrfYsgScWEqrTj4gvO_6NWZDwU19nrhVYme6bUz')"></div>
+</div>
+</header>
+<main class="flex flex-1 flex-col lg:flex-row">
+<aside class="w-full border-r border-primary/10 bg-white dark:bg-slate-900 p-6 lg:w-80">
+<div class="flex flex-col gap-8">
+<div>
+<h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-slate-500">Onboarding Progress</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-sm">edit</span>
+</div>
+<div>
+<p class="text-sm font-semibold">Store Details</p>
+<p class="text-xs text-primary">In Progress</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400">
+<span class="material-symbols-outlined text-sm">hub</span>
+</div>
+<div>
+<p class="text-sm font-medium text-slate-500">Integration Method</p>
+<p class="text-xs text-slate-400">Pending</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400">
+<span class="material-symbols-outlined text-sm">rss_feed</span>
+</div>
+<div>
+<p class="text-sm font-medium text-slate-500">Feed/API Setup</p>
+<p class="text-xs text-slate-400">Pending</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400">
+<span class="material-symbols-outlined text-sm">verified</span>
+</div>
+<div>
+<p class="text-sm font-medium text-slate-500">Verification</p>
+<p class="text-xs text-slate-400">Pending</p>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-primary/5 p-4 border border-primary/10">
+<div class="mb-3 flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-lg">lightbulb</span>
+<h4 class="text-sm font-bold">Onboarding Tips</h4>
+</div>
+<ul class="space-y-3">
+<li class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+<strong>High-quality logos</strong> improve merchant trust and click-through rates.
+                            </li>
+<li class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                                Regular <strong>feed updates</strong> (at least every 24h) ensure price accuracy for users.
+                            </li>
+<li class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                                Use <strong>canonical URLs</strong> to ensure shoppers land on the correct product pages.
+                            </li>
+</ul>
+</div>
+</div>
+</aside>
+<section class="flex-1 bg-background-light dark:bg-background-dark p-6 lg:p-12 overflow-y-auto">
+<div class="mx-auto max-w-3xl">
+<div class="mb-8">
+<h1 class="text-3xl font-black tracking-tight text-slate-900 dark:text-white">Store Details</h1>
+<p class="mt-2 text-slate-500">Tell us about your business to help shoppers identify your store on PriceRadar.</p>
+</div>
+<div class="space-y-8">
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Store Name</label>
+<input class="rounded-lg border-slate-200 bg-white px-4 py-2.5 outline-none ring-primary transition focus:ring-2 dark:border-slate-700 dark:bg-slate-800" placeholder="e.g. TechGear Pro" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Website URL</label>
+<input class="rounded-lg border-slate-200 bg-white px-4 py-2.5 outline-none ring-primary transition focus:ring-2 dark:border-slate-700 dark:bg-slate-800" placeholder="https://www.techgearpro.com" type="url"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Primary Category</label>
+<select class="rounded-lg border-slate-200 bg-white px-4 py-2.5 outline-none ring-primary transition focus:ring-2 dark:border-slate-700 dark:bg-slate-800">
+<option>Electronics</option>
+<option>Fashion &amp; Apparel</option>
+<option>Home &amp; Garden</option>
+<option>Health &amp; Beauty</option>
+<option>Automotive</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Logo Upload</label>
+<div class="flex items-center gap-4">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-dashed border-slate-300 dark:border-slate-600">
+<span class="material-symbols-outlined text-slate-400">add_photo_alternate</span>
+</div>
+<button class="text-sm font-semibold text-primary hover:underline">Upload PNG or SVG</button>
+</div>
+</div>
+</div>
+<hr class="border-slate-200 dark:border-slate-800"/>
+<div>
+<h3 class="mb-4 text-lg font-bold text-slate-900 dark:text-white">Integration Method</h3>
+<p class="mb-6 text-sm text-slate-500">Choose how you want to synchronize your product catalog with our database.</p>
+<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+<label class="relative flex cursor-pointer rounded-xl border-2 border-primary bg-white p-5 shadow-sm dark:bg-slate-800">
+<input checked="" class="hidden" name="integration" type="radio"/>
+<div class="flex h-full flex-col">
+<div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined">description</span>
+</div>
+<h4 class="font-bold">Merchant Product Feed</h4>
+<p class="mt-1 text-xs text-slate-500">Supports XML, CSV, or JSON formats via static URL.</p>
+<div class="absolute right-4 top-4 text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</div>
+</label>
+<label class="relative flex cursor-pointer rounded-xl border-2 border-slate-200 bg-white p-5 shadow-sm transition hover:border-primary/50 dark:border-slate-700 dark:bg-slate-800">
+<input class="hidden" name="integration" type="radio"/>
+<div class="flex h-full flex-col">
+<div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined">api</span>
+</div>
+<h4 class="font-bold">API Integration</h4>
+<p class="mt-1 text-xs text-slate-500">Real-time updates via our RESTful Merchant API.</p>
+</div>
+</label>
+</div>
+</div>
+<div class="mt-10 flex flex-col-reverse items-center justify-between gap-4 md:flex-row">
+<button class="text-sm font-bold text-slate-500 transition hover:text-slate-900 dark:hover:text-white">
+                                Back to Dashboard
+                            </button>
+<div class="flex gap-4 w-full md:w-auto">
+<button class="w-full md:w-auto rounded-lg border border-slate-300 px-6 py-2.5 text-sm font-bold dark:border-slate-700">
+                                    Save Draft
+                                </button>
+<button class="w-full md:w-auto rounded-lg bg-primary px-10 py-2.5 text-sm font-bold text-white shadow-lg shadow-primary/25 transition hover:bg-primary/90">
+                                    Save &amp; Continue
+                                </button>
+</div>
+</div>
+<div class="mt-12 flex items-center justify-center gap-2 border-t border-slate-200 pt-8 dark:border-slate-800">
+<span class="material-symbols-outlined text-slate-400 text-base">support_agent</span>
+<span class="text-xs text-slate-500">Need help? <a class="font-semibold text-primary underline" href="#">Contact Merchant Support</a></span>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>

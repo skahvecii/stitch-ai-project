@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1c74e9",
+              "background-light": "#f6f7f8",
+              "background-dark": "#111821",
+            },
+            fontFamily: {
+              "display": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<title>PriceRadar - Smartphones</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-4 gap-3">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">arrow_back</span>
+</button>
+<div class="flex-1 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary focus:bg-white dark:focus:bg-slate-700" placeholder="Search smartphones..." type="text"/>
+</div>
+</div>
+<!-- Quick Stats -->
+<div class="px-4 pb-2">
+<h1 class="text-xl font-bold">Smartphones</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs">1,240 results found</p>
+</div>
+<!-- Sticky Filters -->
+<div class="flex gap-2 p-3 overflow-x-auto no-scrollbar border-t border-slate-100 dark:border-slate-800">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 dark:bg-primary/20 border border-primary/20 px-4">
+<span class="material-symbols-outlined text-primary text-sm">tune</span>
+<p class="text-primary text-sm font-semibold">Filters</p>
+<span class="material-symbols-outlined text-primary text-sm">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-100 dark:bg-slate-800 px-4">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Sort by: Popular</p>
+<span class="material-symbols-outlined text-slate-500 text-sm">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-100 dark:bg-slate-800 px-4">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Brand</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-100 dark:bg-slate-800 px-4">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">5G</p>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 p-4 space-y-4">
+<!-- Product Card 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col">
+<div class="flex p-4 gap-4">
+<div class="w-24 h-24 shrink-0 bg-slate-50 dark:bg-slate-800 rounded-lg flex items-center justify-center relative overflow-hidden">
+<img alt="iPhone 15 Pro" class="object-contain p-2 w-full h-full" data-alt="Modern high-end titanium smartphone display" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUvb4zwrVKsIl1g-QGZeswqf3ArC9rOnCkmt6nhTiK7OVFXsQlyw0ueh31VTgekAKbxxJizDxi_UcdqgFxhpzAE2g-H1pwLszgBv8CdbRkZNkLYt3dyXxY0KeUElpy5A0_UctsKQd87qaGbR4xd3IfMkqjt0YTUQmiJ6pnc3z2edfdG9_EAJeF0zVloAwarSuXsJCK-v8onTTCK0sRLBxxjttuH2AqojEKqRZIPrYf2LmSTQrJ0EGf1_DqB29QkcKNsBCoBGh6poNc"/>
+<div class="absolute top-1 left-1 bg-green-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">Best Price</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">Apple</p>
+<h3 class="font-bold text-base leading-tight">iPhone 15 Pro</h3>
+<p class="text-primary font-bold text-lg mt-1">From $999.00</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-0.5">at 12 stores</p>
+</div>
+</div>
+</div>
+<div class="px-4 pb-4 flex gap-2">
+<button class="flex-1 bg-primary text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">compare_arrows</span>
+                    Compare
+                </button>
+<button class="w-12 border border-slate-200 dark:border-slate-800 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">favorite</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col">
+<div class="flex p-4 gap-4">
+<div class="w-24 h-24 shrink-0 bg-slate-50 dark:bg-slate-800 rounded-lg flex items-center justify-center relative overflow-hidden">
+<img alt="Samsung S24 Ultra" class="object-contain p-2 w-full h-full" data-alt="Premium sleek grey flagship android smartphone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHsvhhiTGw8OWnXQ3SUW094lFpG9Q2A8UEy7Xi9uWIlq8D-Nx7AeQG39Cztonx0GOtwjRn3rzQAnFSVu7DeS3BqgeEkyIY0QkawbKot-j6giS7DTDWdAPO7j3DwXp_5Bu7VoQZkKKxRifaKdxL34HQk0tGvaQTIwAsVZXL-MUGBnH1dwv3iCT4boMInawQUo78Vr1P5RNHHme8e4sYqFrsiRJbk4zB8EVOT8Ed01pKg-okX5SrOcW4Oo9QMpFPF_D2zeMjD7EMicka"/>
+<div class="absolute top-1 left-1 bg-amber-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">Price Drop</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">Samsung</p>
+<h3 class="font-bold text-base leading-tight">Galaxy S24 Ultra</h3>
+<div class="flex items-center gap-2 mt-1">
+<p class="text-primary font-bold text-lg">From $1,199.00</p>
+<span class="text-slate-400 line-through text-xs">$1,299.00</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-0.5">at 18 stores</p>
+</div>
+</div>
+</div>
+<div class="px-4 pb-4 flex gap-2">
+<button class="flex-1 bg-primary text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">compare_arrows</span>
+                    Compare
+                </button>
+<button class="w-12 border border-slate-200 dark:border-slate-800 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">favorite</span>
+</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col">
+<div class="flex p-4 gap-4">
+<div class="w-24 h-24 shrink-0 bg-slate-50 dark:bg-slate-800 rounded-lg flex items-center justify-center relative overflow-hidden">
+<img alt="Pixel 8 Pro" class="object-contain p-2 w-full h-full" data-alt="Light blue modern smartphone with camera bar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2pjDbcMnQlYS7zED9L1ALblxbIfzFjMA1dKMn-AYDb-XLQEstMGfcgo9zIfENUw0omigU0F3fLlZqNPY-GRtQ6mFBEyEe9Tl8RiPbMBGs4fcr8gg73z0yAGWOVt0EwanOjEOcyEP8yVGBJLLrGly1nxF11_sOpRgB6uNckIfmesZsmRUokukga0MWRs5eiP3WVVhL7A3tGH8CUPasdHcjI6xPjlT9kg2BDzODxbmgLahCdiBzQl2hpM3NsxJeIMLfBp8QkGh2U5ZR"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">Google</p>
+<h3 class="font-bold text-base leading-tight">Pixel 8 Pro</h3>
+<p class="text-primary font-bold text-lg mt-1">From $749.00</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-0.5">at 9 stores</p>
+</div>
+</div>
+</div>
+<div class="px-4 pb-4 flex gap-2">
+<button class="flex-1 bg-primary text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">compare_arrows</span>
+                    Compare
+                </button>
+<button class="w-12 border border-slate-200 dark:border-slate-800 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">favorite</span>
+</button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col">
+<div class="flex p-4 gap-4">
+<div class="w-24 h-24 shrink-0 bg-slate-50 dark:bg-slate-800 rounded-lg flex items-center justify-center relative overflow-hidden">
+<img alt="S23 FE" class="object-contain p-2 w-full h-full" data-alt="Budget friendly black smartphone with clean design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqd6HRbGeJsRduUbMIoMZPppGwQ-l-TsHO39-NC64ylFKMMzNDutVwahJHZXyyGetHoTRJ57-SercStC4jOVHPZzn0A2YS4TMzMZ2UqoBvvIw8SSR5NG88qs3ahU7MWtmysch9dAykIgyDBh3U9joKS_Xnq80FlqcYdlyIXlsAn0N_lj9ZpPk9wkEap2ZLvHtB5kGWyMb24AK5tW1RS31JikTEGUoln8nE9iRZMpTsX6CVr-BpnyOTzwQjOdhil6x21Ard9VOXNwWd"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">Samsung</p>
+<h3 class="font-bold text-base leading-tight">Galaxy S23 FE</h3>
+<p class="text-primary font-bold text-lg mt-1">From $599.00</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-0.5">at 15 stores</p>
+</div>
+</div>
+</div>
+<div class="px-4 pb-4 flex gap-2">
+<button class="flex-1 bg-primary text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">compare_arrows</span>
+                    Compare
+                </button>
+<button class="w-12 border border-slate-200 dark:border-slate-800 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">favorite</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Spacer for Nav -->
+<div class="h-20"></div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-2 pb-safe-area-inset-bottom">
+<div class="flex justify-around items-center h-16">
+<a class="flex flex-col items-center justify-center flex-1 gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center flex-1 gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">grid_view</span>
+<span class="text-[10px] font-medium">Categories</span>
+</a>
+<a class="flex flex-col items-center justify-center flex-1 gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-medium">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center flex-1 gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</nav>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .pb-safe-area-inset-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+</body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#ec5b13",
+                "background-light": "#f8f6f6",
+                "background-dark": "#221610",
+              },
+              fontFamily: {
+                "display": ["Public Sans"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<title>500 Internal Server Error | PriceRadar</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header / TopNavBar -->
+<header class="border-b border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-4 md:px-10 py-3">
+<div class="max-w-7xl mx-auto flex items-center justify-between whitespace-nowrap">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">PriceRadar</h2>
+</div>
+<div class="hidden md:flex flex-col min-w-64">
+<div class="flex w-full items-stretch rounded-xl h-10 overflow-hidden border border-slate-200 dark:border-slate-700">
+<div class="bg-slate-100 dark:bg-slate-800 flex items-center justify-center px-3 text-slate-500">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="w-full border-none bg-slate-100 dark:bg-slate-800 text-sm focus:ring-0 placeholder:text-slate-400" placeholder="Search for products..." value=""/>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 md:gap-8">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Categories</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Alerts</a>
+</nav>
+<button class="bg-primary text-white text-sm font-bold px-5 py-2 rounded-xl hover:opacity-90 transition-opacity">
+                    Sign Up
+                </button>
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="User profile avatar placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw-ZFhWNE_kV05WdRy6kouUtMvY0xWmUO2-DPl38Wftw5k_oe0GdVFBis95c_gmdMIiI1BK3E-y2ijuqXj_5cwpN5vIMz557VcTJj6tAEEDaZFOVEIg7FDcci1VWd_8wPSlbXWlbs8tCFy7TqkmJzVHbubkrR65oSqGyLrJM1G4_Oxb74N1RLspxgUmZZ9Rlj83__7GiTzNVdUCvpf4ul1Jb_WRPePN7HgF4VzzkatA1Vj7UWNLCs-GTyzuKcxHqDutAROt6-L2Dk7"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content: 500 Error Section -->
+<main class="flex-grow flex flex-col items-center justify-center px-4 py-20 text-center">
+<div class="max-w-2xl w-full">
+<!-- Visual Element: Abstract Radar Glitch -->
+<div class="relative flex justify-center mb-12">
+<div class="relative size-64 md:size-80 flex items-center justify-center">
+<!-- Circular Radar Rings -->
+<div class="absolute inset-0 border-2 border-primary/10 rounded-full"></div>
+<div class="absolute inset-8 border-2 border-primary/20 rounded-full"></div>
+<div class="absolute inset-16 border-2 border-primary/30 rounded-full"></div>
+<!-- Glitch Icon -->
+<div class="relative z-10 flex flex-col items-center">
+<span class="material-symbols-outlined text-8xl md:text-9xl text-primary animate-pulse">radar</span>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 w-full h-1 bg-primary/50 blur-sm"></div>
+</div>
+<!-- Floating "Error" Particles -->
+<div class="absolute top-4 right-4 bg-primary/10 px-2 py-1 rounded text-[10px] font-mono text-primary">500</div>
+<div class="absolute bottom-10 left-0 bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded text-[10px] font-mono">LOST_SIGNAL</div>
+</div>
+</div>
+<div class="space-y-4">
+<h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-slate-100">
+                    Whoops! Our radar hit a glitch.
+                </h1>
+<p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-lg mx-auto leading-relaxed">
+                    Something went wrong on our end (500 Server Error). We're working on recalibrating our systems to get you back to price tracking.
+                </p>
+</div>
+<div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="flex min-w-[180px] items-center justify-center rounded-xl bg-primary px-8 py-4 text-white font-bold text-lg shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform" href="#">
+                    Back to Home
+                </a>
+<a class="flex min-w-[180px] items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-800 px-8 py-4 text-slate-700 dark:text-slate-300 font-bold text-lg hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors" href="#">
+                    Check System Status
+                </a>
+</div>
+<!-- Helpful links for lost users -->
+<div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-xl mx-auto">
+<a class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-colors group" href="#">
+<span class="material-symbols-outlined text-primary mb-2">local_fire_department</span>
+<p class="text-sm font-semibold">Latest Deals</p>
+</a>
+<a class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-colors group" href="#">
+<span class="material-symbols-outlined text-primary mb-2">trending_down</span>
+<p class="text-sm font-semibold">Price Drops</p>
+</a>
+<a class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-colors group" href="#">
+<span class="material-symbols-outlined text-primary mb-2">support_agent</span>
+<p class="text-sm font-semibold">Support</p>
+</a>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-auto bg-slate-100 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 py-12 px-5">
+<div class="max-w-7xl mx-auto flex flex-col items-center gap-8">
+<div class="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+<div class="flex items-center gap-4 text-slate-400">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<p class="text-sm font-medium">© 2024 PriceRadar. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

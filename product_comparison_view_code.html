@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>PriceRadar - Product Comparison</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16 gap-4">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">radar</span>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold tracking-tight">PriceRadar</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Deals</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Categories</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Guides</a>
+</nav>
+</div>
+<div class="flex-1 max-w-md">
+<label class="relative block">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+<span class="material-symbols-outlined text-xl">search</span>
+</span>
+<input class="block w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg py-2 pl-10 pr-3 text-sm placeholder-slate-500 focus:ring-2 focus:ring-primary focus:bg-white dark:focus:bg-slate-700 transition-all" placeholder="Add a product to compare..." type="text"/>
+</label>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary overflow-hidden border border-primary/20">
+<img class="h-full w-full object-cover" data-alt="User profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTx7ts7xi5JIF9Y8co8bYT44vOyj2Vmjo80dwlR87NjxQnc7zo57RyMBAFfH-3kN0tkezbWbzbo19BDfV5z4Q8jWXyNO0f9mLTM2Y2dzxDLZk5eS3LpEdMw5VYDvxB88d_xwljpXyfZoxOFitWgIjZIjW8kFbelJcUt-z2xLLxgh-m-05mZTxadWw6ZvEpA8jDhtaRyxEFInZpC3BN08rmAph1K4wWBSAacjxVvTl4HE0xyjVKXtzwomJdWGKWsHqAfP93VbxXcXHh"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex mb-6 text-sm text-slate-500 dark:text-slate-400">
+<ol class="flex items-center space-x-2">
+<li><a class="hover:text-primary" href="#">Home</a></li>
+<li><span class="material-symbols-outlined text-xs">chevron_right</span></li>
+<li><a class="hover:text-primary" href="#">Smartphones</a></li>
+<li><span class="material-symbols-outlined text-xs">chevron_right</span></li>
+<li class="font-medium text-slate-900 dark:text-white">Compare Models</li>
+</ol>
+</nav>
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Comparison Section -->
+<div class="flex-1 overflow-x-auto">
+<div class="min-w-[800px]">
+<!-- Product Headers Grid -->
+<div class="grid grid-cols-4 gap-4 mb-8">
+<div class="flex flex-col justify-end pb-4">
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white">Compare<br/>Smartphones</h1>
+<p class="text-slate-500 text-sm mt-2">Comparing 3 latest flagships</p>
+</div>
+<!-- Product Card 1 -->
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 relative">
+<div class="aspect-square w-full rounded-lg bg-slate-50 dark:bg-slate-900 mb-4 overflow-hidden group">
+<img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform" data-alt="iPhone 15 in blue color" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2kjPgp_t2M-HOKLTzSb4xKV9sWhCv7Y3UOqRgTyzEnlBdsc2eFC9qUYOt4GHGCSXbFgvveU39jhKO4ildbQyllzwtvSrzNrZG9cfIKQtBAEFL1ZVcou15YWDfZoxIB2BmBaWTStTc562vch5CkKm1EJLsHWEMix6lSkrRDRptUYZDCd_ErvXjgzxE6kY1-M1yVZZLKVs0oa8hCTSpr2ffHZLZuFiKWn3tC1XzrKMRaK7GE-qG3uGggceFUdvm2_fc8Mb2ruvTYzoS"/>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white truncate">iPhone 15</h3>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="text-xs text-slate-500">Best Price</span>
+<span class="text-primary font-bold">$799.00</span>
+</div>
+<p class="text-[10px] text-slate-400 mb-4">via Amazon</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white text-sm font-bold py-2 rounded-lg transition-colors">Compare Prices</button>
+</div>
+<!-- Product Card 2 (Best Value) -->
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-md border-2 border-primary relative">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Best Value</div>
+<div class="aspect-square w-full rounded-lg bg-slate-50 dark:bg-slate-900 mb-4 overflow-hidden group">
+<img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform" data-alt="Galaxy S24 in phantom gray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9FFdP8pdsVvcWSKN4yfHF3dHVdZ6M5S33T9WNzqbTMxUpjLOnJPNnbU-1MK8Lqp9spPlou6toZN_QYIVUR7RazvHzcn-1RpVb8egAsrJ3XAexxUdCAtVTqmyHBf159eVg_byfPBUphux5jXbFkaK25qswkrZpFiHZuZvZ6TBfB5Xf6WwAAD_bxsojibhuX-mdK30PM9MV4AjZEybx16vQbhesDSPEgn4YfxLAP84L3Zs-V7vIM9vYKLZ4uzohcvghvyYrM8k5F56V"/>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white truncate">Galaxy S24</h3>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="text-xs text-slate-500">Best Price</span>
+<span class="text-primary font-bold">$749.99</span>
+</div>
+<p class="text-[10px] text-slate-400 mb-4">via Best Buy</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white text-sm font-bold py-2 rounded-lg transition-colors">Compare Prices</button>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+<div class="aspect-square w-full rounded-lg bg-slate-50 dark:bg-slate-900 mb-4 overflow-hidden group">
+<img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform" data-alt="Pixel 8 in hazel color" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWdiwd-kuquXj2YGH15T92lNX4kVL8-RIl5NqKFFXEGW7DXfiwk_ccDUAeoJhvvrEbnc2wPIIUQumDYGhDGCwR4tC7DGpdZwHkEp48RSQodx_Zp1JEzLQk9vQCKyFwUX24SRGUGsHmqAIRDDXqRRiVd2wSWtPCR0R48qxFu46KM2-G015HXLhAT3rIIOeKK7wIh5PzEPsMAt2Ij2y8Ebl_xUpksfwTYztmfrtcXUADis0xhn62ThsXBElX0tNQtrg1xmiuIW7y3oa3"/>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white truncate">Pixel 8</h3>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="text-xs text-slate-500">Best Price</span>
+<span class="text-primary font-bold">$699.00</span>
+</div>
+<p class="text-[10px] text-slate-400 mb-4">via Google Store</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white text-sm font-bold py-2 rounded-lg transition-colors">Compare Prices</button>
+</div>
+</div>
+<!-- Comparison Table -->
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-900/50">
+<th class="p-4 text-xs font-bold uppercase text-slate-400 w-1/4">Feature</th>
+<th class="p-4 text-sm font-semibold text-slate-900 dark:text-white">iPhone 15</th>
+<th class="p-4 text-sm font-semibold text-slate-900 dark:text-white">Galaxy S24</th>
+<th class="p-4 text-sm font-semibold text-slate-900 dark:text-white">Pixel 8</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<!-- Price Row -->
+<tr>
+<td class="p-4 text-sm font-medium text-slate-500">Price Range</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">$799 - $1,099</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300 font-bold text-primary">$749 - $999</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">$699 - $859</td>
+</tr>
+<!-- Stores Row -->
+<tr>
+<td class="p-4 text-sm font-medium text-slate-500">Available Stores</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">12 Stores</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">18 Stores</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">8 Stores</td>
+</tr>
+<!-- Ratings Row -->
+<tr>
+<td class="p-4 text-sm font-medium text-slate-500">Ratings &amp; Reviews</td>
+<td class="p-4">
+<div class="flex items-center gap-1 text-yellow-500">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="text-sm font-bold text-slate-900 dark:text-white">4.8</span>
+<span class="text-xs text-slate-400 font-normal">(2.4k)</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-1 text-yellow-500">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="text-sm font-bold text-slate-900 dark:text-white">4.7</span>
+<span class="text-xs text-slate-400 font-normal">(1.8k)</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-1 text-yellow-500">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="text-sm font-bold text-slate-900 dark:text-white">4.6</span>
+<span class="text-xs text-slate-400 font-normal">(1.2k)</span>
+</div>
+</td>
+</tr>
+<!-- Chipset -->
+<tr>
+<td class="p-4 text-sm font-medium text-slate-500">Chipset</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">A16 Bionic</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">Snapdragon 8 Gen 3</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">Google Tensor G3</td>
+</tr>
+<!-- Display -->
+<tr>
+<td class="p-4 text-sm font-medium text-slate-500">Display</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">6.1" Super Retina XDR</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">6.2" Dynamic AMOLED 2X</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">6.2" Actua Display</td>
+</tr>
+<!-- Camera -->
+<tr>
+<td class="p-4 text-sm font-medium text-slate-500">Main Camera</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">48MP Dual System</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">50MP Triple System</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">50MP Dual System</td>
+</tr>
+<!-- Battery -->
+<tr>
+<td class="p-4 text-sm font-medium text-slate-500">Battery</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">Up to 20h Video Playback</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">4,000 mAh</td>
+<td class="p-4 text-sm text-slate-700 dark:text-slate-300">4,575 mAh</td>
+</tr>
+<!-- Stock -->
+<tr>
+<td class="p-4 text-sm font-medium text-slate-500">Stock Status</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1 text-green-600 dark:text-green-400 text-xs font-bold">
+<span class="size-1.5 rounded-full bg-green-600 dark:bg-green-400"></span> In Stock
+                                            </span>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1 text-green-600 dark:text-green-400 text-xs font-bold">
+<span class="size-1.5 rounded-full bg-green-600 dark:bg-green-400"></span> In Stock
+                                            </span>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1 text-orange-600 dark:text-orange-400 text-xs font-bold">
+<span class="size-1.5 rounded-full bg-orange-600 dark:bg-orange-400"></span> Limited Stock
+                                            </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Sidebar: Suggested Products -->
+<aside class="w-full lg:w-72 flex flex-col gap-6">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+<h3 class="font-bold text-slate-900 dark:text-white mb-4">Suggested for you</h3>
+<div class="space-y-4">
+<!-- Suggested Item 1 -->
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="size-14 rounded-lg bg-slate-50 dark:bg-slate-900 p-1 flex-shrink-0">
+<img class="w-full h-full object-contain" data-alt="iPhone 15 Pro Max side view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH8cKmdi--Cbn7-hMuLKWOoQwGvsDjpXKk5zJe9G0ogddTFvYIl3XJzj08_F4c0WbgE9ttJzdbCRpX2mHN-AQnvGYArxW6tlrK4RrMY3qma_-I3Nmvgyj9SXnScC5vRHrLqT_NfznsIe-CpG1KVdCAZxLbK8Mn_mbAQo6Jjs6s-SHsD1ADQYK_x4DTEGrpAOqH4dt1aVZM1Y3zU5TyuTty3R_ojCc132QoIOAhHQn6SOpEl5Hbd73UNtV53BiZpLRfZm__-xeR75ZY"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-slate-900 dark:text-white truncate group-hover:text-primary transition-colors">iPhone 15 Pro Max</p>
+<p class="text-xs text-slate-500">From $1,199</p>
+</div>
+<button class="text-primary p-1 hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+</button>
+</div>
+<!-- Suggested Item 2 -->
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="size-14 rounded-lg bg-slate-50 dark:bg-slate-900 p-1 flex-shrink-0">
+<img class="w-full h-full object-contain" data-alt="Galaxy S24 Ultra front view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv3I07YMTOou19iUSlBerX7p2Co1zeLNmS37btouUKk0DwVMzIv4gaIvaefFVExOJuPOFxDu8-MZHqhL85IbXZp4BDNqMoEYWl6XMmmLOQLLgniY1GCzhVOOUkieG_AiZ_xs93VQc-is-VhsDOhsYS2IdEzlouHltBet7_TleIfpXxIbA08FiDv-TtMbtWG6yH9e_6wyePdLY4tn3TaOynXfInxjvCYaDz4Wo-OE6ZDZq5meblTmKkikxi01he7s4O4o46I6-nKJQs"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-slate-900 dark:text-white truncate group-hover:text-primary transition-colors">Galaxy S24 Ultra</p>
+<p class="text-xs text-slate-500">From $1,299</p>
+</div>
+<button class="text-primary p-1 hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+</button>
+</div>
+<!-- Suggested Item 3 -->
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="size-14 rounded-lg bg-slate-50 dark:bg-slate-900 p-1 flex-shrink-0">
+<img class="w-full h-full object-contain" data-alt="Pixel 8 Pro back view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4J80WWffgsDzSTPdn-D4wWrDhnc878mxtcW-n4naHrnyquhklqi3SfWdfo-8jXGifVLNMCN1OtH4mLNclZQWflstvY03TYnLXuXDH0mT-Abhmu1V1nqxFV4lGMvWhrPR_ZA4juNvY6J9iG3u7WbNwsv0lwrfOaae1hWRg1DSQne-fwQygKTFRWK04joHqFgLbmYp1rCP9dl1GX0U-QyEWb_L6JgqHbCLG2d96dBwJP_h39DafXfvcrIBiAH49cuXuD-dqcW-_keSX"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-slate-900 dark:text-white truncate group-hover:text-primary transition-colors">Pixel 8 Pro</p>
+<p class="text-xs text-slate-500">From $999</p>
+</div>
+<button class="text-primary p-1 hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+</button>
+</div>
+</div>
+<button class="w-full mt-6 text-sm font-medium text-primary hover:underline">View more suggestions</button>
+</div>
+<!-- Comparison Summary Card -->
+<div class="bg-primary/5 dark:bg-primary/10 p-6 rounded-xl border border-primary/20">
+<div class="flex items-center gap-2 text-primary mb-3">
+<span class="material-symbols-outlined text-xl">info</span>
+<span class="font-bold text-sm">Expert Tip</span>
+</div>
+<p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            The <span class="font-bold text-slate-900 dark:text-white">Galaxy S24</span> currently offers the best balance of features and price across 18 verified stores. Look for trade-in deals to save an additional $200.
+                        </p>
+</div>
+</aside>
+</div>
+<!-- Recently Compared Section -->
+<section class="mt-12">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Recently Compared</h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+<div class="bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-700 flex flex-col items-center text-center">
+<div class="size-16 mb-2 bg-slate-50 dark:bg-slate-900 rounded-md p-2">
+<img class="w-full h-full object-contain" data-alt="Generic smartwatch icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIcEicI4lfTD0kslk-5v4rIRg4Kjw5sZyp7pQmA9_7b8Zcd7uVuGQ0Epi_0V1AG5Tk4GBoK1uK_LuDfqHuIEye4ukbir8SoOGmx3TjaCEAxz42NPF527CZ__6u3Zgm--Jfqb4ADgYC-IyazZBiu-1n45zZqibh_-LMHEqHLJBUklZ7CKGXs8T6ZIG7jRZsUu0mD0nLN2gfQA8AYaLk0KZORwpCGGhoqWoY2-NSFHU5SuDSHfKDRxPvNIndByfoJlo5RlY4yCYijjMw"/>
+</div>
+<p class="text-xs font-medium truncate w-full">Apple Watch S9</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-700 flex flex-col items-center text-center">
+<div class="size-16 mb-2 bg-slate-50 dark:bg-slate-900 rounded-md p-2">
+<img class="w-full h-full object-contain" data-alt="Over-ear headphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW_BMAZCO2klwrq_XnxltlMiwVQGGud35qdcI-ujHmxWrWJghA1d-3BMbw_yRqYJls-c3s1v2wBtiBwPDDZ8gT8L-kBggQX8Ue2z2fxue4oC_FBWu7APsxILxJCT3f7dRYryrjFYnQYVpssiEIYdbdPJDDbtny1fWcRcpp2RW02tm1IeBALkGgK6xk315h1EW9-NYACKkH2XojzNeqo_uUF7-F-JyMHhAD_AZOrhbeZadTgKNHNHaY8kRo_pWIpJV5mj1Z2IDGYrYE"/>
+</div>
+<p class="text-xs font-medium truncate w-full">Sony XM5</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-700 flex flex-col items-center text-center">
+<div class="size-16 mb-2 bg-slate-50 dark:bg-slate-900 rounded-md p-2">
+<img class="w-full h-full object-contain" data-alt="High-end laptop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9O5RH4YMGY4YFYj5eRSs8014Da9Kko-CI3-hd9tUnqS_0LU7-V0FY7CvkasUgJHZ8Co3M1_GPFslzJIshRteehLnGBZUP_7HGW8pKNLqVhgS91154uIxBFKJ6CQtfOYekqOej8hwyM5_2FB796LWXHpRINE5Q8HNI4OlSFhJLZzPOYqtANMBUkP1i59bXGP_6aIeVtuSmbBfV2B7q3fJSQcgAhI4vt0MRly4ia31ridjSCXciECcUCp15s6_yWZV94_RnzvQ3UIZI"/>
+</div>
+<p class="text-xs font-medium truncate w-full">MacBook Air M3</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-700 flex flex-col items-center text-center">
+<div class="size-16 mb-2 bg-slate-50 dark:bg-slate-900 rounded-md p-2">
+<img class="w-full h-full object-contain" data-alt="Generic tablet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYGGol6NIH3F51KjZl5NigogBhCtWFQUInazIngjVETcMcoVQtMe4wEzYrnJnoexMWVEau65hcWi07GzVswVKk9oPHYXg1OWrflADrdyuXBJ0VfjZShGyGnBUF_c1spMcYR3aqOpt2EB-zvNHquYAyY1kdn_tfkEfWknocZ3bTja9h55XiiPt7R1s2IetoacLr7JDx37UrIx4OBusBobWrbetkJJToIW7Z0EL7ONkX8nw-0fsPmYHZ3n18gQYZCbIMUPAg0tYH0DPm"/>
+</div>
+<p class="text-xs font-medium truncate w-full">iPad Air</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-700 flex flex-col items-center text-center opacity-50">
+<div class="size-16 mb-2 bg-slate-50 dark:bg-slate-900 rounded-md p-2 border-2 border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">add</span>
+</div>
+<p class="text-xs font-medium">Add New</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-700 flex flex-col items-center text-center opacity-50">
+<div class="size-16 mb-2 bg-slate-50 dark:bg-slate-900 rounded-md p-2 border-2 border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">add</span>
+</div>
+<p class="text-xs font-medium">Add New</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="mt-auto py-12 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 text-center">
+<div class="flex items-center justify-center gap-2 text-primary opacity-50 mb-4">
+<span class="material-symbols-outlined text-2xl">radar</span>
+<span class="font-bold">PriceRadar</span>
+</div>
+<p class="text-slate-500 text-sm">© 2024 PriceRadar. Real-time price comparison engine.</p>
+<div class="flex justify-center gap-6 mt-4">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">crossword</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">interests</span></a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

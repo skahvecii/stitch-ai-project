@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center cursor-pointer" data-icon="ArrowLeft">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">PriceRadar</h2>
+</div>
+<!-- Brand/Hero Section -->
+<div class="@container">
+<div class="@[480px]:px-4 @[480px]:py-3">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-background-light dark:bg-background-dark @[480px]:rounded-lg min-h-[180px] px-4" data-alt="Modern abstract e-commerce shopping bags and deals" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWbhmweiXKGJTCgqRofMzPl52IkSp6g_baBmSW43QhvMWZZ-UPjv4xY60g7SSnnu-Xoym76ZtWcJlMmU6Tdg64RaO_ZZ-A5yKr8b4Gm5c2JpflYJ3RdwwI31grDLPVhp-hH99bqYEJ7Ox8GpoFtRUH1Etst7PtOivMy60QSDl6usYSkgi4BI0d3ctzxonYsxnFlXT7lKXTCiV5e9XQLcoxEPbOawVd6HuH20FjK7wgpwAUpzbfyBsw5uQXtWhLcJA8h7PYksC2KQX2");'>
+</div>
+</div>
+</div>
+<!-- Welcome Text -->
+<div class="px-6">
+<h1 class="text-slate-900 dark:text-slate-100 tracking-tight text-[32px] font-bold leading-tight pb-2 pt-8">Welcome Back</h1>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal">Sign in to track your favorite prices and get deal alerts.</p>
+</div>
+<!-- Login Form -->
+<div class="flex flex-col gap-4 px-6 py-6">
+<!-- Email Input -->
+<label class="flex flex-col w-full">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-semibold leading-normal pb-2">Email</p>
+<div class="relative">
+<input class="form-input flex w-full rounded-xl text-slate-900 dark:text-slate-100 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 h-14 placeholder:text-slate-400 p-[15px] text-base font-normal leading-normal" placeholder="Enter your email" type="email" value=""/>
+</div>
+</label>
+<!-- Password Input -->
+<label class="flex flex-col w-full">
+<div class="flex justify-between items-center pb-2">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-semibold leading-normal">Password</p>
+<a class="text-primary text-sm font-semibold hover:underline" href="#">Forgot Password?</a>
+</div>
+<div class="relative">
+<input class="form-input flex w-full rounded-xl text-slate-900 dark:text-slate-100 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 h-14 placeholder:text-slate-400 p-[15px] text-base font-normal leading-normal" placeholder="Enter your password" type="password" value=""/>
+</div>
+</label>
+<!-- Sign In Button -->
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all mt-2">
+                Sign In
+            </button>
+</div>
+<!-- Divider -->
+<div class="flex items-center px-6 py-4">
+<div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+<span class="px-4 text-slate-400 text-sm font-medium">Or continue with</span>
+<div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-4 px-6 pb-8">
+<button class="flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<img alt="" class="w-5 h-5" data-alt="Google colorful letter G logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyqedLe-JQ3jt5riOtgG2-0kQQHTBNfUwu8Rb7FUqv1GF2Tztkf-oH_-GxWsnHexd5_nd_n1CRAR7tEQ5xFfmeOpJUbW8RU_2ks-SyRr0sDDyRd2Zu2Bz6zOrCURqKk9r4MFORje74DiJNKMv37NgiONlGM_cnERsvYA8xbDsAWOdm4F0waHLGLmatPFYPtTxorSmvHXv-PGZDVMDGwY9znHcIUDC5ESfSl6_rEM0LQdEdw9rlNMxwdxCr3bncm4VqC9887AhUd5vi"/>
+<span class="text-slate-700 dark:text-slate-200 font-semibold text-sm">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100 text-xl">ios</span>
+<span class="text-slate-700 dark:text-slate-200 font-semibold text-sm">Apple</span>
+</button>
+</div>
+<!-- Sign Up Link -->
+<div class="mt-auto pb-10 text-center px-6">
+<p class="text-slate-600 dark:text-slate-400 text-sm">
+                Don't have an account? 
+                <a class="text-primary font-bold hover:underline ml-1" href="#">Sign Up</a>
+</p>
+</div>
+<div class="h-5 bg-background-light dark:bg-background-dark"></div>
+</div>
+</body></html>

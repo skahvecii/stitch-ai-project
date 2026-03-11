@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar - Topic Discovery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 py-3">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined text-xl leading-none">radar</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight">Topic Discovery</h1>
+</div>
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/50 placeholder:text-slate-500" placeholder="Search topics or keywords..." type="text"/>
+</div>
+</header>
+<main class="pb-24">
+<!-- KPI Metrics Section -->
+<section class="p-4 grid grid-cols-2 gap-3">
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">New Opportunities</p>
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold">128</span>
+<span class="text-xs font-bold text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 px-1.5 py-0.5 rounded-md flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs">trending_up</span>12%
+                    </span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">Active Gaps</p>
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold">42</span>
+<span class="text-xs font-bold text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 px-1.5 py-0.5 rounded-md flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs">trending_up</span>5%
+                    </span>
+</div>
+</div>
+</section>
+<!-- Emerging Trends Section -->
+<section class="mb-6">
+<div class="flex items-center justify-between px-4 mb-3">
+<h2 class="text-base font-bold">Emerging Trends</h2>
+<button class="text-primary text-xs font-semibold">View All</button>
+</div>
+<div class="flex gap-4 overflow-x-auto px-4 pb-2 hide-scrollbar">
+<!-- Trend Card 1 -->
+<div class="flex-shrink-0 w-44 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-3 shadow-sm">
+<p class="text-sm font-bold mb-1 truncate">Foldable Phones</p>
+<div class="flex items-center gap-1 text-green-600 dark:text-green-400 mb-3">
+<span class="material-symbols-outlined text-xs">add</span>
+<span class="text-xs font-bold">84% Growth</span>
+</div>
+<div class="h-10 w-full bg-primary/10 rounded overflow-hidden">
+<div class="h-full w-full bg-gradient-to-t from-primary/20 to-transparent" data-alt="Mini sparkline chart showing upward growth trend"></div>
+</div>
+</div>
+<!-- Trend Card 2 -->
+<div class="flex-shrink-0 w-44 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-3 shadow-sm">
+<p class="text-sm font-bold mb-1 truncate">Sustainable Tech</p>
+<div class="flex items-center gap-1 text-green-600 dark:text-green-400 mb-3">
+<span class="material-symbols-outlined text-xs">add</span>
+<span class="text-xs font-bold">62% Growth</span>
+</div>
+<div class="h-10 w-full bg-primary/10 rounded overflow-hidden">
+<div class="h-full w-full bg-gradient-to-t from-primary/20 to-transparent" data-alt="Mini sparkline chart showing upward growth trend"></div>
+</div>
+</div>
+<!-- Trend Card 3 -->
+<div class="flex-shrink-0 w-44 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-3 shadow-sm">
+<p class="text-sm font-bold mb-1 truncate">MagSafe Acc.</p>
+<div class="flex items-center gap-1 text-green-600 dark:text-green-400 mb-3">
+<span class="material-symbols-outlined text-xs">add</span>
+<span class="text-xs font-bold">45% Growth</span>
+</div>
+<div class="h-10 w-full bg-primary/10 rounded overflow-hidden">
+<div class="h-full w-full bg-gradient-to-t from-primary/20 to-transparent" data-alt="Mini sparkline chart showing upward growth trend"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Topic Clusters -->
+<section class="px-4 mb-6">
+<h2 class="text-base font-bold mb-3">Related Clusters</h2>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary/10 text-primary px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 border border-primary/20">
+                    Smart Home <span class="material-symbols-outlined text-xs">hub</span>
+</span>
+<span class="bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5">
+                    IoT Security <span class="material-symbols-outlined text-xs">hub</span>
+</span>
+<span class="bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5">
+                    Kitchen Tech <span class="material-symbols-outlined text-xs">hub</span>
+</span>
+<span class="bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5">
+                    Mesh WiFi <span class="material-symbols-outlined text-xs">hub</span>
+</span>
+</div>
+</section>
+<!-- Content Gap Analysis Section -->
+<section class="px-4">
+<div class="flex items-center justify-between mb-3">
+<h2 class="text-base font-bold">Content Gap Analysis</h2>
+<span class="material-symbols-outlined text-slate-400">filter_list</span>
+</div>
+<div class="space-y-3">
+<!-- Gap Item 1 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-400 text-[10px] uppercase font-bold px-1.5 py-0.5 rounded">High Priority</span>
+<h3 class="text-sm font-bold mt-1">Best Foldable Case 2024</h3>
+</div>
+<button class="bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-lg shadow-sm active:scale-95 transition-transform">Generate</button>
+</div>
+<div class="flex gap-4 mt-3">
+<div>
+<p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-medium">Est. Traffic</p>
+<p class="text-xs font-bold">12.4K/mo</p>
+</div>
+<div class="w-px h-6 bg-slate-200 dark:bg-slate-800 self-center"></div>
+<div>
+<p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-medium">Difficulty</p>
+<div class="flex items-center gap-1">
+<p class="text-xs font-bold">34</p>
+<div class="w-12 h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-yellow-500 h-full w-[34%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Gap Item 2 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="bg-yellow-100 dark:bg-yellow-900/40 text-yellow-600 dark:text-yellow-400 text-[10px] uppercase font-bold px-1.5 py-0.5 rounded">Medium Priority</span>
+<h3 class="text-sm font-bold mt-1">Eco-friendly Power Banks</h3>
+</div>
+<button class="bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-lg shadow-sm active:scale-95 transition-transform">Generate</button>
+</div>
+<div class="flex gap-4 mt-3">
+<div>
+<p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-medium">Est. Traffic</p>
+<p class="text-xs font-bold">8.2K/mo</p>
+</div>
+<div class="w-px h-6 bg-slate-200 dark:bg-slate-800 self-center"></div>
+<div>
+<p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-medium">Difficulty</p>
+<div class="flex items-center gap-1">
+<p class="text-xs font-bold">18</p>
+<div class="w-12 h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-green-500 h-full w-[18%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Gap Item 3 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm opacity-80">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold px-1.5 py-0.5 rounded">Low Priority</span>
+<h3 class="text-sm font-bold mt-1">Refurbished VR Headsets</h3>
+</div>
+<button class="bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-lg shadow-sm active:scale-95 transition-transform">Generate</button>
+</div>
+<div class="flex gap-4 mt-3">
+<div>
+<p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-medium">Est. Traffic</p>
+<p class="text-xs font-bold">2.1K/mo</p>
+</div>
+<div class="w-px h-6 bg-slate-200 dark:bg-slate-800 self-center"></div>
+<div>
+<p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-medium">Difficulty</p>
+<div class="flex items-center gap-1">
+<p class="text-xs font-bold">45</p>
+<div class="w-12 h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-orange-500 h-full w-[45%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Persistent Bottom Navigation -->
+<nav class="fixed bottom-0 inset-x-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pb-safe shadow-2xl z-50">
+<div class="flex justify-around items-center px-2 py-3">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">trending_up</span>
+<span class="text-[10px] font-medium">Rankings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1">explore</span>
+<span class="text-[10px] font-bold">Research</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">description</span>
+<span class="text-[10px] font-medium">Reports</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</a>
+</div>
+</nav>
+</body></html>

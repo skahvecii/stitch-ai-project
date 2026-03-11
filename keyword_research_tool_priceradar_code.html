@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar | Keyword Research Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 lg:px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">PriceRadar</h2>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-semibold border-b-2 border-primary py-4 -mb-4" href="#">Keywords</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Competitors</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Reports</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="h-10 w-10 rounded-full bg-primary/10 border border-primary/20 overflow-hidden">
+<img alt="User avatar" data-alt="User profile picture avatar circular" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG_80AXSUTllrO_37c4HHzDY2IxF5Nv3D0k3Z2M66neR5ZvjzN1YQ37Q8lMvkf55aMRX4M_JPjz8TgYWHwjzcFFoLxtvv7M9f210zsPIt2lkBd28RBapSKukfK-09Rr0t58GZUqndaR4oL4RLQ1Zq5nj1JV8ltLmcb-wMQxSx3DBAWN-s7NL5o8LbfCEAjFibUYojHYyW24g250LFPkZWaMSWnrVZDf4LTOf1rVFRiTWqo2aSZWtM3_5e70ccYrV2Fc2NBR5vypDBw"/>
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex flex-col w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 gap-8">
+<div>
+<h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-4">Keyword Tools</h3>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary font-semibold" href="#">
+<span class="material-symbols-outlined text-[20px]">search</span>
+<span class="text-sm">Keyword Research</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="text-sm">Rank Tracker</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+<span class="text-sm">Topic Discovery</span>
+</a>
+</nav>
+</div>
+<div>
+<h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-4">Saved Keywords</h3>
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between text-sm text-slate-600 dark:text-slate-400">
+<span class="truncate">Wireless Headphones</span>
+<span class="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-[10px]">12</span>
+</div>
+<div class="flex items-center justify-between text-sm text-slate-600 dark:text-slate-400">
+<span class="truncate">Smartwatches 2024</span>
+<span class="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-[10px]">8</span>
+</div>
+<div class="flex items-center justify-between text-sm text-slate-600 dark:text-slate-400">
+<span class="truncate">Mechanical Keyboards</span>
+<span class="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-[10px]">45</span>
+</div>
+<button class="text-primary text-xs font-semibold mt-2 text-left flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add</span> View All Collections
+                        </button>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-4">Suggested Categories</h3>
+<div class="flex flex-wrap gap-2">
+<span class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-3 py-1 rounded-full text-xs hover:bg-primary/20 hover:text-primary cursor-pointer transition-colors">Electronics</span>
+<span class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-3 py-1 rounded-full text-xs hover:bg-primary/20 hover:text-primary cursor-pointer transition-colors">Gaming Gear</span>
+<span class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-3 py-1 rounded-full text-xs hover:bg-primary/20 hover:text-primary cursor-pointer transition-colors">Home Office</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-6 lg:p-8 overflow-y-auto">
+<!-- Header Actions -->
+<div class="flex flex-wrap items-end justify-between gap-6 mb-8">
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl font-black tracking-tight">Keyword Research</h1>
+<p class="text-slate-500 dark:text-slate-400">Analyze search metrics and competitive landscape for your target terms.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-50 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                            Export Data
+                        </button>
+<button class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                            Track Keyword
+                        </button>
+</div>
+</div>
+<!-- Search Section -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-800 mb-8">
+<div class="flex items-center gap-4">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg py-3 pl-12 pr-4 focus:ring-2 focus:ring-primary text-slate-900 dark:text-white transition-all" placeholder="Enter keyword to analyze (e.g. 'noise cancelling headphones')" type="text"/>
+</div>
+<button class="bg-primary px-8 py-3 text-white font-bold rounded-lg hover:bg-primary/90 transition-all">Analyze</button>
+</div>
+</div>
+<!-- Metrics Overview -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">Search Volume</p>
+<div class="flex items-baseline gap-2">
+<h3 class="text-2xl font-bold">125,400</h3>
+<span class="text-emerald-500 text-xs font-bold flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> 12%
+                            </span>
+</div>
+<p class="text-[10px] text-slate-400 mt-2 uppercase tracking-wide">Monthly average</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">Difficulty</p>
+<div class="flex items-baseline gap-2">
+<h3 class="text-2xl font-bold">68<span class="text-slate-300 dark:text-slate-600">/100</span></h3>
+<span class="text-amber-500 text-xs font-bold bg-amber-500/10 px-1.5 py-0.5 rounded">Hard</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-amber-500 h-full rounded-full w-[68%]"></div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">Avg. CPC</p>
+<div class="flex items-baseline gap-2">
+<h3 class="text-2xl font-bold">$2.45</h3>
+<span class="text-rose-500 text-xs font-bold flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_down</span> 4%
+                            </span>
+</div>
+<p class="text-[10px] text-slate-400 mt-2 uppercase tracking-wide">Market average price</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">CTR Trend</p>
+<div class="h-10 mt-1 flex items-end gap-1">
+<div class="w-full bg-primary/20 h-4 rounded-sm"></div>
+<div class="w-full bg-primary/40 h-6 rounded-sm"></div>
+<div class="w-full bg-primary/30 h-5 rounded-sm"></div>
+<div class="w-full bg-primary/60 h-8 rounded-sm"></div>
+<div class="w-full bg-primary/50 h-7 rounded-sm"></div>
+<div class="w-full bg-primary h-10 rounded-sm"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Related Keywords Table -->
+<div class="xl:col-span-2 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<h3 class="font-bold text-lg">Related Keywords</h3>
+<button class="text-primary text-sm font-semibold">View All Suggestions</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 text-xs uppercase font-bold">
+<tr>
+<th class="px-6 py-4">Keyword</th>
+<th class="px-6 py-4">Volume</th>
+<th class="px-6 py-4">Difficulty</th>
+<th class="px-6 py-4">SEO Priority</th>
+<th class="px-6 py-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-900 dark:text-slate-100">best wireless earbud 2024</td>
+<td class="px-6 py-4">45,000</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full w-[35%]"></div>
+</div>
+<span class="text-xs">35</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold px-2 py-1 rounded uppercase">High</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-slate-400 hover:text-primary">bookmark</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-900 dark:text-slate-100">bluetooth headphones for running</td>
+<td class="px-6 py-4">12,200</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full w-[52%]"></div>
+</div>
+<span class="text-xs">52</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 text-[10px] font-bold px-2 py-1 rounded uppercase">Medium</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-primary fill-1">bookmark</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-900 dark:text-slate-100">affordable noise cancelling</td>
+<td class="px-6 py-4">8,900</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full w-[18%]"></div>
+</div>
+<span class="text-xs">18</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold px-2 py-1 rounded uppercase">High</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-slate-400 hover:text-primary">bookmark</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-900 dark:text-slate-100">sony vs bose headphones</td>
+<td class="px-6 py-4">22,100</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-rose-500 h-full w-[88%]"></div>
+</div>
+<span class="text-xs">88</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[10px] font-bold px-2 py-1 rounded uppercase">Low</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-slate-400 hover:text-primary">bookmark</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Top Performing Pages -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800">
+<h3 class="font-bold text-lg">Top Performing Pages</h3>
+<p class="text-slate-500 text-xs mt-1">Pages ranking for these keywords</p>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div class="group cursor-pointer">
+<div class="flex items-start gap-3">
+<div class="mt-1 flex items-center justify-center size-8 rounded bg-primary/10 text-primary font-bold text-xs shrink-0">1</div>
+<div>
+<h4 class="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-primary transition-colors line-clamp-1">The Best Wireless Noise-Cancelling Headphones of 2024</h4>
+<p class="text-xs text-slate-400 truncate mt-0.5">priceradar.com/reviews/headphones-2024</p>
+<div class="flex items-center gap-3 mt-2">
+<div class="flex items-center gap-1 text-[10px] text-slate-500">
+<span class="material-symbols-outlined text-[12px]">visibility</span> 14.5k
+                                            </div>
+<div class="flex items-center gap-1 text-[10px] text-emerald-500">
+<span class="material-symbols-outlined text-[12px]">arrow_drop_up</span> Pos. #1
+                                            </div>
+</div>
+</div>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="flex items-start gap-3">
+<div class="mt-1 flex items-center justify-center size-8 rounded bg-primary/10 text-primary font-bold text-xs shrink-0">2</div>
+<div>
+<h4 class="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-primary transition-colors line-clamp-1">Headphone Comparison: Sony WH-1000XM5 vs Bose QuietComfort</h4>
+<p class="text-xs text-slate-400 truncate mt-0.5">priceradar.com/compare/sony-vs-bose</p>
+<div class="flex items-center gap-3 mt-2">
+<div class="flex items-center gap-1 text-[10px] text-slate-500">
+<span class="material-symbols-outlined text-[12px]">visibility</span> 9.2k
+                                            </div>
+<div class="flex items-center gap-1 text-[10px] text-emerald-500">
+<span class="material-symbols-outlined text-[12px]">arrow_drop_up</span> Pos. #3
+                                            </div>
+</div>
+</div>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="flex items-start gap-3">
+<div class="mt-1 flex items-center justify-center size-8 rounded bg-primary/10 text-primary font-bold text-xs shrink-0">3</div>
+<div>
+<h4 class="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-primary transition-colors line-clamp-1">Ultimate Buying Guide for Bluetooth Audio Gear</h4>
+<p class="text-xs text-slate-400 truncate mt-0.5">priceradar.com/guides/bluetooth-buying-tips</p>
+<div class="flex items-center gap-3 mt-2">
+<div class="flex items-center gap-1 text-[10px] text-slate-500">
+<span class="material-symbols-outlined text-[12px]">visibility</span> 5.8k
+                                            </div>
+<div class="flex items-center gap-1 text-[10px] text-amber-500">
+<span class="material-symbols-outlined text-[12px]">horizontal_rule</span> Pos. #7
+                                            </div>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-2 text-xs font-bold text-primary bg-primary/5 rounded hover:bg-primary/10 transition-colors mt-2">Analyze More Pages</button>
+</div>
+</div>
+</div>
+<!-- Volume Over Time Chart Area -->
+<div class="mt-8 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-6">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="font-bold text-lg">Search Volume Trend</h3>
+<p class="text-slate-500 text-xs">Historical data for "Wireless Headphones"</p>
+</div>
+<div class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-lg">
+<button class="px-3 py-1 text-xs font-semibold rounded-md bg-white dark:bg-slate-700 shadow-sm">6 Months</button>
+<button class="px-3 py-1 text-xs font-semibold rounded-md text-slate-500">12 Months</button>
+<button class="px-3 py-1 text-xs font-semibold rounded-md text-slate-500">All Time</button>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 px-2">
+<!-- Simulated Chart -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/20 rounded-t-lg group-hover:bg-primary transition-all duration-300" style="height: 40%"></div>
+<span class="text-[10px] text-slate-400 font-bold uppercase">Jan</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/20 rounded-t-lg group-hover:bg-primary transition-all duration-300" style="height: 45%"></div>
+<span class="text-[10px] text-slate-400 font-bold uppercase">Feb</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/20 rounded-t-lg group-hover:bg-primary transition-all duration-300" style="height: 60%"></div>
+<span class="text-[10px] text-slate-400 font-bold uppercase">Mar</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/20 rounded-t-lg group-hover:bg-primary transition-all duration-300" style="height: 55%"></div>
+<span class="text-[10px] text-slate-400 font-bold uppercase">Apr</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary rounded-t-lg shadow-lg shadow-primary/20" style="height: 90%"></div>
+<span class="text-[10px] text-primary font-bold uppercase">May</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/20 rounded-t-lg group-hover:bg-primary transition-all duration-300" style="height: 75%"></div>
+<span class="text-[10px] text-slate-400 font-bold uppercase">Jun</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Product Details - Google Shopping Style</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<!-- Top Navigation Bar -->
+<nav class="sticky top-0 z-30 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer text-slate-600 dark:text-slate-400">arrow_back</span>
+<span class="font-semibold text-lg truncate max-w-[200px]">Product Details</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer text-slate-600 dark:text-slate-400">share</span>
+<span class="material-symbols-outlined cursor-pointer text-slate-600 dark:text-slate-400">favorite</span>
+</div>
+</nav>
+<main class="pb-32">
+<!-- Hero Image Section -->
+<div class="bg-white dark:bg-slate-900 p-4">
+<div class="@container">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden aspect-square relative group">
+<img alt="Premium Headphones" class="w-full h-full object-contain p-8" data-alt="Professional studio wireless headphones in black" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhTLRcOAGsKla5_AxmppjL6Ryqp2d239XZiCNN2qZau-fLOmfw8Jx3ynZnACT84Mcc-8WMphLt7X1tmzSl7jcvCERzXoKc62CZ5y0r8tCOVW577LThTudid5qGuvP1SJup7pWgmBfIwe_hMqwyRTfq67KS93VPBNrFohTbQK59oWnAPcGHlnxWWkQNI4Qu9gIDFX0UQzKTYc1M9V81-qApXJQLsCq7L6sQ6mQhc4y5WgrSC22YJDhuLn3uvoGDqXMtv9V81JBaQMwF"/>
+</div>
+</div>
+</div>
+<!-- Product Info Section -->
+<div class="px-4 py-6 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+<div class="flex flex-col gap-1">
+<span class="text-primary font-medium text-sm">Electronics &amp; Audio</span>
+<h1 class="text-2xl font-bold leading-tight">Premium Wireless Noise Cancelling Headphones - XM5</h1>
+<div class="flex items-center gap-2 mt-2">
+<div class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-[18px] fill-[1]">star</span>
+<span class="material-symbols-outlined text-[18px] fill-[1]">star</span>
+<span class="material-symbols-outlined text-[18px] fill-[1]">star</span>
+<span class="material-symbols-outlined text-[18px] fill-[1]">star</span>
+<span class="material-symbols-outlined text-[18px]">star_half</span>
+</div>
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium">4.8 (1,240 reviews)</span>
+</div>
+</div>
+</div>
+<!-- Comparison Table (Tap-Friendly) -->
+<div class="mt-4 px-4">
+<h3 class="text-lg font-bold mb-4">Compare prices</h3>
+<div class="flex flex-col gap-3">
+<!-- Best Offer Row -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 border-2 border-primary/30 shadow-sm flex items-center justify-between cursor-pointer active:scale-[0.98] transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden">
+<img alt="BestBuy" class="w-8 h-8 object-contain" data-alt="Best Buy store logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCooZiMpCgVAfbUqdfnRthl8P_eUhpd_4-Z3UHWDGNLGifVUi2PsIFR8t0-JzV8csSrhnfCBK_L4QYdc2tYRYMSDkMhPGr4iBdBIINq3TSKIjw3u24y3ixu7fAhAjgRSiaVIRUzaEluC0zWKYYQRF63FAQpt70KkDiCgFk4eiy_r_VqhsUUxcisc0IHcyYhUmFgLQmOWAHtJ4brMkwx2kGIA00sSPG4S_HXjMJym6iJh4nAnysRVrs7TRUwfCFvE2aEGfNveleKF_bx"/>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">BestBuy</p>
+<p class="text-xs text-green-600 font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> In Stock
+                            </p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xl font-black text-primary">$999.00</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Free Shipping</p>
+</div>
+</div>
+<!-- Competitor 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 flex items-center justify-between cursor-pointer active:scale-[0.98] transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden">
+<img alt="Amazon" class="w-8 h-8 object-contain" data-alt="Amazon store logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNJ1nMO0YbA5wT7_n4qNzPUYaL_xVzsvU7-ZfcJMVwAqDDH9fE7bdgcwCwpXsCRcIiI2s3JGnWiqGhWSFb8Br93heYPBMjELfx-MktKNAmDe5nJ8kGIqHxKTMD1WvpBBC_zykWKp-ibyN4O9n-2g6D1w0ZvJFsMTtGtgFUOCYZ7GEEswM7iPKmCKh3iYwiyAP4Wtw92fGNpyu2qvv89Wo-C0XU_4rDLVcasKebEYWqqSdS61qlzze1aKbD74Y299mpF7N4zFk3nkU7"/>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Amazon</p>
+<p class="text-xs text-slate-500 font-medium">Delivery by tomorrow</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold">$1,049.00</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Prime Shipping</p>
+</div>
+</div>
+<!-- Competitor 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 flex items-center justify-between cursor-pointer active:scale-[0.98] transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden">
+<img alt="Walmart" class="w-8 h-8 object-contain" data-alt="Walmart store logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeV9UgzfcEol9kuSCela2YyETZVeJAYTL03WEv45JWrWjRpiyCRo72zZQpBcnwGkTpbAolUwiT_DNN94_QYXAbjrchJZ15DejqPlA_g32qWAxvPZFN6mMLRq1ZEPpwVUvfHnlXuTus10QTlWfzA1t-lLS1vET3A7VqRXZ14GvWrJx1KnaOnDNU0BoyYtGSr9KPVvF-4rjEpcVjz-YDJJqi5GX8epzOnSSLi-JpzWPxSnUi1tLswTgegotJqDmNOqj8VfkqgUvwIXoy"/>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Walmart</p>
+<p class="text-xs text-slate-500 font-medium">Store pickup available</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold">$1,099.99</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">+$5.00 shipping</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Specifications Summary -->
+<div class="mt-8 px-4">
+<h3 class="text-lg font-bold mb-4">Key Specifications</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+<p class="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider font-bold">Battery Life</p>
+<p class="font-semibold text-slate-900 dark:text-slate-100">30 Hours</p>
+</div>
+<div class="p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+<p class="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider font-bold">Weight</p>
+<p class="font-semibold text-slate-900 dark:text-slate-100">250g</p>
+</div>
+<div class="p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+<p class="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider font-bold">Bluetooth</p>
+<p class="font-semibold text-slate-900 dark:text-slate-100">5.2 LE</p>
+</div>
+<div class="p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+<p class="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider font-bold">Noise Cancellation</p>
+<p class="font-semibold text-slate-900 dark:text-slate-100">Active (ANC)</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky High-Impact 'Go to Store' CTA -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 p-4 pb-8 shadow-[0_-8px_30px_rgb(0,0,0,0.04)]">
+<div class="max-w-md mx-auto flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-slate-50 dark:bg-slate-800 flex items-center justify-center border border-slate-200 dark:border-slate-700">
+<img alt="BestBuy" class="w-8 h-8 object-contain" data-alt="Best Buy small merchant logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALuEhYeqVQImCn1JmCE4mUyh3S14YxWUu5zYUja1MF0pCpObfWN2a_DH_3oHC1ICLqQ7xSDp_ZB91apNydrX_m0Rxl_nvsfbHyy--rSERGmTW8LSQxzUpHX3u78fyDeAp8Kew3vL_-QE2WjFagRu59UAQoVtHpkexbUkBpn3bFiYDK-kYozIBU5mPgs6IWQH-Wu7pcZUsfKjqwhaeppxKXmWUvw4du-aBH-_Z4Nt1A_D62p--WQUUmdI-s5QVG5fkzuhvYjPC7xbtq"/>
+</div>
+<div class="flex flex-col">
+<span class="text-slate-500 dark:text-slate-400 text-xs font-semibold leading-none mb-1">BEST PRICE</span>
+<span class="text-2xl font-black text-slate-900 dark:text-slate-100 leading-none">$999.00</span>
+</div>
+</div>
+<button class="flex-1 max-w-[180px] bg-primary hover:bg-primary/90 text-white h-14 rounded-xl flex items-center justify-center gap-2 font-bold text-lg shadow-lg shadow-primary/20 active:scale-95 transition-all">
+<span>Go to Store</span>
+<span class="material-symbols-outlined text-[20px]">open_in_new</span>
+</button>
+</div>
+</div>
+</body></html>

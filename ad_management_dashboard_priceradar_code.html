@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar | Ad Management Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-size: 24px; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="flex min-h-screen w-full">
+<!-- Side Navigation -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col fixed h-full">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary rounded-lg p-2 text-white">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<div>
+<h1 class="text-slate-900 dark:text-white text-lg font-bold leading-none">PriceRadar</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Admin Panel</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-sm font-medium">Stores</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">package</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary text-white rounded-lg shadow-sm shadow-primary/30" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Ad Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<div class="size-10 rounded-full bg-slate-300 overflow-hidden">
+<img alt="User" data-alt="Admin user avatar portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRSTK1XCR11pluwz5J-IOb8JpsUQ9AlNu_yukCFuiZsfyqnfPXAgtuegl-X-cJ8yhxerpUcMVQEFd8uBkpAt-3LzLi_MZqGsxLtqya9262IVG3bXZ6AlhvlKnBV0jddbVTzLBSgQxgDrcxqN9SSEzS8YMtoxkQOg7Zrxa5Sa9wV8UbQM9bC-Xs6ndAcglTjZk9ccaVjYRpdSQkAKjDzphExeeYvP49gPVbw1Goo84JW4_TGhcJcmwXP43vEBaWU5G4dSfZM1dPKYmX"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Alex Morgan</p>
+<p class="text-xs text-slate-500 truncate">Super Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 flex-1 flex flex-col">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<h2 class="text-xl font-bold">Ad Management</h2>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary w-64" placeholder="Search campaigns..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 border-2 border-white dark:border-slate-900 rounded-full"></span>
+</button>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+                        Create Campaign
+                    </button>
+</div>
+</header>
+<div class="p-8 space-y-8">
+<!-- Page Title & Quick Stats -->
+<div>
+<h3 class="text-2xl font-black tracking-tight mb-2">Ad Performance Overview</h3>
+<p class="text-slate-500 dark:text-slate-400">Real-time tracking of advertisement KPIs for the last 30 days.</p>
+</div>
+<!-- KPI Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="text-slate-500 dark:text-slate-400 font-medium text-sm">Total Impressions</span>
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold">2.4M</span>
+<span class="text-emerald-500 text-sm font-bold pb-1 flex items-center gap-0.5">
+<span class="material-symbols-outlined !text-sm">trending_up</span> 12.5%
+                            </span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="text-slate-500 dark:text-slate-400 font-medium text-sm">Click-Through Rate</span>
+<div class="p-2 bg-amber-500/10 rounded-lg text-amber-500">
+<span class="material-symbols-outlined">ads_click</span>
+</div>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold">3.2%</span>
+<span class="text-emerald-500 text-sm font-bold pb-1 flex items-center gap-0.5">
+<span class="material-symbols-outlined !text-sm">trending_up</span> 0.4%
+                            </span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="text-slate-500 dark:text-slate-400 font-medium text-sm">Total Ad Revenue</span>
+<div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-500">
+<span class="material-symbols-outlined">monetization_on</span>
+</div>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold">$45,280</span>
+<span class="text-emerald-500 text-sm font-bold pb-1 flex items-center gap-0.5">
+<span class="material-symbols-outlined !text-sm">trending_up</span> 8.2%
+                            </span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="text-slate-500 dark:text-slate-400 font-medium text-sm">Active Campaigns</span>
+<div class="p-2 bg-purple-500/10 rounded-lg text-purple-500">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold">12</span>
+<span class="text-slate-500 text-sm font-bold pb-1 flex items-center gap-0.5">
+<span class="material-symbols-outlined !text-sm">horizontal_rule</span> Steady
+                            </span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Revenue Trends Chart (Placeholder) -->
+<div class="lg:col-span-2 bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h4 class="text-lg font-bold">Revenue Trends (Last 30 Days)</h4>
+<select class="text-xs bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg">
+<option>Daily View</option>
+<option>Weekly View</option>
+</select>
+</div>
+<div class="relative h-64 w-full flex items-end justify-between px-2">
+<!-- Simple Visual Bar Chart Placeholder -->
+<div class="w-4 bg-primary/20 rounded-t h-2/4"></div>
+<div class="w-4 bg-primary/20 rounded-t h-3/4"></div>
+<div class="w-4 bg-primary rounded-t h-4/4"></div>
+<div class="w-4 bg-primary/20 rounded-t h-2/4"></div>
+<div class="w-4 bg-primary/20 rounded-t h-1/4"></div>
+<div class="w-4 bg-primary/20 rounded-t h-3/4"></div>
+<div class="w-4 bg-primary rounded-t h-2/4"></div>
+<div class="w-4 bg-primary/20 rounded-t h-3/4"></div>
+<div class="w-4 bg-primary rounded-t h-4/4"></div>
+<div class="w-4 bg-primary/20 rounded-t h-3/4"></div>
+<div class="w-4 bg-primary rounded-t h-2/4"></div>
+<div class="w-4 bg-primary/20 rounded-t h-3/4"></div>
+<div class="w-4 bg-primary rounded-t h-4/4"></div>
+<div class="w-4 bg-primary/20 rounded-t h-2/4"></div>
+<div class="w-4 bg-primary/20 rounded-t h-1/4"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-9xl">show_chart</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between text-xs text-slate-400 font-medium">
+<span>01 May</span>
+<span>15 May</span>
+<span>30 May</span>
+</div>
+</div>
+<!-- Create New Ad Quick Form -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<h4 class="text-lg font-bold mb-4">Quick Setup</h4>
+<form class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Campaign Name</label>
+<input class="w-full text-sm bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg p-2.5 focus:ring-2 focus:ring-primary focus:border-primary" placeholder="e.g. Summer Sale 2024" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Ad Type</label>
+<select class="w-full text-sm bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg p-2.5 focus:ring-2 focus:ring-primary focus:border-primary">
+<option>Sponsored Product</option>
+<option>Banner Ad</option>
+<option>Featured Store</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Budget ($)</label>
+<input class="w-full text-sm bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg p-2.5 focus:ring-2 focus:ring-primary focus:border-primary" placeholder="500.00" type="number"/>
+</div>
+<button class="w-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold py-2.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-sm" type="button">
+                                Save as Draft
+                            </button>
+<button class="w-full bg-primary text-white font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-shadow shadow-lg shadow-primary/20 text-sm" type="submit">
+                                Launch Campaign
+                            </button>
+</form>
+</div>
+</div>
+<!-- Ad Inventory & Placement -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<h4 class="text-lg font-bold mb-6">Available Ad Inventory</h4>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="p-4 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50 flex items-center gap-4">
+<div class="bg-primary/10 p-3 rounded-lg text-primary">
+<span class="material-symbols-outlined">web</span>
+</div>
+<div>
+<p class="font-bold text-sm">Homepage Hero</p>
+<p class="text-xs text-slate-500">2 slots available</p>
+</div>
+</div>
+<div class="p-4 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50 flex items-center gap-4">
+<div class="bg-primary/10 p-3 rounded-lg text-primary">
+<span class="material-symbols-outlined">side_navigation</span>
+</div>
+<div>
+<p class="font-bold text-sm">Sidebar Sidebar</p>
+<p class="text-xs text-emerald-500 font-medium">8 slots available</p>
+</div>
+</div>
+<div class="p-4 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50 flex items-center gap-4">
+<div class="bg-primary/10 p-3 rounded-lg text-primary">
+<span class="material-symbols-outlined">search_check</span>
+</div>
+<div>
+<p class="font-bold text-sm">Search Results Top</p>
+<p class="text-xs text-amber-500 font-medium">1 slot left</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Campaign Management Table -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<h4 class="text-lg font-bold">Campaign Management</h4>
+<div class="flex gap-2">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-800/50">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Ad Name</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Type</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase text-right">Impressions</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase text-right">Clicks</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase text-right">Revenue</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-slate-200 overflow-hidden">
+<img alt="Ad Preview" data-alt="Small banner ad preview thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYDa_BQwKKqNevcBC5AeNDEyOKoNKAy0hCQEkYOKLBM-hHI90P2HKfU_eIxVBydcWUfQoBx2ZKX2qJ6hB6qy2HvzCY3xLgd4eLhrz83-quikbioPQC-s_CzeqIa8IaKGqdGpLERLoHeUxQQ61kwgJ2QIAYQwGDJbPFrJG8Aid1pcs0oQ8nROfHRIDH4R_WHPme8QAanOTjG0KNpA8TBYmdr_Oawl0eklC__ROcGED7moMvHOVciMG18C5-NtiGhl1t5VwEDtKBA9rX"/>
+</div>
+<span class="text-sm font-semibold">Electronics Mega Sale</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">Banner Ad</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold rounded-full">Active</span>
+</td>
+<td class="px-6 py-4 text-sm text-right">842,000</td>
+<td class="px-6 py-4 text-sm text-right">24,510</td>
+<td class="px-6 py-4 text-sm font-bold text-right">$12,400</td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-center gap-2">
+<button class="p-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined !text-xl">edit</span>
+</button>
+<button class="p-1 text-slate-400 hover:text-amber-500 transition-colors">
+<span class="material-symbols-outlined !text-xl">pause</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-slate-200 overflow-hidden">
+<img alt="Ad Preview" data-alt="Small product sponsorship preview thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu2xGOatsPW55z006h4lfkvvsVXQGRMk2yy0EDBI3woaqHncPATU3pNCO6Iy_zpmtr8MePOM52DSmgkKAnNmwMwRbdBa6rt3vpLvk8NMiezly_8DTHpaeWWGlwgnNiGTbPgVFVh4wY5OOFbKZig-vC_N64J5ZiGvMjv9A2jFnUQ2aMIFriFJpV5e2j6dCqycOfJ1KazJbYNXqaE32eTShPYLjaxZf7-lPny0KmqU5uDVd2tGyBH_EXKKfjO3rl1a3ODrU1VoUgLyGQ"/>
+</div>
+<span class="text-sm font-semibold">Nike Air Max Promo</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">Sponsored Product</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold rounded-full">Scheduled</span>
+</td>
+<td class="px-6 py-4 text-sm text-right">0</td>
+<td class="px-6 py-4 text-sm text-right">0</td>
+<td class="px-6 py-4 text-sm font-bold text-right">$0</td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-center gap-2">
+<button class="p-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined !text-xl">edit</span>
+</button>
+<button class="p-1 text-slate-400 hover:text-amber-500 transition-colors">
+<span class="material-symbols-outlined !text-xl">pause</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-slate-200 overflow-hidden">
+<img alt="Ad Preview" data-alt="Store highlight preview thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWmn3-QYf-vgunIcotlIV44suHHCJWgpgeaEzf-U4qEkPzBKWA8_EpupiB6Foa1TAjQNkN1aKfsS6yCfS6E8zva5DY82BA_IBrw0U1igaNdNWeO1ZzibSeT8osootknh7nPJpqb1R0mzNIQTt11foYZK3R9fzrFpfP1qKbHThMWWeeRkvt2qfoHyRs_dqOExnnwDCreM8D2DxQOIUHN7D2Hu0gwIzbTkkwecIAwU4SruIgtUM22ggKHNXgEqZSDieVhUcaZEHci24u"/>
+</div>
+<span class="text-sm font-semibold">Apple Store Feature</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">Featured Store</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-400 text-xs font-bold rounded-full">Ended</span>
+</td>
+<td class="px-6 py-4 text-sm text-right">1.2M</td>
+<td class="px-6 py-4 text-sm text-right">45,900</td>
+<td class="px-6 py-4 text-sm font-bold text-right">$22,100</td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-center gap-2">
+<button class="p-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined !text-xl">edit</span>
+</button>
+<button class="p-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined !text-xl">replay</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<footer class="p-8 text-center text-slate-400 text-sm">
+                © 2024 PriceRadar Admin Panel. All systems operational.
+            </footer>
+</main>
+</div>
+</body></html>

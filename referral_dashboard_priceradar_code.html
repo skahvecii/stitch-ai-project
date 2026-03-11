@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar - Referral Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#1c74e9",
+                "background-light": "#f6f7f8",
+                "background-dark": "#111821",
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display">
+<div class="flex min-h-screen overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hidden lg:flex flex-col">
+<div class="p-6">
+<div class="flex items-center gap-3">
+<div class="bg-primary size-10 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">PriceRadar</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Smart Comparisons</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-sm font-medium">Price Alerts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">group</span>
+<span class="text-sm font-medium">Referrals</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="User profile avatar placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRP7mPpgqgeI4CFy1F79eDDQMlTIxEi6K3pJjHCHnizBd4EREF3MxiaWBW-nYxeOqQToNoKRBShDgDdw1dxqRUeI24lJiKNvZ-aGLcZ6qWpTnxxIn9xscfP3a9mHnLtkb3-z4I1ls1tL66i2NUId3mDw91dw2w--Ahivkcc1D3_cguY-aGvC2BMRl_Di2HoFvTBhDohknthx_2E7hm21RO5MyuyWxnlOHF9YPlUK2Ag90qg-YO4yCPTIAfc2IrB53a4h55j-cZv8np"/>
+</div>
+<div class="flex flex-col">
+<p class="text-xs font-bold text-slate-900 dark:text-white leading-tight">Alex Johnson</p>
+<p class="text-[10px] text-slate-500">Free Account</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 bg-background-light dark:bg-background-dark overflow-y-auto">
+<!-- Top Bar (Mobile Toggle) -->
+<header class="lg:hidden h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center px-4 justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">radar</span>
+<span class="font-bold text-slate-900 dark:text-white">PriceRadar</span>
+</div>
+<button class="p-2 text-slate-500">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<div class="max-w-5xl mx-auto w-full p-4 lg:p-8 space-y-8">
+<!-- Header Section -->
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Referral Dashboard</h1>
+<p class="text-slate-600 dark:text-slate-400">Share PriceRadar with your friends and unlock premium rewards together.</p>
+</div>
+<!-- Referral Progress Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Total Invites</span>
+<span class="material-symbols-outlined text-slate-400">send</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold text-slate-900 dark:text-white leading-none">24</span>
+<span class="text-xs font-semibold text-emerald-600 bg-emerald-100 dark:bg-emerald-900/30 px-1.5 py-0.5 rounded flex items-center">
+<span class="material-symbols-outlined text-xs">arrow_upward</span>5%
+                        </span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Successful Sign-ups</span>
+<span class="material-symbols-outlined text-slate-400">person_add</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold text-slate-900 dark:text-white leading-none">12</span>
+<span class="text-xs font-semibold text-emerald-600 bg-emerald-100 dark:bg-emerald-900/30 px-1.5 py-0.5 rounded flex items-center">
+<span class="material-symbols-outlined text-xs">arrow_upward</span>2%
+                        </span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Rewards Earned</span>
+<span class="material-symbols-outlined text-slate-400">payments</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold text-slate-900 dark:text-white leading-none">$60.00</span>
+<span class="text-xs font-semibold text-emerald-600 bg-emerald-100 dark:bg-emerald-900/30 px-1.5 py-0.5 rounded flex items-center">
+<span class="material-symbols-outlined text-xs">arrow_upward</span>$10
+                        </span>
+</div>
+</div>
+</div>
+<!-- Milestone Progress -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+<div>
+<h3 class="font-bold text-slate-900 dark:text-white">Next Reward Milestone</h3>
+<p class="text-sm text-slate-500">8 more sign-ups to unlock a $20 bonus!</p>
+</div>
+<span class="text-sm font-bold text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">12 / 20 Referrals</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-3">
+<div class="bg-primary h-3 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Share Link & Socials -->
+<div class="space-y-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">link</span>
+                            Your Referral Link
+                        </h3>
+<div class="flex items-center gap-2">
+<input class="flex-1 bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 rounded-lg py-2.5 px-4 text-sm font-medium text-slate-600 dark:text-slate-400 focus:ring-primary focus:border-primary" readonly="" type="text" value="https://priceradar.com/ref/alexj78"/>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-6 rounded-lg transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+<span>Copy</span>
+</button>
+</div>
+<div class="mt-8">
+<p class="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-4 uppercase tracking-wider">Share via</p>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20 rounded-lg transition-colors flex-1">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-sm font-bold">WhatsApp</span>
+</button>
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-[#1DA1F2]/10 text-[#1DA1F2] hover:bg-[#1DA1F2]/20 rounded-lg transition-colors flex-1">
+<span class="material-symbols-outlined">share</span>
+<span class="text-sm font-bold">Twitter</span>
+</button>
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-[#1877F2]/10 text-[#1877F2] hover:bg-[#1877F2]/20 rounded-lg transition-colors flex-1">
+<span class="material-symbols-outlined">social_leaderboard</span>
+<span class="text-sm font-bold">Facebook</span>
+</button>
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 rounded-lg transition-colors flex-1">
+<span class="material-symbols-outlined">mail</span>
+<span class="text-sm font-bold">Email</span>
+</button>
+</div>
+</div>
+</div>
+<!-- How it Works -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6">How it Works</h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="size-10 flex-shrink-0 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">1</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Share your link</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Copy your unique referral link and send it to your friends or post it on social media.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="size-10 flex-shrink-0 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">2</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">They sign up</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">When your friends register using your link, they'll get a special welcome discount.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="size-10 flex-shrink-0 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">3</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Earn rewards</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">For every successful sign-up, you earn $5 in credit towards your next subscription.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Referral History Table -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col h-full">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Referral History</h3>
+<button class="text-primary text-sm font-bold hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-950/50">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Friend</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-right">Reward</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">SM</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-slate-900 dark:text-white">Sarah Miller</p>
+<p class="text-xs text-slate-500">2 hours ago</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400">
+<span class="size-1.5 rounded-full bg-emerald-500"></span>
+                                            Reward Earned
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<p class="text-sm font-bold text-slate-900 dark:text-white">$5.00</p>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-xs font-bold">JD</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-slate-900 dark:text-white">John Doe</p>
+<p class="text-xs text-slate-500">Yesterday</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400">
+<span class="size-1.5 rounded-full bg-blue-500"></span>
+                                            Signed Up
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<p class="text-sm font-bold text-slate-400 dark:text-slate-500">Pending</p>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-xs font-bold">RT</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-slate-900 dark:text-white">Robert Taylor</p>
+<p class="text-xs text-slate-500">3 days ago</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+<span class="size-1.5 rounded-full bg-slate-400"></span>
+                                            Invited
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<p class="text-sm font-bold text-slate-400 dark:text-slate-500">—</p>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xs font-bold">EK</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-slate-900 dark:text-white">Emily Kraft</p>
+<p class="text-xs text-slate-500">Nov 12, 2023</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400">
+<span class="size-1.5 rounded-full bg-emerald-500"></span>
+                                            Reward Earned
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<p class="text-sm font-bold text-slate-900 dark:text-white">$10.00</p>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs font-bold">MP</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-slate-900 dark:text-white">Mark Peterson</p>
+<p class="text-xs text-slate-500">Nov 08, 2023</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400">
+<span class="size-1.5 rounded-full bg-emerald-500"></span>
+                                            Reward Earned
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<p class="text-sm font-bold text-slate-900 dark:text-white">$5.00</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-auto p-4 border-t border-slate-200 dark:border-slate-800 text-center">
+<p class="text-xs text-slate-500">Showing 5 of 24 referrals</p>
+</div>
+</div>
+</div>
+<!-- Promotion Banner -->
+<div class="bg-primary/5 border-2 border-dashed border-primary/30 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1 space-y-4 text-center md:text-left">
+<h2 class="text-2xl font-black text-slate-900 dark:text-white">Earn double points this weekend!</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-lg">Invite friends before Sunday midnight and receive $10 instead of $5 for every successful sign-up. Don't miss out on this limited time offer!</p>
+<button class="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:shadow-lg hover:shadow-primary/20 transition-all">Start Inviting Now</button>
+</div>
+<div class="relative w-48 h-48 flex-shrink-0">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-2xl"></div>
+<div class="relative bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-xl border border-primary/20 flex flex-col items-center justify-center gap-2 transform rotate-3">
+<span class="material-symbols-outlined text-primary text-6xl">redeem</span>
+<span class="text-2xl font-black text-slate-900 dark:text-white">$10.00</span>
+<span class="text-xs font-bold text-primary uppercase">Limited Offer</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Simple Footer -->
+<footer class="mt-auto py-8 border-t border-slate-200 dark:border-slate-800 text-center">
+<p class="text-sm text-slate-500">© 2024 PriceRadar. All rights reserved. <a class="text-primary hover:underline ml-2" href="#">Terms &amp; Conditions</a></p>
+</footer>
+</main>
+</div>
+</body></html>

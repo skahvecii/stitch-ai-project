@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Merchant Feedback Analytics - PriceRadar Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">PriceRadar Admin</h2>
+</div>
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-500 flex border-none bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-0 border-none bg-slate-100 dark:bg-slate-800 focus:border-none h-full placeholder:text-slate-500 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal" placeholder="Search merchants or reviews" value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-800 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold text-slate-900 dark:text-white">Alex Rivera</p>
+<p class="text-xs text-slate-500">System Admin</p>
+</div>
+<div class="bg-primary/20 rounded-full size-10 flex items-center justify-center text-primary font-bold border border-primary/30" data-alt="User profile placeholder">AR</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hidden md:flex flex-col p-4 gap-2">
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">
+<span class="material-symbols-outlined text-slate-500">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary cursor-pointer">
+<span class="material-symbols-outlined">analytics</span>
+<p class="text-sm font-bold">Merchant Analytics</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-slate-500">package_2</span>
+<p class="text-sm font-medium">Product Tracking</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-slate-500">group</span>
+<p class="text-sm font-medium">User Management</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-slate-500">reviews</span>
+<p class="text-sm font-medium">Review Center</p>
+</div>
+<div class="mt-auto pt-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-slate-500">help</span>
+<p class="text-sm font-medium">Support</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-8">
+<!-- Header & Date Picker -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+<div>
+<h1 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Merchant Feedback Analytics</h1>
+<p class="text-slate-500 mt-1">Real-time sentiment and rating overview across all registered merchants</p>
+</div>
+<div class="flex items-center gap-3 bg-white dark:bg-slate-800 p-1.5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<button class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors">7 Days</button>
+<button class="px-4 py-2 text-sm font-bold bg-primary text-white rounded-lg shadow-sm">30 Days</button>
+<button class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors">90 Days</button>
+<div class="w-[1px] h-6 bg-slate-200 dark:bg-slate-700 mx-1"></div>
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span>Custom Range</span>
+</button>
+</div>
+</div>
+<!-- KPI Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">star</span>
+</div>
+<span class="text-xs font-bold text-emerald-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>+0.2%
+                            </span>
+</div>
+<p class="text-slate-500 text-sm font-medium mb-1">Average Platform Rating</p>
+<h3 class="text-3xl font-black text-slate-900 dark:text-white">4.6<span class="text-lg text-slate-400">/5.0</span></h3>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600">
+<span class="material-symbols-outlined">rate_review</span>
+</div>
+<span class="text-xs font-bold text-emerald-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>+5.4%
+                            </span>
+</div>
+<p class="text-slate-500 text-sm font-medium mb-1">Total Reviews</p>
+<h3 class="text-3xl font-black text-slate-900 dark:text-white">12,842</h3>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg text-emerald-600">
+<span class="material-symbols-outlined">sentiment_satisfied</span>
+</div>
+<span class="text-xs font-bold text-emerald-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>+1.2%
+                            </span>
+</div>
+<p class="text-slate-500 text-sm font-medium mb-1">Sentiment Score</p>
+<h3 class="text-3xl font-black text-slate-900 dark:text-white">88% <span class="text-lg font-bold text-emerald-500">Positive</span></h3>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="p-2 bg-rose-100 dark:bg-rose-900/30 rounded-lg text-rose-600">
+<span class="material-symbols-outlined">flag</span>
+</div>
+<span class="text-xs font-bold text-rose-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_down</span>-3%
+                            </span>
+</div>
+<p class="text-slate-500 text-sm font-medium mb-1">Flagged Reviews</p>
+<h3 class="text-3xl font-black text-slate-900 dark:text-white">42</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+<!-- Sentiment & Rating Trends Chart -->
+<div class="lg:col-span-2 bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Sentiment &amp; Rating Trends</h3>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5">
+<div class="size-2.5 rounded-full bg-primary"></div>
+<span class="text-xs font-medium text-slate-500">Rating</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="size-2.5 rounded-full bg-slate-300"></div>
+<span class="text-xs font-medium text-slate-500">Reviews</span>
+</div>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 px-2 relative">
+<!-- Chart Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-8">
+<div class="border-t border-slate-100 dark:border-slate-800 w-full"></div>
+<div class="border-t border-slate-100 dark:border-slate-800 w-full"></div>
+<div class="border-t border-slate-100 dark:border-slate-800 w-full"></div>
+<div class="border-t border-slate-100 dark:border-slate-800 w-full"></div>
+</div>
+<!-- Mock Bars -->
+<div class="flex flex-col flex-1 items-center gap-2 group cursor-pointer z-10">
+<div class="w-full bg-primary/20 rounded-t-lg h-24 transition-all group-hover:bg-primary/40 relative">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg h-16"></div>
+</div>
+<span class="text-xs text-slate-500">May</span>
+</div>
+<div class="flex flex-col flex-1 items-center gap-2 group cursor-pointer z-10">
+<div class="w-full bg-primary/20 rounded-t-lg h-32 transition-all group-hover:bg-primary/40 relative">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg h-20"></div>
+</div>
+<span class="text-xs text-slate-500">Jun</span>
+</div>
+<div class="flex flex-col flex-1 items-center gap-2 group cursor-pointer z-10">
+<div class="w-full bg-primary/20 rounded-t-lg h-40 transition-all group-hover:bg-primary/40 relative">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg h-28"></div>
+</div>
+<span class="text-xs text-slate-500">Jul</span>
+</div>
+<div class="flex flex-col flex-1 items-center gap-2 group cursor-pointer z-10">
+<div class="w-full bg-primary/20 rounded-t-lg h-36 transition-all group-hover:bg-primary/40 relative">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg h-24"></div>
+</div>
+<span class="text-xs text-slate-500">Aug</span>
+</div>
+<div class="flex flex-col flex-1 items-center gap-2 group cursor-pointer z-10">
+<div class="w-full bg-primary/20 rounded-t-lg h-48 transition-all group-hover:bg-primary/40 relative">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg h-34"></div>
+</div>
+<span class="text-xs text-slate-500">Sep</span>
+</div>
+<div class="flex flex-col flex-1 items-center gap-2 group cursor-pointer z-10">
+<div class="w-full bg-primary/20 rounded-t-lg h-56 transition-all group-hover:bg-primary/40 relative">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg h-44"></div>
+</div>
+<span class="text-xs text-slate-500">Oct</span>
+</div>
+</div>
+</div>
+<!-- AI Sentiment Analysis -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">AI Sentiment Analysis</h3>
+<span class="material-symbols-outlined text-slate-400">info</span>
+</div>
+<div class="flex flex-col gap-5">
+<div>
+<div class="flex justify-between text-sm mb-1.5">
+<span class="font-medium text-slate-700 dark:text-slate-300">Shipping Speed</span>
+<span class="text-slate-500">92% Pos.</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full flex overflow-hidden">
+<div class="h-full bg-emerald-500" style="width: 92%"></div>
+<div class="h-full bg-rose-500" style="width: 8%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1.5">
+<span class="font-medium text-slate-700 dark:text-slate-300">Product Quality</span>
+<span class="text-slate-500">85% Pos.</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full flex overflow-hidden">
+<div class="h-full bg-emerald-500" style="width: 85%"></div>
+<div class="h-full bg-rose-500" style="width: 15%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1.5">
+<span class="font-medium text-slate-700 dark:text-slate-300">Customer Support</span>
+<span class="text-slate-500">68% Pos.</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full flex overflow-hidden">
+<div class="h-full bg-emerald-500" style="width: 68%"></div>
+<div class="h-full bg-rose-500" style="width: 32%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1.5">
+<span class="font-medium text-slate-700 dark:text-slate-300">Pricing</span>
+<span class="text-slate-500">79% Pos.</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full flex overflow-hidden">
+<div class="h-full bg-emerald-500" style="width: 79%"></div>
+<div class="h-full bg-rose-500" style="width: 21%"></div>
+</div>
+</div>
+</div>
+<div class="mt-6 p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg text-xs text-slate-500 leading-relaxed italic border border-slate-100 dark:border-slate-800">
+                            "Most negative sentiment for 'Support' stems from delayed email responses during peak weekend hours."
+                        </div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+<!-- Leaderboards -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Store Leaderboards</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div>
+<p class="text-xs font-bold text-emerald-500 uppercase tracking-wider mb-4">Top Rated</p>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-xs">1</div>
+<div class="flex-1">
+<p class="text-sm font-bold truncate">TechNexus</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-amber-400 fill-1">star</span>
+<span class="text-xs text-slate-500">4.92</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-xs">2</div>
+<div class="flex-1">
+<p class="text-sm font-bold truncate">AeroGadgets</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-amber-400 fill-1">star</span>
+<span class="text-xs text-slate-500">4.88</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-xs">3</div>
+<div class="flex-1">
+<p class="text-sm font-bold truncate">SwiftBuy</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-amber-400 fill-1">star</span>
+<span class="text-xs text-slate-500">4.85</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<p class="text-xs font-bold text-rose-500 uppercase tracking-wider mb-4">Bottom Rated</p>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-rose-50 dark:bg-rose-900/10 flex items-center justify-center font-bold text-xs text-rose-600">1</div>
+<div class="flex-1">
+<p class="text-sm font-bold truncate">BudgetDepot</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-rose-400 fill-1">star</span>
+<span class="text-xs text-slate-500">2.14</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-rose-50 dark:bg-rose-900/10 flex items-center justify-center font-bold text-xs text-rose-600">2</div>
+<div class="flex-1">
+<p class="text-sm font-bold truncate">GlobalShippingCo</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-rose-400 fill-1">star</span>
+<span class="text-xs text-slate-500">2.45</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-rose-50 dark:bg-rose-900/10 flex items-center justify-center font-bold text-xs text-rose-600">3</div>
+<div class="flex-1">
+<p class="text-sm font-bold truncate">MegaSaleOutlet</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-rose-400 fill-1">star</span>
+<span class="text-xs text-slate-500">2.68</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Common Keywords -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Common Keywords</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-lg font-bold">Fast Delivery</span>
+<span class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full text-sm font-medium">Poor Packaging</span>
+<span class="px-5 py-2.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 rounded-full text-xl font-black">Quality</span>
+<span class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full text-sm font-medium">Expensive</span>
+<span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-base font-bold">Responsive Support</span>
+<span class="px-3 py-1.5 bg-rose-50 dark:bg-rose-900/20 text-rose-600 rounded-full text-sm font-medium">Wrong Item</span>
+<span class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-base font-medium">User Friendly</span>
+<span class="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium">Reliable</span>
+<span class="px-4 py-2 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 rounded-full text-lg font-bold">Best Price</span>
+<span class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full text-xs font-medium">Late</span>
+<span class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full text-sm font-medium">Secure Payment</span>
+</div>
+</div>
+</div>
+<!-- Recent Low-Rated Reviews Table -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Recent Low-Rated Reviews</h3>
+<button class="text-primary text-sm font-bold hover:underline">View All Critical Tasks</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-800/50">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Store Name</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Rating</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Review Comment</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Date</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="px-6 py-4 font-bold text-sm">BudgetDepot</td>
+<td class="px-6 py-4">
+<div class="flex text-rose-500">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400 max-w-xs truncate">Item arrived broken and support hasn't replied for 3 days. Extremely disappointed.</td>
+<td class="px-6 py-4 text-xs text-slate-500">2h ago</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="px-3 py-1.5 bg-primary/10 text-primary rounded-lg text-xs font-bold">View</button>
+<button class="px-3 py-1.5 bg-rose-50 text-rose-600 rounded-lg text-xs font-bold">Flag</button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-bold text-sm">GlobalShippingCo</td>
+<td class="px-6 py-4">
+<div class="flex text-rose-500">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400 max-w-xs truncate">Still haven't received my tracking number after a week. Avoid this merchant.</td>
+<td class="px-6 py-4 text-xs text-slate-500">5h ago</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="px-3 py-1.5 bg-primary/10 text-primary rounded-lg text-xs font-bold">View</button>
+<button class="px-3 py-1.5 bg-rose-50 text-rose-600 rounded-lg text-xs font-bold">Flag</button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-bold text-sm">MegaSaleOutlet</td>
+<td class="px-6 py-4">
+<div class="flex text-rose-500">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400 max-w-xs truncate">False advertising. Product looks nothing like the pictures shown on site.</td>
+<td class="px-6 py-4 text-xs text-slate-500">8h ago</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="px-3 py-1.5 bg-primary/10 text-primary rounded-lg text-xs font-bold">View</button>
+<button class="px-3 py-1.5 bg-rose-50 text-rose-600 rounded-lg text-xs font-bold">Flag</button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-bold text-sm">QuickShop Inc</td>
+<td class="px-6 py-4">
+<div class="flex text-rose-500">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400 max-w-xs truncate">Package was missing half of the order. Trying to get a refund now.</td>
+<td class="px-6 py-4 text-xs text-slate-500">1d ago</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="px-3 py-1.5 bg-primary/10 text-primary rounded-lg text-xs font-bold">View</button>
+<button class="px-3 py-1.5 bg-rose-50 text-rose-600 rounded-lg text-xs font-bold">Flag</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</body></html>

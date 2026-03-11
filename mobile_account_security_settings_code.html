@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar - Account Security</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full max-w-md mx-auto flex-col bg-background-light dark:bg-background-dark shadow-2xl overflow-x-hidden pb-24">
+<!-- Header -->
+<div class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between border-b border-primary/10">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center mr-10">Security Settings</h2>
+</div>
+<div class="px-4 py-6 space-y-8">
+<!-- Password Management Section -->
+<section>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight mb-4">Password Management</h2>
+<div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm space-y-4 border border-primary/5">
+<div class="flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal">Change Password</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Last updated 3 months ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+<div class="pt-2">
+<div class="flex gap-6 justify-between items-center mb-2">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Password Strength</p>
+<span class="text-primary text-xs font-bold px-2 py-0.5 bg-primary/10 rounded-full">Secure</span>
+</div>
+<div class="h-2 w-full rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 85%;"></div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-2 italic">Strong passwords use numbers, symbols, and mixed case.</p>
+</div>
+</div>
+</section>
+<!-- Two-Factor Authentication Section -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">Two-Factor Auth</h2>
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-2 py-1 rounded">Recommended</span>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl divide-y divide-primary/5 shadow-sm border border-primary/5 overflow-hidden">
+<!-- SMS Toggle -->
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-4">
+<div class="text-slate-600 dark:text-slate-400 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">sms</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-base font-medium">Text Message (SMS)</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Verification codes via mobile</p>
+</div>
+</div>
+<button class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-200 dark:bg-slate-700 transition-colors duration-200 ease-in-out focus:outline-none">
+<span class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<!-- App Toggle -->
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-4">
+<div class="text-slate-600 dark:text-slate-400 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">phonelink_lock</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-base font-medium">Authenticator App</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Google or Microsoft Auth</p>
+</div>
+</div>
+<button class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-none">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- Security Alerts -->
+<section>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight mb-4">Security Alerts</h2>
+<div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-primary/5 space-y-4">
+<div class="flex items-center justify-between">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">New device logins</p>
+<button class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Suspicious activity</p>
+<button class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- Active Sessions -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">Active Sessions</h2>
+<button class="text-primary text-sm font-semibold hover:underline">See All</button>
+</div>
+<div class="space-y-3">
+<!-- Session 1 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-primary/5 flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">smartphone</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold">iPhone 15 Pro</p>
+<span class="bg-emerald-500/10 text-emerald-600 text-[10px] font-bold px-1.5 py-0.5 rounded">Active Now</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs">San Francisco, USA • PriceRadar App</p>
+</div>
+</div>
+<!-- Session 2 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-primary/5 flex items-center gap-4 opacity-80">
+<div class="text-slate-500 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-700 shrink-0 size-10">
+<span class="material-symbols-outlined">laptop</span>
+</div>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold">MacBook Pro 16"</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">San Francisco, USA • Chrome Browser</p>
+</div>
+<button class="text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">logout</span>
+</button>
+</div>
+<button class="w-full mt-2 py-3 px-4 rounded-xl border-2 border-primary/20 text-primary font-bold text-sm hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">no_accounts</span>
+                        Log out of all other sessions
+                    </button>
+</div>
+</section>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md border-t border-primary/10 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg px-4 pb-6 pt-3 z-50">
+<div class="flex justify-between items-center">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">sell</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Deals</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Alerts</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Profile</p>
+</a>
+</div>
+</div>
+</div>
+</body></html>

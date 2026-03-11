@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar Ad Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen pb-24">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="flex items-center p-4 justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-2xl">radar</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">PriceRadar</h2>
+</div>
+<div class="flex gap-2">
+<button class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary overflow-hidden">
+<img class="size-full object-cover" data-alt="User profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_WrgX7NACWQGVKjUkjQcCj26HIn1zahCXVqn2UYb_jm2zuhKbnb2Ec1k8zSoEkJAk6WC2pAGK5arwQuvVHhREGgbSyw03SwpNudtO5_JxCWq4r5nEzN-bOmbpLK31CQUkv9uiGt09DcdUUugrKPoGEjm-tQvqPbzCOB0VxU8OX3d_9xoE3IyiwG2JvzRBJFgQeyCFRRTvs0H3IBoiwR5F-eDqTbdt4PA1U6uet_QW9GbvJO7m-5cKgZztHAYN5hAbdMISrj2gEctQ"/>
+</button>
+</div>
+</div>
+</header>
+<!-- Global KPIs -->
+<section class="px-4 pt-6">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-500">24h Performance</h3>
+<span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span> Live
+            </span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2 rounded-xl p-4 bg-white dark:bg-slate-900 shadow-sm border border-primary/5">
+<p class="text-slate-500 text-xs font-medium leading-normal">Total Revenue</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">$12,450.00</p>
+<div class="flex items-center gap-1 text-[#07883b] text-xs font-bold">
+<span class="material-symbols-outlined text-xs">arrow_upward</span>
+                    12.5%
+                </div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-4 bg-white dark:bg-slate-900 shadow-sm border border-primary/5">
+<p class="text-slate-500 text-xs font-medium leading-normal">Impressions</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">840.2K</p>
+<div class="flex items-center gap-1 text-[#e73908] text-xs font-bold">
+<span class="material-symbols-outlined text-xs">arrow_downward</span>
+                    2.1%
+                </div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-4 bg-white dark:bg-slate-900 shadow-sm border border-primary/5">
+<p class="text-slate-500 text-xs font-medium leading-normal">Avg. CTR</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">2.4%</p>
+<div class="flex items-center gap-1 text-[#07883b] text-xs font-bold">
+<span class="material-symbols-outlined text-xs">arrow_upward</span>
+                    0.4%
+                </div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-4 bg-white dark:bg-slate-900 shadow-sm border border-primary/5">
+<p class="text-slate-500 text-xs font-medium leading-normal">Active Campaigns</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">18</p>
+<div class="flex items-center gap-1 text-primary text-xs font-bold">
+                    Stable
+                </div>
+</div>
+</div>
+</section>
+<!-- Active Campaigns Tabs -->
+<section class="mt-8 px-4">
+<h2 class="text-lg font-bold mb-4">Campaign Management</h2>
+<div class="flex border-b border-primary/10 gap-6 mb-4">
+<button class="flex flex-col items-center border-b-2 border-primary text-primary pb-3 text-sm font-bold">
+                Active (12)
+            </button>
+<button class="flex flex-col items-center border-b-2 border-transparent text-slate-500 pb-3 text-sm font-medium hover:text-primary/70">
+                Paused (4)
+            </button>
+<button class="flex flex-col items-center border-b-2 border-transparent text-slate-500 pb-3 text-sm font-medium hover:text-primary/70">
+                Scheduled (2)
+            </button>
+</div>
+<!-- Campaign Cards -->
+<div class="space-y-4">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-primary/5 shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Summer Electronics Sale</h4>
+<p class="text-xs text-slate-500">ID: PR-99201 • Tech &amp; Gadgets</p>
+</div>
+<span class="px-2 py-1 rounded bg-[#07883b]/10 text-[#07883b] text-[10px] font-bold uppercase">Active</span>
+</div>
+<div class="grid grid-cols-3 gap-2 bg-background-light dark:bg-background-dark/50 rounded-lg p-3">
+<div class="text-center border-r border-slate-200 dark:border-slate-800">
+<p class="text-[10px] text-slate-500 uppercase">Impr.</p>
+<p class="text-sm font-bold">45.2K</p>
+</div>
+<div class="text-center border-r border-slate-200 dark:border-slate-800">
+<p class="text-[10px] text-slate-500 uppercase">Clicks</p>
+<p class="text-sm font-bold">1.2K</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] text-slate-500 uppercase">Revenue</p>
+<p class="text-sm font-bold text-primary">$1,240</p>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full bg-primary/20 flex items-center justify-center border-2 border-white dark:border-slate-900">
+<span class="material-symbols-outlined text-[14px]">desktop_windows</span>
+</div>
+<div class="size-6 rounded-full bg-primary/20 flex items-center justify-center border-2 border-white dark:border-slate-900">
+<span class="material-symbols-outlined text-[14px]">smartphone</span>
+</div>
+</div>
+<button class="text-primary text-xs font-bold flex items-center gap-1">
+                        Edit Campaign <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-primary/5 shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Home Office Essentials</h4>
+<p class="text-xs text-slate-500">ID: PR-99245 • Productivity</p>
+</div>
+<span class="px-2 py-1 rounded bg-[#e73908]/10 text-[#e73908] text-[10px] font-bold uppercase tracking-tight">Low CTR</span>
+</div>
+<div class="grid grid-cols-3 gap-2 bg-background-light dark:bg-background-dark/50 rounded-lg p-3">
+<div class="text-center border-r border-slate-200 dark:border-slate-800">
+<p class="text-[10px] text-slate-500 uppercase">Impr.</p>
+<p class="text-sm font-bold">12.1K</p>
+</div>
+<div class="text-center border-r border-slate-200 dark:border-slate-800">
+<p class="text-[10px] text-slate-500 uppercase">Clicks</p>
+<p class="text-sm font-bold">84</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] text-slate-500 uppercase">Revenue</p>
+<p class="text-sm font-bold text-primary">$420</p>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400 text-sm">schedule</span>
+<span class="text-[10px] text-slate-500 italic">Ends in 2 days</span>
+</div>
+<button class="text-primary text-xs font-bold flex items-center gap-1">
+                        Optimize <span class="material-symbols-outlined text-sm">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Ad Inventory Health -->
+<section class="mt-8 px-4">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-500">Ad Inventory Health</h3>
+<button class="text-primary text-xs font-bold">Full Report</button>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/5 p-4 shadow-sm overflow-hidden">
+<div class="space-y-5">
+<!-- Slot 1 -->
+<div>
+<div class="flex justify-between text-xs mb-1.5">
+<span class="font-bold">Homepage Hero Banner</span>
+<span class="text-primary font-bold">98% Fill Rate</span>
+</div>
+<div class="w-full bg-primary/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 98%"></div>
+</div>
+</div>
+<!-- Slot 2 -->
+<div>
+<div class="flex justify-between text-xs mb-1.5">
+<span class="font-bold">Search Result Sidebar</span>
+<span class="text-primary font-bold">72% Fill Rate</span>
+</div>
+<div class="w-full bg-primary/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 72%"></div>
+</div>
+</div>
+<!-- Slot 3 -->
+<div>
+<div class="flex justify-between text-xs mb-1.5">
+<span class="font-bold">Product Detail Native</span>
+<span class="text-[#07883b] font-bold">100% Fill Rate</span>
+</div>
+<div class="w-full bg-[#07883b]/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#07883b] h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAB for New Campaign -->
+<button class="fixed bottom-24 right-4 size-14 bg-primary text-white rounded-full shadow-lg shadow-primary/40 flex items-center justify-center z-50">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-background-dark/95 backdrop-blur-lg border-t border-primary/10 z-50 pb-safe">
+<div class="flex justify-around items-center py-3">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined font-fill text-2xl">dashboard</span>
+<span class="text-[10px] font-bold">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">ads_click</span>
+<span class="text-[10px] font-medium">Ads</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">bar_chart_4_bars</span>
+<span class="text-[10px] font-medium">Analytics</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</a>
+</div>
+</nav>
+</body></html>

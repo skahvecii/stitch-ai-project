@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smartphones Price Comparison | PriceRadar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .filled-star { font-variation-settings: 'FILL' 1; color: #fbbf24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-background-dark/80 px-4 md:px-10 py-3">
+<div class="mx-auto flex max-w-7xl items-center justify-between gap-4">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">radar</span>
+<h2 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">PriceRadar</h2>
+</div>
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-300" href="#">Deals</a>
+<a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-300" href="#">Categories</a>
+<a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-300" href="#">Price Alerts</a>
+<a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-300" href="#">Trending</a>
+</nav>
+</div>
+<div class="flex flex-1 items-center justify-end gap-4 max-w-2xl">
+<div class="relative flex-1 group">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="block w-full rounded-lg border-none bg-slate-100 dark:bg-slate-800 py-2 pl-10 pr-3 text-sm placeholder-slate-500 focus:ring-2 focus:ring-primary focus:bg-white transition-all" placeholder="Search for products, brands or models..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center rounded-lg p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-slate-200 bg-cover bg-center border border-slate-300" data-alt="User avatar placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAbwwoxysYT_JL7h1lu9e2B2xMwQtRWA5ES6uijYXzwKiOhRtQ5lZWdPgrWa8qisX252xK0pe6s9NeI7Q0tHmCwHfLj_pjs3DBgscXYceEMtvx9e_kRLQ70q5c0GL9kdZ0Ped-WKDXnip_gkFZPViX0wVLn8utZzlnIjj_YQfXPFGWQqQT-fVZ2vLMYPpXs403WVEPGeOLIzNRD0SbEDO-q-08i6S_dWIJLJBhNwBmVrGlE0s0tS_mdnl-pXs2QrGUWhXcfo1mlCyTd')"></div>
+</div>
+</div>
+</div>
+</header>
+<main class="mx-auto w-full max-w-7xl px-4 py-6 md:px-10">
+<!-- Breadcrumb -->
+<nav class="mb-4 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="font-medium text-slate-900 dark:text-slate-200">Smartphones</span>
+</nav>
+<!-- Page Title -->
+<div class="mb-8">
+<h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white md:text-4xl">Smartphones Price Comparison</h1>
+<p class="mt-2 text-slate-600 dark:text-slate-400">Comparing 1,245 current deals from 85 verified stores.</p>
+</div>
+<div class="flex flex-col gap-8 lg:flex-row">
+<!-- Sidebar Filters -->
+<aside class="w-full shrink-0 lg:w-64">
+<div class="sticky top-24 space-y-8">
+<!-- Reset All -->
+<div class="flex items-center justify-between border-b border-slate-200 pb-4 dark:border-slate-800">
+<h3 class="font-bold text-slate-900 dark:text-white">Filters</h3>
+<button class="text-sm font-semibold text-primary hover:underline">Reset All</button>
+</div>
+<!-- Categories -->
+<section>
+<h4 class="mb-3 text-sm font-bold uppercase tracking-wider text-slate-500">Categories</h4>
+<div class="space-y-2">
+<a class="flex items-center justify-between text-sm font-medium text-primary" href="#">
+<span>Smartphones</span>
+<span class="text-xs font-bold text-primary/60 bg-primary/10 px-1.5 rounded">1,245</span>
+</a>
+<div class="ml-4 space-y-2 border-l border-slate-200 pl-4 dark:border-slate-800">
+<a class="block text-sm text-slate-600 hover:text-primary dark:text-slate-400" href="#">iOS Devices</a>
+<a class="block text-sm text-slate-600 hover:text-primary dark:text-slate-400" href="#">Android Devices</a>
+<a class="block text-sm text-slate-600 hover:text-primary dark:text-slate-400" href="#">Refurbished</a>
+</div>
+</div>
+</section>
+<!-- Brands -->
+<section>
+<h4 class="mb-3 text-sm font-bold uppercase tracking-wider text-slate-500">Brand</h4>
+<div class="max-h-48 space-y-2 overflow-y-auto pr-2 scrollbar-thin">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary transition-all" type="checkbox"/>
+<span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary">Apple</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary transition-all" type="checkbox"/>
+<span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary">Samsung</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary transition-all" type="checkbox"/>
+<span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary">Google</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary transition-all" type="checkbox"/>
+<span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary">Xiaomi</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary transition-all" type="checkbox"/>
+<span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary">OnePlus</span>
+</label>
+</div>
+</section>
+<!-- Price Range -->
+<section>
+<h4 class="mb-3 text-sm font-bold uppercase tracking-wider text-slate-500">Price Range</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<span class="absolute left-2 top-1/2 -translate-y-1/2 text-slate-400 text-xs">$</span>
+<input class="w-full rounded-lg border-slate-200 bg-white py-1.5 pl-5 pr-2 text-sm focus:border-primary focus:ring-0 dark:border-slate-800 dark:bg-slate-900" placeholder="Min" type="number"/>
+</div>
+<span class="text-slate-400">—</span>
+<div class="relative flex-1">
+<span class="absolute left-2 top-1/2 -translate-y-1/2 text-slate-400 text-xs">$</span>
+<input class="w-full rounded-lg border-slate-200 bg-white py-1.5 pl-5 pr-2 text-sm focus:border-primary focus:ring-0 dark:border-slate-800 dark:bg-slate-900" placeholder="Max" type="number"/>
+</div>
+</div>
+<div class="relative h-1.5 w-full rounded-full bg-slate-200 dark:bg-slate-800">
+<div class="absolute inset-y-0 left-[10%] right-[30%] rounded-full bg-primary/40"></div>
+<div class="absolute top-1/2 left-[10%] h-4 w-4 -translate-y-1/2 rounded-full border-2 border-primary bg-white shadow-sm"></div>
+<div class="absolute top-1/2 right-[30%] h-4 w-4 -translate-y-1/2 rounded-full border-2 border-primary bg-white shadow-sm"></div>
+</div>
+</div>
+</section>
+<!-- Rating -->
+<section>
+<h4 class="mb-3 text-sm font-bold uppercase tracking-wider text-slate-500">Rating</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-lg">star</span>
+<span class="material-symbols-outlined filled-star text-lg">star</span>
+<span class="material-symbols-outlined filled-star text-lg">star</span>
+<span class="material-symbols-outlined filled-star text-lg">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+</div>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary">&amp; Up</span>
+</label>
+</div>
+</section>
+<!-- Availability -->
+<section class="space-y-3">
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-primary">In Stock only</span>
+<input class="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-primary">Free Shipping</span>
+<input class="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+</label>
+</section>
+</div>
+</aside>
+<!-- Content Area -->
+<div class="flex-1">
+<!-- Controls Bar -->
+<div class="mb-6 flex flex-col items-center justify-between gap-4 rounded-xl bg-white p-4 shadow-sm dark:bg-slate-900 md:flex-row">
+<div class="text-sm font-medium text-slate-600 dark:text-slate-400">
+                            Showing <span class="text-slate-900 dark:text-white">1–24</span> of 1,245 products
+                        </div>
+<div class="flex items-center gap-3">
+<span class="text-sm text-slate-500">Sort by:</span>
+<select class="rounded-lg border-slate-200 bg-slate-50 py-1.5 pl-3 pr-10 text-sm font-semibold focus:border-primary focus:ring-0 dark:border-slate-800 dark:bg-slate-800">
+<option>Popularity</option>
+<option>Lowest Price</option>
+<option>Highest Price</option>
+<option>User Rating</option>
+<option>Newest First</option>
+</select>
+<div class="flex divide-x divide-slate-200 border-l border-slate-200 pl-3 dark:divide-slate-800 dark:border-slate-800">
+<button class="flex items-center justify-center p-1 text-primary">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="flex items-center justify-center p-1 text-slate-400 hover:text-slate-600">
+<span class="material-symbols-outlined">view_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+<!-- Product Card 1 -->
+<div class="group flex flex-col rounded-xl border border-slate-200 bg-white p-4 transition-all hover:border-primary hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+<div class="relative mb-4 aspect-square overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800">
+<img class="h-full w-full object-contain p-4 mix-blend-multiply group-hover:scale-110 transition-transform" data-alt="iPhone 15 Pro Titanium Blue Front View" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_J9nk3Vr0y3MYUfT1fAzirnpb4p4WLyLI4yAvOhv5SB0xRFZeaAhyINHPC41ww5adGTpQVFxgox48H0ZPR5FQlkvY0hGPFAFthjLe9S7N4MRr033bYVGTzdeUbHDz6oClLtHUcPlqd4wRmfovKDOIvF6KOgBGXlWZLMz5nYTyI675VKx2teXytlqxNKQC9UTyxjcEHnQfH56p01C52mkEdXz7-WbX-IsY2TuCoKdHi3DeBi6aVKg5Y3pWB6iz__vbVixVsBPng-CI"/>
+<button class="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex flex-1 flex-col">
+<span class="mb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Apple</span>
+<h3 class="mb-2 line-clamp-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">iPhone 15 Pro - Titanium Blue, 128GB</h3>
+<div class="mb-3 flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star_half</span>
+</div>
+<span class="text-xs font-medium text-slate-500">(1.2k)</span>
+</div>
+<div class="mt-auto pt-4">
+<p class="text-xs text-slate-500">From 18 stores</p>
+<div class="mt-1 flex items-baseline gap-1">
+<span class="text-xs font-medium text-slate-500">Best:</span>
+<span class="text-xl font-black text-primary">$999.00</span>
+</div>
+<button class="mt-4 w-full rounded-lg bg-primary py-2.5 text-center text-sm font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95">
+                                        Compare Prices
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col rounded-xl border border-slate-200 bg-white p-4 transition-all hover:border-primary hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+<div class="relative mb-4 aspect-square overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800">
+<img class="h-full w-full object-contain p-4 mix-blend-multiply group-hover:scale-110 transition-transform" data-alt="Samsung Galaxy S24 Ultra Phantom Black" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa8HapZKivB08jPg9mPo7qerbI9jmpXZqeJoUYLoAu7eqW3poIAf7bOyngkBYNEg9mSfC-pQBV08ugFPpYmwtmYFsPMCbThyI3VMNwrun76nLjfOaqqDAPqkulgG_KZCzkwuATcYIqd2--QzJKA1D1Sp729xWuETaNg9taYdcCo7ENe0QfESdqf38Hz6z4zBMtikkDaVL8wjPD8xTEu0m-ttt3qlxxJpJljgY40cYTU5sQ22lfVctdysmLzjskKSL-awv7fpR14Zat"/>
+<button class="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute top-2 left-2 rounded bg-green-500 px-1.5 py-0.5 text-[10px] font-bold text-white">LOWEST PRICE</div>
+</div>
+<div class="flex flex-1 flex-col">
+<span class="mb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Samsung</span>
+<h3 class="mb-2 line-clamp-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Galaxy S24 Ultra - 256GB, AI Powered</h3>
+<div class="mb-3 flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<span class="text-xs font-medium text-slate-500">(840)</span>
+</div>
+<div class="mt-auto pt-4">
+<p class="text-xs text-slate-500">From 12 stores</p>
+<div class="mt-1 flex items-baseline gap-1">
+<span class="text-xs font-medium text-slate-500">Best:</span>
+<span class="text-xl font-black text-primary">$1,149.99</span>
+</div>
+<button class="mt-4 w-full rounded-lg bg-primary py-2.5 text-center text-sm font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95">
+                                        Compare Prices
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col rounded-xl border border-slate-200 bg-white p-4 transition-all hover:border-primary hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+<div class="relative mb-4 aspect-square overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800">
+<img class="h-full w-full object-contain p-4 mix-blend-multiply group-hover:scale-110 transition-transform" data-alt="Google Pixel 8 Pro Porcelain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbjZLzuYVmen70m83jYD9h0mTouCXSuu-8Jrg2fOWUSfcYhtcXs2deufc9AzeB9ohUXz9cx9bkmXaEwpmjadelXGrEND5DbtV5BEVUaR-GpTrkHH91I-oIIvcVmE0QU9-lXaNkdxUeSjezhDV1-mHMdoCju5eLTY7mUN2-kURvjtH5s7EfselE59_H72XSP3stsJ7SeEauRvduWHBb57oP9Uk174BsHHcC9ybOsi-XDxie7IzHuOWUH6-PRVaWhKbtWHbjdyMNobjC"/>
+<button class="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex flex-1 flex-col">
+<span class="mb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Google</span>
+<h3 class="mb-2 line-clamp-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Pixel 8 Pro - Unlocked, porcelain</h3>
+<div class="mb-3 flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<span class="text-xs font-medium text-slate-500">(215)</span>
+</div>
+<div class="mt-auto pt-4">
+<p class="text-xs text-slate-500">From 24 stores</p>
+<div class="mt-1 flex items-baseline gap-1">
+<span class="text-xs font-medium text-slate-500">Best:</span>
+<span class="text-xl font-black text-primary">$799.00</span>
+</div>
+<button class="mt-4 w-full rounded-lg bg-primary py-2.5 text-center text-sm font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95">
+                                        Compare Prices
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col rounded-xl border border-slate-200 bg-white p-4 transition-all hover:border-primary hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+<div class="relative mb-4 aspect-square overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800">
+<img class="h-full w-full object-contain p-4 mix-blend-multiply group-hover:scale-110 transition-transform" data-alt="Apple iPhone 15 Pink Color" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8bDErpqTM4YmBI-1rTFrimPI7xH33mmz9UAYSN5XZ-myJa9XDTFnlitdEvnm55qkb1HaEdRRA2I5hEgqdz0PXpJENtsatMOxhWP4D4omO9gBHsBUFO1ldnIj3D3jcOZ93WdyybT8lKMKLnSLDjm0WHPTTjB76DM0USo6XAloToddi1IhuBi2nGsP0WVC8TVeyzsWWcFb4lX1nowjqp7Fjo6adsmfFhDBvfaAggj6Jmm6cOgb23ukdsilEKrDHmjTawARdCVtVD-vo"/>
+<button class="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex flex-1 flex-col">
+<span class="mb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Apple</span>
+<h3 class="mb-2 line-clamp-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">iPhone 15 - 128GB, Pink Edition</h3>
+<div class="mb-3 flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+</div>
+<span class="text-xs font-medium text-slate-500">(2.4k)</span>
+</div>
+<div class="mt-auto pt-4">
+<p class="text-xs text-slate-500">From 32 stores</p>
+<div class="mt-1 flex items-baseline gap-1">
+<span class="text-xs font-medium text-slate-500">Best:</span>
+<span class="text-xl font-black text-primary">$729.99</span>
+</div>
+<button class="mt-4 w-full rounded-lg bg-primary py-2.5 text-center text-sm font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95">
+                                        Compare Prices
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Repeat some cards for grid visualization -->
+<div class="group flex flex-col rounded-xl border border-slate-200 bg-white p-4 transition-all hover:border-primary hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+<div class="relative mb-4 aspect-square overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800">
+<img class="h-full w-full object-contain p-4 mix-blend-multiply group-hover:scale-110 transition-transform" data-alt="Xiaomi 14 Ultra Green" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZUtLY74Fi70THDBxxgLYmReSZ-uRY3qqaGee9Hvv_yYKdlLEzL4ow1ZRoTVh60RpVqb9CUZwPTfgV1ReMKnGZ2--4FML4MkSvFlbpBVWuQCRnfnhZI8ZP4zjLCZ2hpP4yPewCDOf8Akv_CPvdLVPzTnDPmgTxdPCcfv3OWvGMwkwyTS7_-N87yVvay1ll96CyTFt1KFZgDRlGI353YqL4L-qMT5Q84OEJwPGpO3byFPbeTZ6VfIhmrKVnrV2YIR9jlHTGOwQoNRW8"/>
+<button class="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute top-2 left-2 rounded bg-primary px-1.5 py-0.5 text-[10px] font-bold text-white">NEW ARRIVAL</div>
+</div>
+<div class="flex flex-1 flex-col">
+<span class="mb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Xiaomi</span>
+<h3 class="mb-2 line-clamp-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Xiaomi 14 Ultra - Leica Camera, 512GB</h3>
+<div class="mb-3 flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<span class="text-xs font-medium text-slate-500">(128)</span>
+</div>
+<div class="mt-auto pt-4">
+<p class="text-xs text-slate-500">From 5 stores</p>
+<div class="mt-1 flex items-baseline gap-1">
+<span class="text-xs font-medium text-slate-500">Best:</span>
+<span class="text-xl font-black text-primary">$1,299.00</span>
+</div>
+<button class="mt-4 w-full rounded-lg bg-primary py-2.5 text-center text-sm font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95">
+                                        Compare Prices
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Card with Trending Badge -->
+<div class="group flex flex-col rounded-xl border border-slate-200 bg-white p-4 transition-all hover:border-primary hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+<div class="relative mb-4 aspect-square overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800">
+<img class="h-full w-full object-contain p-4 mix-blend-multiply group-hover:scale-110 transition-transform" data-alt="Nothing Phone (2) Dark Gray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD897lzGbsGKGAOvv_9Msqbs1QhvAskdZsODM9NWxQDFCtH3CZQR55lv1rV5bu4lQsriI0rc3cTzngSnoz7fGUOZ4Xq-0g_yAji8tPPfwetViZxidVr9fGN3f9oggkBhAr2e6DWRyAaPXQlSbvVV4C0UuiyjLETVPl76e5qFl2gx3JW26NhHALXaDm4N0p_0z9pDO-n5R1v1Ppj_sAUnfcUkjJo2XbE77AjguPFt_ebxdEMcfh_Ml3TvITrkCc4V8V2kHVMDdPCq1XJ"/>
+<button class="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute top-2 left-2 rounded bg-orange-500 px-1.5 py-0.5 text-[10px] font-bold text-white">TRENDING</div>
+</div>
+<div class="flex flex-1 flex-col">
+<span class="mb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Nothing</span>
+<h3 class="mb-2 line-clamp-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Nothing Phone (2) - 256GB, Glyph Interface</h3>
+<div class="mb-3 flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star_half</span>
+</div>
+<span class="text-xs font-medium text-slate-500">(542)</span>
+</div>
+<div class="mt-auto pt-4">
+<p class="text-xs text-slate-500">From 15 stores</p>
+<div class="mt-1 flex items-baseline gap-1">
+<span class="text-xs font-medium text-slate-500">Best:</span>
+<span class="text-xl font-black text-primary">$599.00</span>
+</div>
+<button class="mt-4 w-full rounded-lg bg-primary py-2.5 text-center text-sm font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95">
+                                        Compare Prices
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Card with Rating Badge -->
+<div class="group flex flex-col rounded-xl border border-slate-200 bg-white p-4 transition-all hover:border-primary hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+<div class="relative mb-4 aspect-square overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800">
+<img class="h-full w-full object-contain p-4 mix-blend-multiply group-hover:scale-110 transition-transform" data-alt="Google Pixel 7a Sea Blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXyMqWKH8kOJrw6fhgACD1JkauqVvPp8Uwn0ri5VWcPxml5RN0oq8SPu-9VHL-dDcxZzTmKQmCVaFaS-LvaG_WDGDo1nfWtG7_Wdz9yRQvqpBi1Qt5FZl4qF3mSCzFcxhPTYYRYiU-jFxpxzku0L7XyQGIRiVNJT1B4AAjxzE5lroeZjMaX-a8neY8QO_6nwvF_sLYGh4_kUQskIRjqyffGcPzrJAUHVHz3-SE4wtqz7-gp2-1apWVRn-yyC_cv2zSl26Q_GNx6DKm"/>
+<button class="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex flex-1 flex-col">
+<span class="mb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Google</span>
+<h3 class="mb-2 line-clamp-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Pixel 7a - 128GB, Best Mid-range</h3>
+<div class="mb-3 flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+</div>
+<span class="text-xs font-medium text-slate-500">(1.1k)</span>
+</div>
+<div class="mt-auto pt-4">
+<p class="text-xs text-slate-500">From 45 stores</p>
+<div class="mt-1 flex items-baseline gap-1">
+<span class="text-xs font-medium text-slate-500">Best:</span>
+<span class="text-xl font-black text-primary">$399.00</span>
+</div>
+<button class="mt-4 w-full rounded-lg bg-primary py-2.5 text-center text-sm font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95">
+                                        Compare Prices
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="group flex flex-col rounded-xl border border-slate-200 bg-white p-4 transition-all hover:border-primary hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+<div class="relative mb-4 aspect-square overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800">
+<img class="h-full w-full object-contain p-4 mix-blend-multiply group-hover:scale-110 transition-transform" data-alt="Samsung Galaxy Z Flip 5 Mint" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIeEynvbG1VFYn0_XAf4kEPtLJ5QL9eDDauLxdYCvstbTHwMXM5_XTog6kmXvJq75Qctme0BpXVwXjpqxotmEvo9-Monju5icN23IZ2Rz0zoCRJSGsMV8X4_TLOux8Z1FN1wu_KWrqW0a8aYLCiMwculHE-clAS9KVXtrsfl1AHcHDe3_s0kPCgZ8W-F_eQLIeSeL0sSouK9FLQygBKEwEFf9jKjryCuFIKwf-1A7Pj9HL-57RcsiRcb59hmH_dv7tg4NtshI0LrCm"/>
+<button class="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex flex-1 flex-col">
+<span class="mb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Samsung</span>
+<h3 class="mb-2 line-clamp-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Galaxy Z Flip 5 - 256GB, Mint Green</h3>
+<div class="mb-3 flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<span class="text-xs font-medium text-slate-500">(365)</span>
+</div>
+<div class="mt-auto pt-4">
+<p class="text-xs text-slate-500">From 11 stores</p>
+<div class="mt-1 flex items-baseline gap-1">
+<span class="text-xs font-medium text-slate-500">Best:</span>
+<span class="text-xl font-black text-primary">$849.00</span>
+</div>
+<button class="mt-4 w-full rounded-lg bg-primary py-2.5 text-center text-sm font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95">
+                                        Compare Prices
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex items-center justify-center gap-2">
+<button class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="h-10 w-10 rounded-lg bg-primary font-bold text-white">1</button>
+<button class="h-10 w-10 rounded-lg border border-slate-200 font-bold text-slate-600 hover:bg-slate-50 dark:border-slate-800 dark:text-slate-400 dark:hover:bg-slate-800">2</button>
+<button class="h-10 w-10 rounded-lg border border-slate-200 font-bold text-slate-600 hover:bg-slate-50 dark:border-slate-800 dark:text-slate-400 dark:hover:bg-slate-800">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="h-10 w-10 rounded-lg border border-slate-200 font-bold text-slate-600 hover:bg-slate-50 dark:border-slate-800 dark:text-slate-400 dark:hover:bg-slate-800">52</button>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-20 border-t border-slate-200 bg-white px-4 py-12 dark:border-slate-800 dark:bg-background-dark">
+<div class="mx-auto max-w-7xl">
+<div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
+<div class="col-span-2 lg:col-span-1">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-2xl font-bold">radar</span>
+<h2 class="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white">PriceRadar</h2>
+</div>
+<p class="mt-4 text-sm text-slate-500 dark:text-slate-400">Smart comparison for smart shoppers. We track millions of products across thousands of stores daily.</p>
+</div>
+<div>
+<h4 class="mb-4 text-sm font-bold text-slate-900 dark:text-white">Product</h4>
+<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Download App</a></li>
+<li><a class="hover:text-primary" href="#">Browser Extension</a></li>
+<li><a class="hover:text-primary" href="#">Price Alerts</a></li>
+<li><a class="hover:text-primary" href="#">Deal Search</a></li>
+</ul>
+</div>
+<div>
+<h4 class="mb-4 text-sm font-bold text-slate-900 dark:text-white">Company</h4>
+<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">About Us</a></li>
+<li><a class="hover:text-primary" href="#">Press Room</a></li>
+<li><a class="hover:text-primary" href="#">Careers</a></li>
+<li><a class="hover:text-primary" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h4 class="mb-4 text-sm font-bold text-slate-900 dark:text-white">Support</h4>
+<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Help Center</a></li>
+<li><a class="hover:text-primary" href="#">Safety Trust</a></li>
+<li><a class="hover:text-primary" href="#">Contact Support</a></li>
+<li><a class="hover:text-primary" href="#">Merchant Login</a></li>
+</ul>
+</div>
+<div class="hidden lg:block">
+<h4 class="mb-4 text-sm font-bold text-slate-900 dark:text-white">Connect</h4>
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</div>
+<div class="mt-12 flex flex-col items-center justify-between border-t border-slate-100 pt-8 dark:border-slate-800 md:flex-row">
+<p class="text-xs text-slate-400">© 2024 PriceRadar Comparison Service. All rights reserved.</p>
+<div class="mt-4 flex gap-6 text-xs text-slate-400 md:mt-0">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Use</a>
+<a class="hover:text-primary" href="#">Cookie Settings</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

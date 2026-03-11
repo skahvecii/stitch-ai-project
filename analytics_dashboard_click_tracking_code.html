@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-size: 24px; vertical-align: middle; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="flex min-h-screen overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="w-64 border-r border-primary/10 bg-white dark:bg-slate-900 flex flex-col shrink-0">
+<div class="p-6 flex flex-col gap-8 h-full">
+<div class="flex items-center gap-3">
+<div class="bg-primary rounded-lg p-1.5 text-white">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<div>
+<h1 class="text-primary text-lg font-bold leading-tight">PriceRadar</h1>
+<p class="text-slate-500 text-xs font-medium">Admin Console</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 flex-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-sm font-medium">Stores</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Users</span>
+</a>
+<div class="mt-auto">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</div>
+</nav>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- Header -->
+<header class="h-16 border-b border-primary/10 bg-white dark:bg-slate-900 px-8 flex items-center justify-between sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<h2 class="text-xl font-bold">Analytics Dashboard</h2>
+<div class="h-6 w-[1px] bg-primary/20"></div>
+<div class="flex items-center gap-2 text-sm text-slate-500">
+<span class="material-symbols-outlined !text-lg">calendar_today</span>
+<span>Oct 1, 2023 - Oct 31, 2023</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex gap-1 bg-background-light dark:bg-slate-800 p-1 rounded-lg">
+<button class="px-3 py-1 text-xs font-semibold rounded bg-white dark:bg-slate-700 shadow-sm">Last 30 Days</button>
+<button class="px-3 py-1 text-xs font-semibold text-slate-500 hover:text-primary">Last 7 Days</button>
+<button class="px-3 py-1 text-xs font-semibold text-slate-500 hover:text-primary">Custom</button>
+</div>
+<button class="p-2 text-slate-500 hover:bg-primary/5 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="size-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center overflow-hidden">
+<img alt="User Avatar" class="size-full" data-alt="Admin user profile illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd5CK7feprVAN1Wmsgcvaqme8SXaZC68neGMIspYgmnHpkMjwB1yLlW3bL_4tp1Dm5xyzoEz_K5bTqFQAVR_JhRKPDKrxPIJyA_SZDYgXF1BxvJD2Ng0LcXWGJSVNioYFtpFmrxoFl7deF4eHK6BKjsj_LqTa8UoZnLUCGkJYbo7NSLZoRyAQnHDbubwAvRYziLfrUWiaCVYyi13Tg0aUle7tRCsBNY8a9-PKZGRXwHWTqtsV_HyU-IK7VfcTDbT4tUaUE-jf7zcRq"/>
+</div>
+</div>
+</header>
+<div class="p-8 flex flex-col gap-8 max-w-[1400px]">
+<!-- KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium text-slate-500">Total Clicks</span>
+<div class="size-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined !text-xl">ads_click</span>
+</div>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-bold">124.5k</span>
+<span class="text-emerald-500 text-sm font-bold pb-1 flex items-center">
+<span class="material-symbols-outlined !text-sm">trending_up</span> 12.4%
+                        </span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium text-slate-500">Average CTR</span>
+<div class="size-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined !text-xl">percent</span>
+</div>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-bold">3.2%</span>
+<span class="text-rose-500 text-sm font-bold pb-1 flex items-center">
+<span class="material-symbols-outlined !text-sm">trending_down</span> 0.5%
+                        </span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium text-slate-500">Affiliate Revenue</span>
+<div class="size-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center">
+<span class="material-symbols-outlined !text-xl">payments</span>
+</div>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-bold">$12,450.00</span>
+<span class="text-emerald-500 text-sm font-bold pb-1 flex items-center">
+<span class="material-symbols-outlined !text-sm">trending_up</span> 8.2%
+                        </span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium text-slate-500">CPC Earnings</span>
+<div class="size-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined !text-xl">monetization_on</span>
+</div>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-bold">$4,120.00</span>
+<span class="text-emerald-500 text-sm font-bold pb-1 flex items-center">
+<span class="material-symbols-outlined !text-sm">trending_up</span> 15.1%
+                        </span>
+</div>
+</div>
+</div>
+<!-- Main Charts Row -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Line Chart: Daily Clicks vs Revenue -->
+<div class="lg:col-span-2 bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-lg">Daily Clicks vs. Revenue</h3>
+<div class="flex gap-4">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-slate-500">
+<div class="size-2 rounded-full bg-primary"></div> Clicks
+                            </div>
+<div class="flex items-center gap-1.5 text-xs font-semibold text-slate-500">
+<div class="size-2 rounded-full bg-emerald-500"></div> Revenue
+                            </div>
+</div>
+</div>
+<div class="h-64 flex items-end gap-2 relative">
+<!-- Simulated Chart Content -->
+<div class="absolute inset-0 flex flex-col justify-between opacity-10 pointer-events-none">
+<div class="border-t border-slate-900 dark:border-slate-100"></div>
+<div class="border-t border-slate-900 dark:border-slate-100"></div>
+<div class="border-t border-slate-900 dark:border-slate-100"></div>
+<div class="border-t border-slate-900 dark:border-slate-100"></div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[40%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[60%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[45%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[80%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[90%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[70%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[55%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[65%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[85%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[40%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[60%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[75%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[95%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[50%]"></div>
+</div>
+</div>
+<!-- Monetization Mix Pie Chart -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm flex flex-col">
+<h3 class="font-bold text-lg mb-6">Monetization Mix</h3>
+<div class="flex-1 flex flex-col items-center justify-center gap-6">
+<div class="size-40 rounded-full border-[12px] border-primary flex items-center justify-center relative">
+<div class="absolute inset-0 rounded-full border-[12px] border-emerald-500" style="clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 50%);"></div>
+<div class="absolute inset-0 rounded-full border-[12px] border-amber-400" style="clip-path: polygon(50% 50%, 100% 50%, 100% 80%, 50% 80%);"></div>
+<div class="text-center">
+<p class="text-2xl font-bold">100%</p>
+<p class="text-[10px] text-slate-500 font-medium">TOTAL SHARE</p>
+</div>
+</div>
+<div class="w-full flex flex-col gap-2">
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2">
+<div class="size-3 rounded-full bg-primary"></div>
+<span class="text-slate-600 dark:text-slate-400">Affiliate</span>
+</div>
+<span class="font-bold">65%</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2">
+<div class="size-3 rounded-full bg-emerald-500"></div>
+<span class="text-slate-600 dark:text-slate-400">CPC Earnings</span>
+</div>
+<span class="font-bold">25%</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2">
+<div class="size-3 rounded-full bg-amber-400"></div>
+<span class="text-slate-600 dark:text-slate-400">Sponsored</span>
+</div>
+<span class="font-bold">10%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Row: Table & Peak Hours -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Top Performing Stores Table -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/10 shadow-sm overflow-hidden flex flex-col">
+<div class="p-6 border-b border-primary/10">
+<h3 class="font-bold text-lg">Top Performing Stores</h3>
+</div>
+<div class="flex-1 overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-background-light dark:bg-slate-800/50">
+<tr>
+<th class="px-6 py-3 text-xs font-bold text-slate-500 uppercase">Store</th>
+<th class="px-6 py-3 text-xs font-bold text-slate-500 uppercase">Clicks</th>
+<th class="px-6 py-3 text-xs font-bold text-slate-500 uppercase">Conv. Rate</th>
+<th class="px-6 py-3 text-xs font-bold text-slate-500 uppercase">Revenue</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/5">
+<tr>
+<td class="px-6 py-4 flex items-center gap-3">
+<div class="size-8 rounded bg-slate-100 flex items-center justify-center p-1">
+<img alt="Amazon Logo" class="size-full" data-alt="Amazon store logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnSzGv8vWLs07ZBQTJRBUTKSoFPX6zXzziSK4bamZrdj4iMUdEeCcf_TR5wGM52LLfESTNQUlfrmqB-NOL23JvVydaR6Oqb95i2xHJJcgCEP7YyIEYNf3wwhkQwfJLN68DIBQjw50S2mVUD6bZF7n-BB-c_WRgQZJMANztwn9MjxAtYSgKW3f2cZLMtJuEMBRy8DLYGDaEwkYqtSLbMsoaQqc2SMclRspJXAbjc9OR3k6ykRIOIiNux9SO87rAp6PtA-H-cxAjcrGa"/>
+</div>
+<span class="font-medium text-sm">Amazon</span>
+</td>
+<td class="px-6 py-4 text-sm">45.2k</td>
+<td class="px-6 py-4 text-sm font-medium text-emerald-500">4.8%</td>
+<td class="px-6 py-4 text-sm font-bold">$4,820</td>
+</tr>
+<tr>
+<td class="px-6 py-4 flex items-center gap-3">
+<div class="size-8 rounded bg-slate-100 flex items-center justify-center p-1">
+<img alt="Walmart Logo" class="size-full" data-alt="Walmart store logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk6vqLa38_AUEh_a5BJSUv_5Sc6_9G3OT84iU3nmUUNTuNUX4krlPHPlFjLwYDvOBwuPyRm0wbOswYRmINIYrQXOEUK7LNegbacW3ceq4FgHUvwe2bwMi4ZL6Wjrk6dvEoMkH2zghRBO2mFjAHjiOgQSdomgSBsy7qtCMxUGMTqZJbabGNAgZ-j2AEUPh4b7PlD3P4FvwpsESCYUlq3J-viJ4Sff2QRg6l8tsXU9q_aEjIriB32UzdGjb3tBydjWGZubWLqLpWBvY7"/>
+</div>
+<span class="font-medium text-sm">Walmart</span>
+</td>
+<td class="px-6 py-4 text-sm">28.1k</td>
+<td class="px-6 py-4 text-sm font-medium text-emerald-500">3.2%</td>
+<td class="px-6 py-4 text-sm font-bold">$3,150</td>
+</tr>
+<tr>
+<td class="px-6 py-4 flex items-center gap-3">
+<div class="size-8 rounded bg-slate-100 flex items-center justify-center p-1">
+<img alt="BestBuy Logo" class="size-full" data-alt="Best Buy store logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMYI41vsdxeTgzT_jcoGTUJqK5J2dUifj21kD3RI_CCmj7TvtK7ERo3SGJAVUQOI5hl3xKazVdZagcok9o3kSVw5PYYFUAdzOFobGzlkKn3Rg7F9COrEQyGeK1W9zCKEUCiF2Nreu4Do5VBUqKjQQr7RX1iF3uuTLCqJaKM6Vhe7D1fXCAT7xSxtArU_h0mqgHoXTZcmfeApu3vpS2Uk_vHWBm7CSzLLsXSSQG8wVRV4Do4m6OpK7M2g0_B_VJ0gAiEoWUJI0GLov7"/>
+</div>
+<span class="font-medium text-sm">Best Buy</span>
+</td>
+<td class="px-6 py-4 text-sm">12.5k</td>
+<td class="px-6 py-4 text-sm font-medium text-amber-500">1.9%</td>
+<td class="px-6 py-4 text-sm font-bold">$1,240</td>
+</tr>
+<tr>
+<td class="px-6 py-4 flex items-center gap-3">
+<div class="size-8 rounded bg-slate-100 flex items-center justify-center p-1">
+<img alt="Target Logo" class="size-full" data-alt="Target store logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANYfH46vH7cKDLT48RyE0gRhyBP50oscMHQ643NQ4sSZjd9S3RlY-dUHYevMFgukTPaQhq4GRSoAEKz2gpeAIUD3TT4_J2LeHfw8ykM34y53iKZt8IdXYCT2PjNH2VrewSjOmLmyy1YU8l7dismcz7cQbB2ng129z5zLHjQsL96fxo6EVo7dsYy3irCwT-SRtmMF1Xl_ez18MmESs_PFCVKQ6G5YVXzmeW0N3GJUQ4qo1KYVw5l3WuiJzor0YcmDepxCkrkGWQjL9a"/>
+</div>
+<span class="font-medium text-sm">Target</span>
+</td>
+<td class="px-6 py-4 text-sm">9.8k</td>
+<td class="px-6 py-4 text-sm font-medium text-rose-500">1.1%</td>
+<td class="px-6 py-4 text-sm font-bold">$945</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Peak Hours Bar Chart -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm flex flex-col">
+<h3 class="font-bold text-lg mb-6">Peak User Activity Hours</h3>
+<div class="flex-1 flex items-end gap-1.5 min-h-[200px]">
+<!-- 24 simulated bars for 24 hours -->
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors rounded-t h-[20%]" title="12 AM"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors rounded-t h-[15%]" title="1 AM"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors rounded-t h-[10%]" title="2 AM"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors rounded-t h-[8%]" title="3 AM"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors rounded-t h-[5%]" title="4 AM"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors rounded-t h-[12%]" title="5 AM"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors rounded-t h-[25%]" title="6 AM"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors rounded-t h-[45%]" title="7 AM"></div>
+<div class="flex-1 bg-primary/40 hover:bg-primary transition-colors rounded-t h-[65%]" title="8 AM"></div>
+<div class="flex-1 bg-primary/40 hover:bg-primary transition-colors rounded-t h-[80%]" title="9 AM"></div>
+<div class="flex-1 bg-primary hover:bg-primary transition-colors rounded-t h-[95%]" title="10 AM"></div>
+<div class="flex-1 bg-primary hover:bg-primary transition-colors rounded-t h-[85%]" title="11 AM"></div>
+<div class="flex-1 bg-primary hover:bg-primary transition-colors rounded-t h-[75%]" title="12 PM"></div>
+<div class="flex-1 bg-primary/40 hover:bg-primary transition-colors rounded-t h-[65%]" title="1 PM"></div>
+<div class="flex-1 bg-primary/40 hover:bg-primary transition-colors rounded-t h-[60%]" title="2 PM"></div>
+<div class="flex-1 bg-primary/40 hover:bg-primary transition-colors rounded-t h-[70%]" title="3 PM"></div>
+<div class="flex-1 bg-primary/40 hover:bg-primary transition-colors rounded-t h-[85%]" title="4 PM"></div>
+<div class="flex-1 bg-primary hover:bg-primary transition-colors rounded-t h-[100%]" title="5 PM"></div>
+<div class="flex-1 bg-primary hover:bg-primary transition-colors rounded-t h-[90%]" title="6 PM"></div>
+<div class="flex-1 bg-primary hover:bg-primary transition-colors rounded-t h-[75%]" title="7 PM"></div>
+<div class="flex-1 bg-primary/40 hover:bg-primary transition-colors rounded-t h-[55%]" title="8 PM"></div>
+<div class="flex-1 bg-primary/40 hover:bg-primary transition-colors rounded-t h-[40%]" title="9 PM"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors rounded-t h-[30%]" title="10 PM"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors rounded-t h-[25%]" title="11 PM"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] text-slate-500 font-bold">
+<span>12 AM</span>
+<span>6 AM</span>
+<span>12 PM</span>
+<span>6 PM</span>
+<span>11 PM</span>
+</div>
+</div>
+</div>
+<!-- Final Row: Products & Traffic Sources -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8">
+<!-- Most Clicked Products -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<h3 class="font-bold text-lg mb-4">Most Clicked Products</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 p-3 hover:bg-primary/5 rounded-lg transition-colors border border-transparent hover:border-primary/10">
+<div class="size-12 rounded-lg bg-slate-100 overflow-hidden shrink-0">
+<img alt="Product 1" class="size-full object-cover" data-alt="Sony WH-1000XM5 headphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEWIDyQF6fijOk0eBOn5tpna1vDxuwZeSqoeNIYTwlFm42JwxkeTkYCKqvQ1mRiPdN3P_0U5zw1pO2yFYpxCavYgVdRi8DORQGCiqAMMpazTydpaBoUSxjB4RoJ6SzoZd1dx7EmmFeS-zeto3varByCHEqcjSuFsamr36ujat3O-ETsiNj8WIz5dGWXx7wRA5rCQvTo_q2WJmSmMNw1rcnomxQuPzGHbpNegcQ54rVFWO6FTGy_oQgcnBJiiKW27N5O6qXDHs_Jzv9"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold truncate">Sony WH-1000XM5 Headphones</h4>
+<p class="text-xs text-slate-500 font-medium">Electronics</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold">8,245</p>
+<p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Clicks</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 hover:bg-primary/5 rounded-lg transition-colors border border-transparent hover:border-primary/10">
+<div class="size-12 rounded-lg bg-slate-100 overflow-hidden shrink-0">
+<img alt="Product 2" class="size-full object-cover" data-alt="Apple MacBook Pro M3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtH_DpQs6aIvtOmKOWJ2uBVDBj6a2iX3A1fBR78SAVAtNWsdseqkHCjLjyQUAtYkZq8bYHzjSa990_SviTuBpluswyTvrREFyGGUMKEk-FYKOS8MphELz-xbyFI9MESwVgUOh39xQgG2h45ETtkOkk-NC2fu8etq250Le3vUXcqwmDwMLpLKopDeEz49o4SKVujWvM5TLwmUPS43GtOy2pC2GpMtAOfnnS0-LJ2cShav3iWbspEluMsNMc2cysOapme85PZ1FGgZb5"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold truncate">Apple MacBook Pro M3</h4>
+<p class="text-xs text-slate-500 font-medium">Computing</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold">6,120</p>
+<p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Clicks</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 hover:bg-primary/5 rounded-lg transition-colors border border-transparent hover:border-primary/10">
+<div class="size-12 rounded-lg bg-slate-100 overflow-hidden shrink-0">
+<img alt="Product 3" class="size-full object-cover" data-alt="Ninja Air Fryer AF101" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcvOUpVzOtyPmnwXdhWQ_Qz0pg1ksIE_sxI5P84WrHGqbXOjzOMo33hay7mdl3aWiAGnVsgAfBtKta9JwisKT3JOnQsz9nkeZrS2s6XuAVi23OkOcKutE0mG-5mGC76hiIO8Flv9cFiqaNpND88Ags2MFOjdVRnmr1fQ8c8wPh8GFR3A47ygstJO8VtNk7Nd6dnx5AfvZWNr2yu4357QL9-ojXpiAe-jxciHnYlrgkxlwu04-s8mjvSZTkhqbHlolxK1voBXdX5y_K"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold truncate">Ninja Air Fryer AF101</h4>
+<p class="text-xs text-slate-500 font-medium">Home &amp; Kitchen</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold">5,890</p>
+<p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Clicks</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Traffic Sources -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<h3 class="font-bold text-lg mb-4">Traffic Sources</h3>
+<div class="flex flex-col gap-6">
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium text-slate-600 dark:text-slate-400">Organic Search</span>
+<span class="font-bold">54,230 (43%)</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[43%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium text-slate-600 dark:text-slate-400">Email Alerts</span>
+<span class="font-bold">38,120 (31%)</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary/70 rounded-full w-[31%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium text-slate-600 dark:text-slate-400">Direct Traffic</span>
+<span class="font-bold">19,800 (16%)</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary/50 rounded-full w-[16%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium text-slate-600 dark:text-slate-400">Social Media</span>
+<span class="font-bold">12,350 (10%)</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary/30 rounded-full w-[10%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

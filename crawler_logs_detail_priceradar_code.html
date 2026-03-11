@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar Crawler Logs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="layout-container flex h-full flex-col">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="size-8 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">PriceRadar</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="flex flex-col min-w-40 h-10 max-w-sm w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-500 flex border-none bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-slate-100 focus:outline-0 focus:ring-0 border-none bg-slate-100 dark:bg-slate-800 focus:border-none h-full placeholder:text-slate-500 px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal" placeholder="Search logs by store or ID..." value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2.5 hover:bg-slate-200 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2.5 hover:bg-slate-200 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+</button>
+</div>
+<div class="bg-primary/10 border border-primary/20 rounded-full size-10 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2FByKfIp7Cyg41I5k9M73bUtGxidROzpqSr8qG1GBjq3AD2ccF0a3Stq2zZWS8hCfYJD8v93QPopKboR9AcYIdpuvR3ybWx9wKkB_caODaj0TFpMbTY9t9_7bdQSIQs8gUcGVQ4g82CPefqzaMPoCopAgVRgkTc5DpGLsEsQaWkqmkwsRPi5sLL4A4WZImYSJujyrRT0QnJLyhmyNPXE6VdRNZfkQvKLNQhiHuG8RieWG0ONe5qEJzy93V1z9laEXtrSpvMoYV5rH"/>
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark p-6 flex flex-col gap-8 sticky top-16 h-[calc(100vh-64px)] overflow-y-auto">
+<div>
+<h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">Main Menu</h3>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1">terminal</span>
+<span class="text-sm font-semibold">Crawler Logs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+<span class="text-sm font-medium">Stores</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined text-[20px]">sync_alt</span>
+<span class="text-sm font-medium">Product Mapping</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<div>
+<h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">Log Filtering</h3>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-medium text-slate-500 dark:text-slate-400">Store</label>
+<select class="form-select rounded-lg border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-sm focus:border-primary focus:ring-primary">
+<option>All Stores</option>
+<option>Amazon US</option>
+<option>eBay UK</option>
+<option>Walmart</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-medium text-slate-500 dark:text-slate-400">Status</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1 rounded-full bg-primary text-white text-xs font-medium">All</button>
+<button class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-medium border border-transparent hover:border-slate-200">Success</button>
+<button class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-medium border border-transparent hover:border-slate-200">Failed</button>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-medium text-slate-500 dark:text-slate-400">Date Range</label>
+<select class="form-select rounded-lg border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-sm focus:border-primary focus:ring-primary">
+<option>Last 24 Hours</option>
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+<option>Custom Range</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-medium text-slate-500 dark:text-slate-400">Collection Type</label>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary border-slate-300 dark:border-slate-700 bg-transparent" type="checkbox"/>
+<span>Crawler</span>
+</label>
+<label class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary border-slate-300 dark:border-slate-700 bg-transparent" type="checkbox"/>
+<span>API Sync</span>
+</label>
+<label class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary border-slate-300 dark:border-slate-700 bg-transparent" type="checkbox"/>
+<span>Feed Processor</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="max-w-6xl mx-auto space-y-8">
+<!-- Dashboard Summary -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">sync</span>
+</div>
+<span class="text-emerald-500 text-xs font-bold bg-emerald-500/10 px-2 py-1 rounded">+12.5%</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Syncs (24h)</p>
+<h4 class="text-2xl font-bold mt-1">1,284</h4>
+</div>
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-500">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<span class="text-rose-500 text-xs font-bold bg-rose-500/10 px-2 py-1 rounded">-0.5%</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Success Rate</p>
+<h4 class="text-2xl font-bold mt-1">98.2%</h4>
+</div>
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-amber-500/10 rounded-lg text-amber-500">
+<span class="material-symbols-outlined">timer</span>
+</div>
+<span class="text-emerald-500 text-xs font-bold bg-emerald-500/10 px-2 py-1 rounded">-2.1s</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Average Duration</p>
+<h4 class="text-2xl font-bold mt-1">45.8s</h4>
+</div>
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-rose-500/10 rounded-lg text-rose-500">
+<span class="material-symbols-outlined">bug_report</span>
+</div>
+<span class="text-emerald-500 text-xs font-bold bg-emerald-500/10 px-2 py-1 rounded">+5%</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Errors Caught</p>
+<h4 class="text-2xl font-bold mt-1">23</h4>
+</div>
+</section>
+<!-- Table Section -->
+<section class="bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+<div>
+<h3 class="text-lg font-bold">Crawler Activity Logs</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Live feed of data collection tasks</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                                    Export CSV
+                                </button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+                                    Refresh
+                                </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-900/50">
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Timestamp</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Store Name</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Type</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Duration</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Updated</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">New</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">2023-11-20 14:30:05</td>
+<td class="px-6 py-4 text-sm">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center text-[10px]">AM</div>
+                                                Amazon US
+                                            </div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-[11px] font-bold uppercase">Crawler</span>
+</td>
+<td class="px-6 py-4 text-sm">124s</td>
+<td class="px-6 py-4 text-sm font-medium text-emerald-600 dark:text-emerald-400">4,102</td>
+<td class="px-6 py-4 text-sm">15</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-medium text-xs">
+<span class="material-symbols-outlined text-[16px] fill-current">check_circle</span>
+                                                Success
+                                            </div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:underline text-xs font-bold">View JSON</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">2023-11-20 14:28:12</td>
+<td class="px-6 py-4 text-sm">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center text-[10px]">EB</div>
+                                                eBay UK
+                                            </div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 text-[11px] font-bold uppercase">API</span>
+</td>
+<td class="px-6 py-4 text-sm">45s</td>
+<td class="px-6 py-4 text-sm font-medium text-emerald-600 dark:text-emerald-400">890</td>
+<td class="px-6 py-4 text-sm">2</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-amber-600 dark:text-amber-500 font-medium text-xs">
+<span class="material-symbols-outlined text-[16px] fill-current">warning</span>
+                                                Warning
+                                            </div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:underline text-xs font-bold">View JSON</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">2023-11-20 14:25:33</td>
+<td class="px-6 py-4 text-sm">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center text-[10px]">WM</div>
+                                                Walmart
+                                            </div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[11px] font-bold uppercase">Feed</span>
+</td>
+<td class="px-6 py-4 text-sm">12s</td>
+<td class="px-6 py-4 text-sm font-medium text-slate-400">0</td>
+<td class="px-6 py-4 text-sm">0</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-rose-600 dark:text-rose-500 font-medium text-xs">
+<span class="material-symbols-outlined text-[16px] fill-current">error</span>
+                                                Failed
+                                            </div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:underline text-xs font-bold">View Details</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">2023-11-20 14:22:10</td>
+<td class="px-6 py-4 text-sm">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center text-[10px]">TH</div>
+                                                Target
+                                            </div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-[11px] font-bold uppercase">Crawler</span>
+</td>
+<td class="px-6 py-4 text-sm">88s</td>
+<td class="px-6 py-4 text-sm font-medium text-emerald-600 dark:text-emerald-400">1,450</td>
+<td class="px-6 py-4 text-sm">4</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-medium text-xs">
+<span class="material-symbols-outlined text-[16px] fill-current">check_circle</span>
+                                                Success
+                                            </div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:underline text-xs font-bold">View JSON</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">2023-11-20 14:15:44</td>
+<td class="px-6 py-4 text-sm">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center text-[10px]">BB</div>
+                                                Best Buy
+                                            </div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 text-[11px] font-bold uppercase">API</span>
+</td>
+<td class="px-6 py-4 text-sm">31s</td>
+<td class="px-6 py-4 text-sm font-medium text-emerald-600 dark:text-emerald-400">542</td>
+<td class="px-6 py-4 text-sm">0</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-medium text-xs">
+<span class="material-symbols-outlined text-[16px] fill-current">check_circle</span>
+                                                Success
+                                            </div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:underline text-xs font-bold">View JSON</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-6 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50">
+<span class="text-sm text-slate-500 dark:text-slate-400">Showing 1-10 of 1,284 logs</span>
+<div class="flex gap-2">
+<button class="p-2 rounded border border-slate-200 dark:border-slate-800 text-slate-500 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="px-3 py-1 rounded bg-primary text-white text-sm font-bold">1</button>
+<button class="px-3 py-1 rounded text-slate-600 dark:text-slate-400 text-sm hover:bg-slate-200 dark:hover:bg-slate-800">2</button>
+<button class="px-3 py-1 rounded text-slate-600 dark:text-slate-400 text-sm hover:bg-slate-200 dark:hover:bg-slate-800">3</button>
+<button class="p-2 rounded border border-slate-200 dark:border-slate-800 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</div>
+</body></html>

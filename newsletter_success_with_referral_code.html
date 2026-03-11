@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<!-- Background Content (Blurred) -->
+<div class="relative flex h-screen w-full flex-col overflow-hidden blur-sm pointer-events-none select-none">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="size-4 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">PriceRadar</h2>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-slate-900 dark:text-slate-100 text-sm font-medium" href="#">Deals</a>
+<a class="text-slate-900 dark:text-slate-100 text-sm font-medium" href="#">Categories</a>
+</div>
+<button class="flex min-w-[84px] items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold">
+                                Sign In
+                            </button>
+</div>
+</header>
+<div class="flex flex-col gap-6 px-4 py-10 md:flex-row items-center">
+<div class="w-full bg-slate-200 aspect-video rounded-xl" data-alt="Abstract blue technology product background"></div>
+<div class="flex flex-col gap-6 md:min-w-[400px]">
+<h1 class="text-slate-900 dark:text-slate-100 text-4xl font-black">Track Prices, Save Money</h1>
+<p class="text-slate-600 dark:text-slate-400">PriceRadar helps you monitor price drops across all major retailers instantly.</p>
+</div>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-[22px] font-bold px-4 pb-3 pt-5">Recent Price Drops</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+<div class="h-40 bg-slate-200 rounded-lg" data-alt="Product placeholder electronics"></div>
+<div class="h-40 bg-slate-200 rounded-lg" data-alt="Product placeholder gadget"></div>
+<div class="h-40 bg-slate-200 rounded-lg" data-alt="Product placeholder accessory"></div>
+<div class="h-40 bg-slate-200 rounded-lg" data-alt="Product placeholder camera"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
+<!-- Success Popup Card -->
+<div class="relative w-full max-w-md bg-white dark:bg-background-dark rounded-xl shadow-2xl p-8 flex flex-col items-center text-center border border-primary/10">
+<!-- Close Button -->
+<button class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+<!-- Success Icon -->
+<div class="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined !text-5xl">check_circle</span>
+</div>
+<!-- Content -->
+<div class="space-y-3 mb-6">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">You're on the list!</h2>
+<p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                    Thank you for joining PriceRadar. You'll now receive our curated selection of the best weekly deals and price drop alerts directly in your inbox.
+                </p>
+</div>
+<!-- Actions -->
+<!-- Refer a Friend Section -->
+<div class="w-full mb-8 pt-6 border-t border-primary/5">
+<div class="space-y-4">
+<div class="space-y-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">Share the Savings!</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                Invite your friends to PriceRadar and help them save on their favorite products.
+            </p>
+</div>
+<!-- Shareable Link Box -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
+<span class="flex-1 text-xs font-medium text-slate-600 dark:text-slate-300 truncate pl-2">priceradar.io/ref/u12345</span>
+<button class="flex items-center justify-center p-2 rounded-md bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors shadow-sm">
+<span class="material-symbols-outlined !text-sm text-slate-600 dark:text-slate-300">content_copy</span>
+</button>
+</div>
+<!-- Quick Share Icons -->
+<div class="flex items-center justify-center gap-4 pt-2">
+<button class="flex items-center justify-center size-10 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" title="Share via WhatsApp">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">share</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" title="Share on Twitter">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">brand_awareness</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" title="Share via Email">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">mail</span>
+</button>
+</div>
+</div>
+</div><div class="w-full space-y-4">
+<button class="w-full flex items-center justify-center rounded-lg h-12 bg-primary text-white text-base font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-[0.98]">
+                    Start Exploring Deals
+                </button>
+<button class="w-full py-2 text-sm font-medium text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors">
+                    Dismiss
+                </button>
+</div>
+<!-- Trust Badge -->
+<div class="mt-8 pt-6 border-t border-primary/5 w-full">
+<div class="flex items-center justify-center gap-2 text-xs text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined !text-sm">verified_user</span>
+<span>Safe &amp; Secure • No Spam Guarantee</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

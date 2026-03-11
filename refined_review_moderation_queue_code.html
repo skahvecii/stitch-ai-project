@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar Admin - Review Moderation Queue</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 flex flex-col bg-white dark:bg-slate-900">
+<div class="p-6 flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<h1 class="font-bold text-xl tracking-tight">PriceRadar</h1>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">fact_check</span>
+<span class="text-sm font-medium">Moderation Queue</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-sm font-medium">Store Insights</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">User Accounts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Global Analytics</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+<img alt="Moderator Avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a male administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGzjjazjI7EzIf1dkl0ekxBzF2hyqbJl0x1S8ZdedD29cRi-k-ci-eBpKK2V-UDBoJBCsYA0YzNLqQPzQ6OE_K7fu5osAmrGbVQzqKHAkp8VV9h6M5FRpIwUC8jsaDwrArk-9lXKG--TyCWdl6axW128Bj8zsiPayRR5IDlWBPBitFhXnBpRM6qEBoIZsX9xT8FkAAcvgVt9h4SBXpIlAp-sDWFAPaZX4_o9pJc9FGiVo9YQnpCX7ij8G2gG1pmqqKalgivZpiZLEh"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold truncate">Alex Morgan</p>
+<p class="text-[10px] text-slate-500">Senior Moderator</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">settings</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between px-8">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/50 outline-none" placeholder="Search by store, user, or keyword..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 border-2 border-white dark:border-slate-900 rounded-full"></span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-blue-600 transition-colors">
+<span class="material-symbols-outlined text-sm">download</span>
+                        Export Report
+                    </button>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+<!-- KPI Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Pending Reviews</span>
+<span class="material-symbols-outlined text-primary">hourglass_empty</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold">1,284</span>
+<span class="text-xs text-green-500 font-medium">+12% vs LW</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Flagged Spam</span>
+<span class="material-symbols-outlined text-red-500">report</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold">42</span>
+<span class="text-xs text-red-500 font-medium">+5% vs LW</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Avg Response</span>
+<span class="material-symbols-outlined text-orange-400">timer</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold">14m 20s</span>
+<span class="text-xs text-green-500 font-medium">-2m vs LW</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Sentiment Score</span>
+<span class="material-symbols-outlined text-emerald-500">sentiment_satisfied</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold">82%</span>
+<span class="text-xs text-slate-400 font-medium">Steady</span>
+</div>
+</div>
+</div>
+<!-- Main Moderation Container -->
+<div class="flex flex-col lg:flex-row gap-6">
+<!-- Left: Table & Filtering -->
+<div class="flex-1 min-w-0 space-y-4">
+<!-- Filters -->
+<div class="flex flex-wrap items-center gap-3 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400 text-lg">filter_list</span>
+<span class="text-xs font-bold text-slate-500 uppercase">Filters</span>
+</div>
+<select class="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg text-xs font-medium focus:ring-primary">
+<option>All Stores</option>
+<option>TechGalaxy</option>
+<option>HomeCenter</option>
+</select>
+<select class="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg text-xs font-medium focus:ring-primary">
+<option>Rating: Any</option>
+<option>5 Stars</option>
+<option>1-2 Stars</option>
+</select>
+<select class="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg text-xs font-medium focus:ring-primary">
+<option>Sentiment: Any</option>
+<option>Positive (AI)</option>
+<option>Negative (AI)</option>
+<option>Mixed (AI)</option>
+</select>
+<select class="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg text-xs font-medium focus:ring-primary">
+<option>Status: Pending</option>
+<option>Approved</option>
+<option>Rejected</option>
+</select>
+<button class="ml-auto text-xs text-primary font-bold hover:underline">Clear All</button>
+</div>
+<!-- Sticky Bulk Action Bar -->
+<div class="sticky top-0 z-10 bg-slate-900 text-white px-6 py-3 rounded-xl flex items-center justify-between shadow-lg hidden group-[.has-selection]:flex">
+<div class="flex items-center gap-4">
+<span class="text-sm font-bold">12 reviews selected</span>
+<div class="w-px h-6 bg-slate-700"></div>
+<button class="flex items-center gap-1 text-sm hover:text-green-400">
+<span class="material-symbols-outlined text-lg">check_circle</span> Approve
+                                </button>
+<button class="flex items-center gap-1 text-sm hover:text-red-400">
+<span class="material-symbols-outlined text-lg">cancel</span> Reject
+                                </button>
+<button class="flex items-center gap-1 text-sm hover:text-orange-400">
+<span class="material-symbols-outlined text-lg">block</span> Mark Spam
+                                </button>
+</div>
+<button class="text-sm text-slate-400 hover:text-white">Cancel</button>
+</div>
+<!-- Moderation Table -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+<table class="w-full text-left text-sm">
+<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+<tr>
+<th class="p-4 w-10">
+<input class="rounded border-slate-300 dark:bg-slate-700 dark:border-slate-600 text-primary focus:ring-primary" type="checkbox"/>
+</th>
+<th class="p-4 font-semibold text-slate-600 dark:text-slate-400">User / Store</th>
+<th class="p-4 font-semibold text-slate-600 dark:text-slate-400">Review</th>
+<th class="p-4 font-semibold text-slate-600 dark:text-slate-400">Sentiment</th>
+<th class="p-4 font-semibold text-slate-600 dark:text-slate-400">Status</th>
+<th class="p-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Row 1 (Selected/Active) -->
+<tr class="bg-primary/5 dark:bg-primary/10 border-l-4 border-l-primary">
+<td class="p-4">
+<input checked="" class="rounded border-slate-300 dark:bg-slate-700 dark:border-slate-600 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-bold">John Doe</span>
+<span class="text-xs text-slate-500">TechGalaxy Store</span>
+</div>
+</td>
+<td class="p-4 max-w-xs">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-slate-300 text-sm">star</span>
+<span class="material-symbols-outlined text-slate-300 text-sm">star</span>
+</div>
+<p class="truncate text-xs text-slate-600 dark:text-slate-300">"The product was okay but the delivery took way too long. I ordered it for a birthday..."</p>
+<button class="text-[10px] text-primary font-bold uppercase mt-1">Show More</button>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 text-[10px] font-bold">
+<span class="material-symbols-outlined text-sm">sentiment_neutral</span> MIXED
+                                            </span>
+</td>
+<td class="p-4">
+<span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-bold">PENDING</span>
+</td>
+<td class="p-4 text-right">
+<button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded">
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 (Flagged) -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="p-4">
+<input class="rounded border-slate-300 dark:bg-slate-700 dark:border-slate-600 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-bold">Sarah Jenkins</span>
+<span class="text-xs text-slate-500">HomeCenter</span>
+</div>
+</td>
+<td class="p-4 max-w-xs">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-slate-300 text-sm">star</span>
+<span class="material-symbols-outlined text-slate-300 text-sm">star</span>
+<span class="material-symbols-outlined text-slate-300 text-sm">star</span>
+<span class="material-symbols-outlined text-slate-300 text-sm">star</span>
+</div>
+<p class="truncate text-xs text-slate-600 dark:text-slate-300">"BUY CRYPTO AT WWW.SCAM-LINK.COM !!! CHEAP DEALS!!"</p>
+<span class="text-[10px] text-red-500 font-bold uppercase mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">flag</span> Reason: Spam/Link
+                                            </span>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 text-[10px] font-bold">
+<span class="material-symbols-outlined text-sm">sentiment_very_dissatisfied</span> NEGATIVE
+                                            </span>
+</td>
+<td class="p-4">
+<span class="px-2 py-0.5 rounded-full bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-[10px] font-bold">FLAGGED</span>
+</td>
+<td class="p-4 text-right">
+<button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded">
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="p-4">
+<input class="rounded border-slate-300 dark:bg-slate-700 dark:border-slate-600 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-bold">Mike Ross</span>
+<span class="text-xs text-slate-500">KitchenPro</span>
+</div>
+</td>
+<td class="p-4 max-w-xs">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+</div>
+<p class="truncate text-xs text-slate-600 dark:text-slate-300">"Excellent service and fast delivery. Highly recommend."</p>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-[10px] font-bold">
+<span class="material-symbols-outlined text-sm">sentiment_very_satisfied</span> POSITIVE
+                                            </span>
+</td>
+<td class="p-4">
+<span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-bold">PENDING</span>
+</td>
+<td class="p-4 text-right">
+<button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded">
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right: Verification Panel -->
+<div class="w-full lg:w-96 space-y-6">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-lg">Review Details</h3>
+<span class="material-symbols-outlined text-slate-400">info</span>
+</div>
+<!-- Product Highlight -->
+<div class="flex items-center gap-4 bg-slate-50 dark:bg-slate-800 p-3 rounded-lg">
+<div class="size-12 bg-white dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 p-1">
+<img alt="Product Thumbnail" class="w-full h-full object-contain" data-alt="Wireless headphones over ear design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVGOMl6ilX6pEweipNu0sfLk_vFD75HybRi5H0FXXfu1TH0lFBfAxysn90oNHjVWYRZ_OBh01DsmvlUO3w18RrPPszwfOuTn6LBnDMWNi5MLSuM5qhtt0PHB1PQpkatL2lJtMI9JYuTDiwqQC82k1FtYlW2GnJ-fJrnYpLSi0dg7umoC0DkD3QbrvrFlELKAbDZVL6nZKtpGC9ePbDbsEScgQJvBwyVtkfuXrAsK1SEA-lmosXYKl81TlnNpPhVf2VGg5IdbaFUg-o"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold truncate">Sony WH-1000XM4 Headphones</p>
+<p class="text-[10px] text-slate-500">SKU: SNY-XM4-B</p>
+</div>
+</div>
+<!-- AI Insights Section -->
+<div class="space-y-3">
+<p class="text-xs font-bold text-slate-500 uppercase tracking-tighter">AI Verification Insights</p>
+<div class="space-y-2">
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-600 dark:text-slate-400">Verified Purchase</span>
+<span class="text-green-500 font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> YES
+                                        </span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-600 dark:text-slate-400">AI-Generated Content</span>
+<span class="text-slate-500 font-bold">Unlikely (12%)</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-600 dark:text-slate-400">User Trust Score</span>
+<span class="text-primary font-bold">88/100</span>
+</div>
+</div>
+</div>
+<hr class="border-slate-100 dark:border-slate-800"/>
+<!-- Moderator Context -->
+<div class="space-y-3">
+<p class="text-xs font-bold text-slate-500 uppercase tracking-tighter">Moderator Notes</p>
+<textarea class="w-full h-24 p-3 text-xs bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg resize-none focus:ring-primary" placeholder="Add a note about this review or user..."></textarea>
+<div class="p-2 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-100 dark:border-yellow-900/30 rounded text-[10px] text-yellow-800 dark:text-yellow-400">
+<strong>Internal Flag:</strong> User has been warned once for "Mild Profanity" on 10/12/23.
+                                </div>
+</div>
+<!-- Quick Response Templates -->
+<div class="space-y-3">
+<p class="text-xs font-bold text-slate-500 uppercase tracking-tighter">Quick Response Templates</p>
+<div class="grid grid-cols-2 gap-2">
+<button class="px-3 py-2 text-[10px] font-medium border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Approve &amp; Notify</button>
+<button class="px-3 py-2 text-[10px] font-medium border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Reject: Profanity</button>
+<button class="px-3 py-2 text-[10px] font-medium border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Reject: Spam</button>
+<button class="px-3 py-2 text-[10px] font-medium border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Request Context</button>
+</div>
+</div>
+<!-- Final Actions -->
+<div class="flex gap-2 pt-2">
+<button class="flex-1 py-2 bg-red-500 hover:bg-red-600 text-white text-xs font-bold rounded-lg transition-colors">Reject</button>
+<button class="flex-[2] py-2 bg-primary hover:bg-blue-600 text-white text-xs font-bold rounded-lg transition-colors">Approve Review</button>
+</div>
+</div>
+<!-- User History Snapshot -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-4">
+<h4 class="text-xs font-bold mb-3">User History (John Doe)</h4>
+<div class="space-y-3">
+<div class="flex justify-between text-[10px]">
+<span class="text-slate-500">Total Reviews</span>
+<span class="font-bold">24</span>
+</div>
+<div class="flex justify-between text-[10px]">
+<span class="text-slate-500">Rejected Reviews</span>
+<span class="font-bold text-red-500">1</span>
+</div>
+<div class="flex justify-between text-[10px]">
+<span class="text-slate-500">Member Since</span>
+<span class="font-bold">Jan 2022</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar - Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<!-- Main Container -->
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-white dark:bg-background-dark shadow-xl overflow-hidden">
+<!-- Sticky Header with Search Input -->
+<div class="sticky top-0 z-20 bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 px-4 pt-4 pb-3">
+<div class="flex items-center gap-3">
+<button class="text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 text-xl">search</span>
+</div>
+<input class="block w-full pl-10 pr-10 py-2.5 bg-slate-100 dark:bg-slate-800 border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/50 focus:bg-white dark:focus:bg-slate-700 transition-all placeholder:text-slate-500" placeholder="Search products, brands, or stores" type="text" value="Smartpho"/>
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center">
+<span class="material-symbols-outlined text-slate-400 text-xl">cancel</span>
+</button>
+</div>
+<button class="text-primary font-semibold text-sm">Cancel</button>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto pb-24">
+<!-- Product Suggestions (Dynamic Overlay) -->
+<div class="px-4 py-4 space-y-4">
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Top Suggestions</h3>
+<div class="space-y-3">
+<!-- Suggestion Item 1 -->
+<div class="flex items-center gap-4 p-2 rounded-xl active:bg-slate-100 dark:active:bg-slate-800 transition-colors">
+<div class="size-14 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-700">
+<img class="object-cover size-full" data-alt="Modern high-end smartphone on neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfkeE0b7EicMWLsN-RSyAufRNCUY9xdS5UbucWqJ8xaBXGtsPdUfKzQN62NcfucaYLNfQgNnYJl3goASejhlPXjvO9lKJ8_A3i9EZIUWYRh2ZxYF1qMluN9Zlq94MHJ4et59LA4XeXinqYta4zHlX3VmYbHrLDDHXpOm_b9zU2_X2sOoCacQMLfemVlH1yXZlTKxswL-ZIK89KAnwUbGibkGDCpzM6s7tpvjmnlWkQy3F9wDm9RaRgtnYREhkEUmnitKCDUkTTzwkM"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-semibold truncate">Smartphone Pro Max 256GB</h4>
+<p class="text-xs text-slate-500">From <span class="text-primary font-bold text-sm">$999.00</span></p>
+<p class="text-[10px] text-slate-400">Compare 12 stores</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">north_west</span>
+</div>
+<!-- Suggestion Item 2 -->
+<div class="flex items-center gap-4 p-2 rounded-xl active:bg-slate-100 dark:active:bg-slate-800 transition-colors">
+<div class="size-14 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-700">
+<img class="object-cover size-full" data-alt="Sleek silver smartphone device front view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG4qdYA36Xd2u4XZ2oYVwHvQ8g9MKygLOsmvFkE1n7U9c5Uch7Axree_4exlEgTt82VXg6VePXfq1ID5O6hYYIBJ-0iJcZFROrEGFLPEY1y0HB_016qv-_ho-X6DF1Qm0Akcl2ZzyZZbEXAJh3dER70zAc4YXds5-6B4WamSmbtooC7fK4ODq9R0c17etBA9BAWEEYXvnJzckWbI7fBuSWyoyXk5FLzfcJmg7uLqwExNJsxec99hrGOZ0fNx0WyU2VmhPWfelXqdYk"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-semibold truncate">Smartphone Lite Plus</h4>
+<p class="text-xs text-slate-500">From <span class="text-primary font-bold text-sm">$549.99</span></p>
+<p class="text-[10px] text-slate-400">Compare 8 stores</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">north_west</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-slate-50 dark:bg-slate-900/50"></div>
+<!-- Recent Searches -->
+<div class="px-4 py-4">
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">Recent Searches</h3>
+<button class="text-xs font-medium text-slate-400 hover:text-primary">Clear All</button>
+</div>
+<div class="flex flex-wrap gap-2">
+<div class="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-sm text-slate-400">history</span>
+<span class="text-xs font-medium">Noise cancelling headphones</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-sm text-slate-400">history</span>
+<span class="text-xs font-medium">Mechanical keyboard</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-sm text-slate-400">history</span>
+<span class="text-xs font-medium">PS5 Console</span>
+</div>
+</div>
+</div>
+<!-- Popular Categories -->
+<div class="py-4">
+<h3 class="px-4 text-sm font-bold text-slate-900 dark:text-slate-100 mb-3">Popular Categories</h3>
+<div class="flex gap-3 overflow-x-auto px-4 no-scrollbar">
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">smartphone</span>
+</div>
+<span class="text-[11px] font-medium">Phones</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">laptop</span>
+</div>
+<span class="text-[11px] font-medium">Laptops</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">headphones</span>
+</div>
+<span class="text-[11px] font-medium">Audio</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">watch</span>
+</div>
+<span class="text-[11px] font-medium">Watches</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">camera</span>
+</div>
+<span class="text-[11px] font-medium">Cameras</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-slate-50 dark:bg-slate-900/50"></div>
+<!-- Trending Now -->
+<div class="px-4 py-4">
+<h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-red-500 fill-1">trending_up</span>
+                    Trending Now
+                </h3>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3">
+<div class="aspect-square rounded-lg bg-slate-50 dark:bg-slate-900 mb-3 overflow-hidden">
+<img class="object-cover size-full" data-alt="Black wireless headphones studio shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqcyc9SeV3xNohIgSmPx8wezk6XxzxVbBGcRRKXftrQ3XyBNEzihHAaJmv5HGOqhAc-svvcCCS3ewViraa5rBMDYJmJOKrJ8Pv9M3nIMixQUKO90LnJAv2D2yCwge7RnRfqqAtAdd2-Ede_mQFXkvgA5un_RD4ZBw0ZdRnZhpXeFCT7XBFzytPJZDoxczo-U4xr7B_rlmogDK5VqGRJwiwuLmi48bA8t0vh7KrKNsGiN-HMCx-odEWQb15DtJ9P6dWmpW9px4_yunA"/>
+</div>
+<p class="text-xs font-semibold line-clamp-2 mb-1">Wireless ANC Earbuds Gen 2</p>
+<p class="text-primary font-bold text-sm">$129.00</p>
+<div class="mt-2 py-1 px-2 bg-green-100 dark:bg-green-900/30 text-[10px] text-green-700 dark:text-green-400 font-bold rounded inline-block">
+                            -25% PRICE DROP
+                        </div>
+</div>
+<div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3">
+<div class="aspect-square rounded-lg bg-slate-50 dark:bg-slate-900 mb-3 overflow-hidden">
+<img class="object-cover size-full" data-alt="Modern smartwatch with white strap" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF3Ttzum4Lf_54bt9__AngotrzsKS4g2B0y-kzjsk4Wv5MKVX5yZpSvA-CeRGxp6clDpG22tRCcgcNdTRePGhakPdOJ6X7S_HE882EBiW82rYLTrO_U0EFqd8_BVEECjumq8psDUYHC5pXU_NB8qjmZUdtoj32IjPeT6o2_IRySjxqnpAao1CQRF4nStTQwdIKB-RES7D1ULfcKgLG2NL56CToWXGr30vmvlXdztBIGMTeygbyiRUjHmN8xJet9UVCrTFZu-RuuWy6"/>
+</div>
+<p class="text-xs font-semibold line-clamp-2 mb-1">Series 7 Smartwatch GPS</p>
+<p class="text-primary font-bold text-sm">$399.00</p>
+<div class="mt-2 py-1 px-2 bg-primary/10 text-[10px] text-primary font-bold rounded inline-block">
+                            HIGH DEMAND
+                        </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="absolute bottom-0 left-0 right-0 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-6 py-2 pb-6">
+<div class="flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">search</span>
+<span class="text-[10px] font-medium">Search</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-medium">Alerts</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">compare_arrows</span>
+<span class="text-[10px] font-medium">Compare</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</div>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .fill-1 {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</body></html>

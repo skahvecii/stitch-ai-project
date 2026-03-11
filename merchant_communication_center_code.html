@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar Admin - Merchant Communication Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #d0dae7; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<div>
+<h1 class="font-bold text-slate-900 dark:text-white leading-none">PriceRadar</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">Admin Portal</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-sm font-medium">Merchants</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">sell</span>
+<span class="text-sm font-medium">Offers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-sm font-medium">Communication</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+<div class="pt-4 pb-2 px-3 text-[10px] font-bold text-slate-400 uppercase tracking-wider">System</div>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Broadcasts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2">
+<img alt="Admin Profile" class="size-8 rounded-full border border-slate-200" data-alt="Professional avatar of admin user" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY5a_kLmq_l4_stWOFfh0Zw7sFrfc1L54uFObNlJiD7gFilLZVc-dxcVJYUFzsO1Cx3F9hB6Nkb0BTLgVMGy2gg4bbldM0wNRoyOsmx1fUYUTmzQ14KuMLTf5e29xxT4YIenAKmvZvNggngAmMGm79yAxFjSLaVAee5f51I7cGRim06F4Gftu0MirgqZmaoo6jXFXJMRKcN0rHTMVSDPhZ6DNKnn0aXzkV3-Q3smKarNFo11ppOAAqhhfd60v1HEgtN9qc299bPPSQ"/>
+<div class="flex-1 overflow-hidden">
+<p class="text-xs font-semibold truncate">Alex Henderson</p>
+<p class="text-[10px] text-slate-500 truncate">Senior Administrator</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">logout</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col bg-slate-50 dark:bg-background-dark overflow-hidden">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between px-8 z-10">
+<div class="flex items-center gap-4">
+<h2 class="text-lg font-bold">Merchant Communication Center</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-primary" placeholder="Search conversations..." type="text"/>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add_comment</span>
+                    New Broadcast
+                </button>
+<div class="flex gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</div>
+</header>
+<!-- KPI Section -->
+<div class="p-6 grid grid-cols-4 gap-4 flex-shrink-0">
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Open Support Tickets</p>
+<div class="flex items-end justify-between mt-1">
+<h3 class="text-2xl font-bold">42</h3>
+<span class="text-[10px] px-1.5 py-0.5 bg-red-100 text-red-600 rounded font-bold">-5%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Unread Merchant Messages</p>
+<div class="flex items-end justify-between mt-1">
+<h3 class="text-2xl font-bold">128</h3>
+<span class="text-[10px] px-1.5 py-0.5 bg-green-100 text-green-600 rounded font-bold">+12%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Avg. Response Time</p>
+<div class="flex items-end justify-between mt-1">
+<h3 class="text-2xl font-bold">2.5h</h3>
+<span class="text-[10px] px-1.5 py-0.5 bg-red-100 text-red-600 rounded font-bold">-10%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Active Broadcasts</p>
+<div class="flex items-end justify-between mt-1">
+<h3 class="text-2xl font-bold">3</h3>
+<span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded font-bold">STABLE</span>
+</div>
+</div>
+</div>
+<!-- Unified Inbox / Workspace -->
+<div class="flex-1 flex overflow-hidden px-6 pb-6 gap-6">
+<!-- Conversation List -->
+<div class="w-1/4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col overflow-hidden">
+<div class="p-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<h4 class="font-bold text-sm">Unified Inbox</h4>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer">filter_list</span>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar">
+<!-- Ticket Item Active -->
+<div class="p-4 border-b border-slate-50 dark:border-slate-800 bg-primary/5 border-l-4 border-l-primary cursor-pointer">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-primary uppercase">Pricing Sync Error</span>
+<span class="text-[10px] text-slate-400">12m ago</span>
+</div>
+<h5 class="text-sm font-semibold truncate">ElectroMart Global</h5>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">Hi, our automated pricing feed is failing for the new catalog...</p>
+<div class="flex gap-2 mt-2">
+<span class="text-[9px] px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded-full font-bold">IN PROGRESS</span>
+<span class="text-[9px] px-1.5 py-0.5 bg-red-100 text-red-700 rounded-full font-bold">HIGH</span>
+</div>
+</div>
+<!-- Ticket Item -->
+<div class="p-4 border-b border-slate-50 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-slate-500 uppercase">Verification Inquiry</span>
+<span class="text-[10px] text-slate-400">45m ago</span>
+</div>
+<h5 class="text-sm font-semibold truncate">Skyline Tech</h5>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">We uploaded our business license but it's still pending.</p>
+<div class="flex gap-2 mt-2">
+<span class="text-[9px] px-1.5 py-0.5 bg-blue-100 text-blue-700 rounded-full font-bold">OPEN</span>
+<span class="text-[9px] px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded-full font-bold">MEDIUM</span>
+</div>
+</div>
+<!-- Ticket Item -->
+<div class="p-4 border-b border-slate-50 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-slate-500 uppercase">Payout Question</span>
+<span class="text-[10px] text-slate-400">2h ago</span>
+</div>
+<h5 class="text-sm font-semibold truncate">Urban Outfitters Ltd</h5>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">Can you clarify the 3% transaction fee on international...</p>
+<div class="flex gap-2 mt-2">
+<span class="text-[9px] px-1.5 py-0.5 bg-green-100 text-green-700 rounded-full font-bold">RESOLVED</span>
+<span class="text-[9px] px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded-full font-bold">LOW</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Message Detail View -->
+<div class="flex-1 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col overflow-hidden">
+<!-- Message Header -->
+<div class="p-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50/50 dark:bg-slate-800/20">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-slate-500">EM</div>
+<div>
+<h4 class="text-sm font-bold">ElectroMart Global <span class="text-slate-400 font-normal ml-2">#TKT-4920</span></h4>
+<p class="text-[10px] text-green-500 font-medium">Merchant Online</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-xs border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Transfer</button>
+<button class="text-xs bg-primary text-white px-3 py-1.5 rounded font-medium">Resolve Ticket</button>
+</div>
+</div>
+<!-- Message History -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
+<!-- Merchant Message -->
+<div class="flex gap-3 max-w-[80%]">
+<div class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400 text-sm">person</span>
+</div>
+<div>
+<div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-2xl rounded-tl-none">
+<p class="text-sm">Hi, our automated pricing feed is failing for the new catalog. We're seeing 'Error 403: Forbidden' on the API calls starting this morning at 08:00 UTC. Can you please check if our API keys were revoked or if there's a system-wide issue?</p>
+</div>
+<span class="text-[10px] text-slate-400 mt-1 block">ElectroMart Support • 08:12 AM</span>
+</div>
+</div>
+<!-- Internal Note -->
+<div class="flex justify-center">
+<div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-900/30 px-4 py-2 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-500 text-sm">sticky_note_2</span>
+<p class="text-[11px] text-amber-800 dark:text-amber-400"><span class="font-bold">Internal Note:</span> Alex, I checked their API logs. It looks like an IP whitelist issue. — Sarah</p>
+</div>
+</div>
+<!-- Admin Reply -->
+<div class="flex gap-3 max-w-[80%] ml-auto flex-row-reverse">
+<div class="size-8 rounded-full bg-primary/10 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">support_agent</span>
+</div>
+<div class="text-right">
+<div class="bg-primary text-white p-4 rounded-2xl rounded-tr-none text-left">
+<p class="text-sm">Hello ElectroMart Team. We are investigating this right now. It seems your outgoing server IP might have changed recently. Could you confirm if you've updated your infrastructure in the last 24 hours?</p>
+</div>
+<span class="text-[10px] text-slate-400 mt-1 block">You • 08:45 AM</span>
+</div>
+</div>
+</div>
+<!-- Reply Area -->
+<div class="p-4 border-t border-slate-100 dark:border-slate-800">
+<!-- Quick Reply Tokens -->
+<div class="flex gap-2 mb-3 overflow-x-auto pb-1 scrollbar-hide">
+<span class="text-[10px] bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors font-medium whitespace-nowrap">API Support Template</span>
+<span class="text-[10px] bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors font-medium whitespace-nowrap">Verify Account Docs</span>
+<span class="text-[10px] bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors font-medium whitespace-nowrap">Policy Update Notice</span>
+<span class="text-[10px] bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors font-medium whitespace-nowrap">Request Call</span>
+</div>
+<div class="relative">
+<textarea class="w-full border-slate-200 dark:border-slate-700 dark:bg-slate-800 rounded-xl text-sm focus:ring-primary focus:border-primary placeholder:text-slate-400" placeholder="Type your reply here... Use @ for internal notes." rows="3"></textarea>
+<div class="absolute bottom-3 right-3 flex gap-2">
+<button class="p-1.5 text-slate-400 hover:text-primary"><span class="material-symbols-outlined">attach_file</span></button>
+<button class="p-1.5 text-slate-400 hover:text-primary"><span class="material-symbols-outlined">mood</span></button>
+<button class="bg-primary text-white p-2 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-sm">send</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Merchant Context Sidebar -->
+<div class="w-1/5 space-y-4 flex flex-col h-full overflow-y-auto custom-scrollbar">
+<!-- Merchant Profile Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="h-16 bg-gradient-to-r from-primary to-blue-400"></div>
+<div class="px-4 pb-4 -mt-8">
+<div class="size-16 rounded-xl bg-white dark:bg-slate-900 border-4 border-white dark:border-slate-900 shadow-md flex items-center justify-center text-xl font-bold text-primary mx-auto">EM</div>
+<div class="text-center mt-2">
+<h4 class="font-bold text-sm">ElectroMart Global</h4>
+<p class="text-xs text-slate-500">Tier: Platinum Merchant</p>
+</div>
+<div class="mt-4 grid grid-cols-2 gap-2 text-center">
+<div class="p-2 bg-slate-50 dark:bg-slate-800 rounded-lg">
+<p class="text-[10px] text-slate-500 uppercase font-bold">Trust Score</p>
+<p class="text-sm font-bold text-green-500">98/100</p>
+</div>
+<div class="p-2 bg-slate-50 dark:bg-slate-800 rounded-lg">
+<p class="text-[10px] text-slate-500 uppercase font-bold">Active Offers</p>
+<p class="text-sm font-bold">1,248</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Status Details -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-4 shadow-sm">
+<h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Onboarding Status</h5>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>
+<span class="text-xs font-medium">Identity Verified</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>
+<span class="text-xs font-medium">Bank Details Setup</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">sync</span>
+<span class="text-xs font-medium">Feed Integration</span>
+</div>
+</div>
+</div>
+<!-- Recent Broadcasts History -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-4 shadow-sm">
+<h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Merchant Timeline</h5>
+<div class="relative pl-4 space-y-4 before:content-[''] before:absolute before:left-[3px] before:top-1 before:bottom-1 before:w-[1px] before:bg-slate-200 dark:before:bg-slate-700">
+<div class="relative">
+<div class="absolute -left-[16px] top-1 size-2 rounded-full bg-primary ring-4 ring-white dark:ring-slate-900"></div>
+<p class="text-[10px] font-bold">API Access Error Reported</p>
+<p class="text-[9px] text-slate-500">Today, 08:12 AM</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[16px] top-1 size-2 rounded-full bg-slate-300"></div>
+<p class="text-[10px] font-bold">Monthly Sales Report Shared</p>
+<p class="text-[9px] text-slate-500">Dec 01, 2023</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[16px] top-1 size-2 rounded-full bg-slate-300"></div>
+<p class="text-[10px] font-bold">Holiday Promo Broadcast Sent</p>
+<p class="text-[9px] text-slate-500">Nov 24, 2023</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Broadcast Banner (Optional/Contextual) -->
+<div class="mx-6 mb-6 bg-slate-900 dark:bg-slate-800 text-white rounded-xl p-4 flex items-center justify-between shadow-lg">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-primary/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">campaign</span>
+</div>
+<div>
+<h4 class="text-sm font-bold">Active Platform-wide Broadcast</h4>
+<p class="text-xs text-slate-400">Scheduled maintenance for API v2.4 on Jan 15th, 02:00 - 04:00 UTC.</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border-2 border-slate-900 bg-slate-700 flex items-center justify-center text-[8px]">+4.2k Merchants</div>
+</div>
+<button class="text-xs bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 px-4 py-2 rounded-lg font-bold transition-colors">Manage Broadcast</button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>PriceRadar - Claim Referral Reward</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header -->
+<header class="flex items-center justify-between border-b border-primary/10 bg-white dark:bg-slate-900 px-6 py-4 lg:px-40">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">PriceRadar</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+<img class="h-full w-full object-cover" data-alt="User profile avatar close up photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCONdhT1Fq1jKIKEM-pYa82CdG18doDcfGULuA1e2rNG6IQr0wFIh1N5QjE_xsM0Kt1eMnskIKDMpT-bmY4BZw2R5krYO971FmAqhI9TGLGoyzjmOvv6rChDi05Uuy_4IIgDLmmszhmOdqkZZfxekLV1g0tSBliUH6jTkIHgdKlQCgh-LYf5qYxh-KNpTP6SLFspzS6Hr3BONkQiXvFQUwBLHI54wrUXGGNOekr4i3B9tyVx7v5-M-6GRrl3itaYZ_tI3Jdk-bINlFA"/>
+</div>
+</div>
+</header>
+<main class="flex-1 px-6 lg:px-40 py-10">
+<div class="max-w-4xl mx-auto flex flex-col gap-8">
+<!-- Stepper and Balance -->
+<div class="flex flex-col lg:flex-row gap-6 justify-between items-start lg:items-end">
+<div class="flex flex-col gap-3 w-full lg:max-w-md">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-slate-900 dark:text-slate-100 text-lg font-semibold">Claim Your Reward</p>
+<span class="text-primary text-sm font-bold bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">Step 1 of 3</span>
+</div>
+<div class="h-2.5 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 33.33%;"></div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Step 1: Choose Reward Type</p>
+</div>
+<div class="flex items-center gap-4 bg-primary text-white p-5 rounded-xl shadow-lg shadow-primary/20 min-w-[240px]">
+<div class="bg-white/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+</div>
+<div class="flex flex-col">
+<p class="text-white/80 text-xs font-semibold uppercase tracking-widest">Available Balance</p>
+<p class="text-3xl font-bold">$60.00</p>
+</div>
+</div>
+</div>
+<!-- Reward Options Grid -->
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<h3 class="text-slate-900 dark:text-slate-100 text-2xl font-bold tracking-tight">Select your preferred reward</h3>
+<p class="text-slate-500 dark:text-slate-400">Choose how you'd like to receive your referral earnings.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Cash Payout Card -->
+<div class="group relative bg-white dark:bg-slate-900 border-2 border-primary rounded-xl p-6 flex flex-col gap-6 transition-all hover:shadow-xl hover:-translate-y-1">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                                Recommended
+                            </div>
+<div class="size-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">payments</span>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Direct Cash Payout</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Withdraw directly to your bank account or PayPal.</p>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between items-baseline mb-4">
+<span class="text-slate-400 text-xs font-semibold uppercase">Value</span>
+<span class="text-2xl font-bold text-slate-900 dark:text-slate-100">$60.00</span>
+</div>
+<button class="w-full bg-primary text-white font-bold py-3 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                                    Select Reward <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Amazon Gift Card -->
+<div class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 flex flex-col gap-6 transition-all hover:border-primary/50 hover:shadow-xl hover:-translate-y-1">
+<div class="size-14 rounded-xl bg-orange-100 text-orange-600 dark:bg-orange-900/20 dark:text-orange-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">card_giftcard</span>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Amazon Gift Card</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Get an instant digital code for Amazon.com shopping.</p>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between items-baseline mb-4">
+<span class="text-slate-400 text-xs font-semibold uppercase">Value</span>
+<span class="text-2xl font-bold text-slate-900 dark:text-slate-100">$60.00</span>
+</div>
+<button class="w-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 font-bold py-3 rounded-lg hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+                                    Select Reward <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Subscription Credit -->
+<div class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 flex flex-col gap-6 transition-all hover:border-primary/50 hover:shadow-xl hover:-translate-y-1">
+<div class="size-14 rounded-xl bg-green-100 text-green-600 dark:bg-green-900/20 dark:text-green-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="text-slate-900 dark:text-slate-100 text-lg font-bold">PriceRadar Credit</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Apply to your Pro subscription for 20% bonus value.</p>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between items-baseline mb-4">
+<span class="text-slate-400 text-xs font-semibold uppercase">Value</span>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-bold text-green-600">$72.00</span>
+<span class="text-[10px] text-green-500 font-bold">+20% Bonus</span>
+</div>
+</div>
+<button class="w-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 font-bold py-3 rounded-lg hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+                                    Select Reward <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Information Section -->
+<div class="bg-primary/5 rounded-xl p-6 border border-primary/10 flex gap-4">
+<span class="material-symbols-outlined text-primary">info</span>
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 dark:text-slate-100 font-semibold text-sm">Important Information</p>
+<ul class="text-slate-500 dark:text-slate-400 text-sm list-disc pl-4 space-y-1">
+<li>Cash payouts take 3-5 business days to process.</li>
+<li>Gift cards and Subscription credits are delivered instantly to your registered email.</li>
+<li>Once a reward type is selected and confirmed, it cannot be reversed.</li>
+</ul>
+</div>
+</div>
+<!-- Navigation Sidebar Link -->
+<div class="flex flex-col gap-2 mt-4">
+<nav class="flex gap-4 border-t border-slate-200 dark:border-slate-800 pt-8">
+<a class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors py-2 px-3" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-sm font-medium">Home</span>
+</a>
+<a class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors py-2 px-3" href="#">
+<span class="material-symbols-outlined">sell</span>
+<span class="text-sm font-medium">Deals</span>
+</a>
+<a class="flex items-center gap-2 text-primary bg-primary/10 rounded-lg py-2 px-4 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-bold">Referrals</span>
+</a>
+<a class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors py-2 px-3 ml-auto" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-medium">Profile</span>
+</a>
+</nav>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="px-6 lg:px-40 py-8 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-sm">
+<p>© 2024 PriceRadar. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

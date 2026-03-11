@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .sticky-col { position: sticky; left: 0; z-index: 10; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<div class="sticky top-0 z-50 flex items-center bg-white/80 dark:bg-background-dark/80 backdrop-blur-md p-4 border-b border-slate-200 dark:border-slate-800 justify-between">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Compare Models</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<!-- Product Cards (Sticky below header or scrollable) -->
+<div class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 overflow-x-auto no-scrollbar">
+<div class="flex min-w-max p-4 gap-4">
+<!-- Label spacer -->
+<div class="w-24 shrink-0"></div>
+<!-- Product 1 -->
+<div class="flex flex-col gap-3 w-40 shrink-0">
+<div class="w-full aspect-square bg-slate-100 dark:bg-slate-800 rounded-xl bg-center bg-contain bg-no-repeat" data-alt="iPhone 15 Pro Natural Titanium front view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDDCS3yGCSA7Ja-W6p1Kq-8hL6FtffUBG4oLO-OsjkolN4QfOPK5AmxhGv90uiaYZ3t6F5TWgvcQ2boEPAJ6ilk6lbvIEuqM1_zG3ImO9OQn-6QuqeUuTmy8UApwc3vl3qktDZX2iif1zSxghcO9JjUEgZJwPbMMAN6be0aYOkMNPBEbrMiQ1TFKFGFs-cjh9rGANcQ1L6yIAGC5Oq27wLXBOKC5oJjKvO9fjJzYRkYSh_J3Fq25iWQn5ysu7XAbzBDuyRPGLJ1m8h_");'></div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold leading-tight">iPhone 15 Pro</p>
+<p class="text-primary text-sm font-semibold mt-1">$999.00</p>
+<button class="mt-2 w-full py-2 bg-primary text-white text-xs font-bold rounded-lg uppercase tracking-wider">Buy Now</button>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="flex flex-col gap-3 w-40 shrink-0">
+<div class="w-full aspect-square bg-slate-100 dark:bg-slate-800 rounded-xl bg-center bg-contain bg-no-repeat" data-alt="Galaxy S24 Ultra Titanium Gray front view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNqk98VGp83ZKkfcz4Nu71pMjKAaQBs4t5HBcbaYsR7wM43GhYnId7WxB7pQS2-5mzw9o67elbU6ZvpT9FxdJb_NHnKnK8fVEgYoAWG-22QsoT7blcvUTh4LyMkWyJdWUYUYS1-d8GwNVt_NbbfC8n5eupr3T7GVhOSPuah7yE_Najo-xyEQVTEP8UKEvdDDYfZp13RDkOb5nEZa1DWrGCLci28vgJWaDwDsaW36iqqnMkpGmOGqEE9tjzhRcuoUym_E8CQ3uTGhqX");'></div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold leading-tight">Galaxy S24 Ultra</p>
+<p class="text-primary text-sm font-semibold mt-1">$1,299.00</p>
+<button class="mt-2 w-full py-2 bg-primary/10 text-primary text-xs font-bold rounded-lg uppercase tracking-wider">Check Deal</button>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="flex flex-col gap-3 w-40 shrink-0 opacity-60">
+<div class="w-full aspect-square bg-slate-100 dark:bg-slate-800 rounded-xl bg-center bg-contain bg-no-repeat" data-alt="Google Pixel 8 Pro Obsidian view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAov6mXYUoe2PgY5pZ_drFpLq3oXkYl4oioT7-nKxHDPBUBSAJY3qdpRxI79F9vjFlYU3tT-ogkh44J0uLGcNyWF-rrQjq35Gx9avJREkPn_rQw9nn2iEclr5_15X99VfoTSUD7SLW0LrqsBrgHLeyGW_D-UDIyxwQEDpleV0jJLp_jdeP28V9N37F0Q-pufzGrkh7A71vY6Mp7Biu0RXqYgYcQqNsvOJB9NQi5baHhdHyOZ3sGd5nZtlwCVGJ2frYCtdDKXA7zGte5");'></div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold leading-tight">Pixel 8 Pro</p>
+<p class="text-primary text-sm font-semibold mt-1">$899.00</p>
+<button class="mt-2 w-full py-2 border border-slate-200 dark:border-slate-700 text-slate-500 text-xs font-bold rounded-lg uppercase tracking-wider">Add More</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Deep-dive Specs Table -->
+<div class="flex-1 overflow-x-auto no-scrollbar bg-white dark:bg-slate-900">
+<div class="min-w-max">
+<!-- Performance Section -->
+<div class="bg-slate-50 dark:bg-slate-800/50 px-4 py-2 border-y border-slate-200 dark:border-slate-700">
+<span class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Performance</span>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800">
+<div class="flex items-center px-4 py-3">
+<div class="w-24 shrink-0 text-xs font-medium text-slate-500">Chipset</div>
+<div class="w-44 shrink-0 text-sm px-2">A17 Pro (3nm)</div>
+<div class="w-44 shrink-0 text-sm px-2">Snapdragon 8 Gen 3</div>
+<div class="w-44 shrink-0 text-sm px-2 text-slate-400">Google Tensor G3</div>
+</div>
+<div class="flex items-center px-4 py-3">
+<div class="w-24 shrink-0 text-xs font-medium text-slate-500">CPU</div>
+<div class="w-44 shrink-0 text-sm px-2">6-core</div>
+<div class="w-44 shrink-0 text-sm px-2">8-core</div>
+<div class="w-44 shrink-0 text-sm px-2 text-slate-400">9-core</div>
+</div>
+<div class="flex items-center px-4 py-3">
+<div class="w-24 shrink-0 text-xs font-medium text-slate-500">RAM</div>
+<div class="w-44 shrink-0 text-sm px-2 font-semibold">8GB LPDDR5X</div>
+<div class="w-44 shrink-0 text-sm px-2 font-semibold">12GB LPDDR5X</div>
+<div class="w-44 shrink-0 text-sm px-2 text-slate-400">12GB LPDDR5X</div>
+</div>
+</div>
+<!-- Display Section -->
+<div class="bg-slate-50 dark:bg-slate-800/50 px-4 py-2 border-y border-slate-200 dark:border-slate-700">
+<span class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Display</span>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800">
+<div class="flex items-center px-4 py-3">
+<div class="w-24 shrink-0 text-xs font-medium text-slate-500">Type</div>
+<div class="w-44 shrink-0 text-sm px-2">LTPO Super Retina</div>
+<div class="w-44 shrink-0 text-sm px-2">Dynamic AMOLED 2X</div>
+<div class="w-44 shrink-0 text-sm px-2 text-slate-400">LTPO OLED</div>
+</div>
+<div class="flex items-center px-4 py-3">
+<div class="w-24 shrink-0 text-xs font-medium text-slate-500">Size</div>
+<div class="w-44 shrink-0 text-sm px-2">6.1 inches</div>
+<div class="w-44 shrink-0 text-sm px-2">6.8 inches</div>
+<div class="w-44 shrink-0 text-sm px-2 text-slate-400">6.7 inches</div>
+</div>
+<div class="flex items-center px-4 py-3">
+<div class="w-24 shrink-0 text-xs font-medium text-slate-500">Peak Bright</div>
+<div class="w-44 shrink-0 text-sm px-2">2000 nits</div>
+<div class="w-44 shrink-0 text-sm px-2 font-semibold text-primary">2600 nits</div>
+<div class="w-44 shrink-0 text-sm px-2 text-slate-400">2400 nits</div>
+</div>
+</div>
+<!-- Camera Section -->
+<div class="bg-slate-50 dark:bg-slate-800/50 px-4 py-2 border-y border-slate-200 dark:border-slate-700">
+<span class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Camera</span>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800">
+<div class="flex items-center px-4 py-3">
+<div class="w-24 shrink-0 text-xs font-medium text-slate-500">Main</div>
+<div class="w-44 shrink-0 text-sm px-2">48 MP, f/1.8</div>
+<div class="w-44 shrink-0 text-sm px-2 font-semibold">200 MP, f/1.7</div>
+<div class="w-44 shrink-0 text-sm px-2 text-slate-400">50 MP, f/1.7</div>
+</div>
+<div class="flex items-center px-4 py-3">
+<div class="w-24 shrink-0 text-xs font-medium text-slate-500">Telephoto</div>
+<div class="w-44 shrink-0 text-sm px-2">12 MP, 3x zoom</div>
+<div class="w-44 shrink-0 text-sm px-2">50 MP, 5x zoom</div>
+<div class="w-44 shrink-0 text-sm px-2 text-slate-400">48 MP, 5x zoom</div>
+</div>
+</div>
+<!-- Battery Section -->
+<div class="bg-slate-50 dark:bg-slate-800/50 px-4 py-2 border-y border-slate-200 dark:border-slate-700">
+<span class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Battery &amp; Charging</span>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800">
+<div class="flex items-center px-4 py-3">
+<div class="w-24 shrink-0 text-xs font-medium text-slate-500">Capacity</div>
+<div class="w-44 shrink-0 text-sm px-2">3274 mAh</div>
+<div class="w-44 shrink-0 text-sm px-2 font-semibold">5000 mAh</div>
+<div class="w-44 shrink-0 text-sm px-2 text-slate-400">5050 mAh</div>
+</div>
+<div class="flex items-center px-4 py-3">
+<div class="w-24 shrink-0 text-xs font-medium text-slate-500">Wired</div>
+<div class="w-44 shrink-0 text-sm px-2">20W</div>
+<div class="w-44 shrink-0 text-sm px-2 font-semibold text-primary">45W</div>
+<div class="w-44 shrink-0 text-sm px-2 text-slate-400">30W</div>
+</div>
+</div>
+<!-- Build Section -->
+<div class="bg-slate-50 dark:bg-slate-800/50 px-4 py-2 border-y border-slate-200 dark:border-slate-700">
+<span class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Build</span>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800">
+<div class="flex items-center px-4 py-3">
+<div class="w-24 shrink-0 text-xs font-medium text-slate-500">Weight</div>
+<div class="w-44 shrink-0 text-sm px-2 font-semibold">187g (Lightest)</div>
+<div class="w-44 shrink-0 text-sm px-2">232g</div>
+<div class="w-44 shrink-0 text-sm px-2 text-slate-400">213g</div>
+</div>
+<div class="flex items-center px-4 py-3">
+<div class="w-24 shrink-0 text-xs font-medium text-slate-500">Material</div>
+<div class="w-44 shrink-0 text-sm px-2">Titanium Frame</div>
+<div class="w-44 shrink-0 text-sm px-2">Titanium Frame</div>
+<div class="w-44 shrink-0 text-sm px-2 text-slate-400">Aluminum Frame</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Spacer -->
+<div class="h-24"></div>
+<!-- Sticky Comparison Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-4 pb-6 pt-3 flex items-center justify-between gap-4">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase font-bold">Comparing</span>
+<span class="text-xs font-bold text-slate-900 dark:text-slate-100">3 Items</span>
+</div>
+<div class="flex gap-2 flex-1">
+<button class="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 py-3 rounded-lg font-bold text-sm">Save List</button>
+<button class="flex-[2] bg-primary text-white py-3 rounded-lg font-bold text-sm shadow-lg shadow-primary/20">Find Best Price</button>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Optional Overlay) -->
+<div class="fixed bottom-0 left-0 w-full bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-4 py-2 flex items-center justify-between z-10 hidden">
+<!-- Not visible in this deep-dive spec view to prioritize the action bar -->
+</div>
+</div>
+</body></html>

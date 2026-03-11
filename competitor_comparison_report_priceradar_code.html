@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar | Competitor Comparison</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="flex min-h-screen">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col fixed h-full z-50">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none">PriceRadar</h1>
+<p class="text-xs text-slate-500">SEO/Admin Suite</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">track_changes</span>
+<span class="text-sm font-medium">Rank Tracker</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="text-sm font-medium">Topic Discovery</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">compare_arrows</span>
+<span class="text-sm font-medium">Competitor Comparison</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">search_check</span>
+<span class="text-sm font-medium">Site Audit</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User avatar placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuYmQVPz8h9rhGPP5PbK1qsX3wRGp4hIgQvvhNKU7TOk-b9G83izop8u4tw4RxZ9wf1cOw6PtbQ32ygCJhm-BDc9T5oJoXlbJWsCDCIbP6HkaRIjly26a6HZ6Zhnpjb6tpIXH_K_YjzMTKTFg4l_Ev_LQdCzVBxDO_RO4SEi8YqxdxZnw2kQr5UOpCHdmuXWFzNNto6mnObNy1f3tFdQDb6eXUEdgt4tu1RdC286wxNWidJi7Vxg1UQlo9iPH9p-k6yoMArUaowVPf"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-sm font-medium truncate">Alex Rivera</p>
+<p class="text-xs text-slate-500 truncate">Admin Account</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">settings</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-64 min-h-screen">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-40 px-8 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<h2 class="text-xl font-bold">Competitor Comparison</h2>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary/20 text-primary uppercase">Report</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="pl-9 pr-4 py-1.5 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary w-64 transition-all" placeholder="Search keywords..." type="text"/>
+</div>
+<button class="p-2 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="bg-primary text-white px-4 py-1.5 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-sm">download</span>
+                        Export PDF
+                    </button>
+</div>
+</header>
+<div class="p-8 space-y-8 max-w-7xl mx-auto">
+<!-- Summary Stats -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 text-sm font-medium">Global Visibility</span>
+<span class="text-emerald-500 text-xs font-bold bg-emerald-50 dark:bg-emerald-500/10 px-2 py-1 rounded">+4.2%</span>
+</div>
+<p class="text-3xl font-black">74.2</p>
+<p class="text-xs text-slate-400 mt-1">Vs 71.2 last month</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 text-sm font-medium">Market Share</span>
+<span class="text-emerald-500 text-xs font-bold bg-emerald-50 dark:bg-emerald-500/10 px-2 py-1 rounded">+1.5%</span>
+</div>
+<p class="text-3xl font-black">28.4%</p>
+<p class="text-xs text-slate-400 mt-1">Sector: E-commerce Comparison</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 text-sm font-medium">Pricing Index</span>
+<span class="text-rose-500 text-xs font-bold bg-rose-50 dark:bg-rose-500/10 px-2 py-1 rounded">-0.8%</span>
+</div>
+<p class="text-3xl font-black">92.1</p>
+<p class="text-xs text-slate-400 mt-1">Competitive Gap: -2.4 pts</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm bg-gradient-to-br from-primary/5 to-transparent">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 text-sm font-medium">Lowest Price Hits</span>
+<span class="text-emerald-500 text-xs font-bold bg-emerald-50 dark:bg-emerald-500/10 px-2 py-1 rounded">Top Performer</span>
+</div>
+<p class="text-3xl font-black">62%</p>
+<p class="text-xs text-slate-400 mt-1">Surfaces lowest price vs competitors</p>
+</div>
+</div>
+<!-- Main Charts Row -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Global Visibility Trends -->
+<div class="lg:col-span-2 bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-bold">Global Market Share &amp; Visibility Trends</h3>
+<div class="flex gap-2">
+<span class="flex items-center gap-1.5 text-[10px] font-bold uppercase text-slate-400"><span class="size-2 rounded-full bg-primary"></span> PriceRadar</span>
+<span class="flex items-center gap-1.5 text-[10px] font-bold uppercase text-slate-400"><span class="size-2 rounded-full bg-orange-400"></span> Google Shopping</span>
+<span class="flex items-center gap-1.5 text-[10px] font-bold uppercase text-slate-400"><span class="size-2 rounded-full bg-emerald-400"></span> Idealo</span>
+</div>
+</div>
+<div class="h-64 relative">
+<!-- SVG Chart Visualization -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 800 200">
+<!-- Grid Lines -->
+<line class="text-slate-100 dark:text-slate-800" stroke="currentColor" stroke-width="1" x1="0" x2="800" y1="0" y2="0"></line>
+<line class="text-slate-100 dark:text-slate-800" stroke="currentColor" stroke-width="1" x1="0" x2="800" y1="50" y2="50"></line>
+<line class="text-slate-100 dark:text-slate-800" stroke="currentColor" stroke-width="1" x1="0" x2="800" y1="100" y2="100"></line>
+<line class="text-slate-100 dark:text-slate-800" stroke="currentColor" stroke-width="1" x1="0" x2="800" y1="150" y2="150"></line>
+<!-- PriceRadar Line -->
+<path d="M0,150 Q100,120 200,130 T400,80 T600,60 T800,40" fill="none" stroke="#1c74e9" stroke-width="3"></path>
+<!-- Google Shopping Line -->
+<path d="M0,100 Q100,110 200,90 T400,100 T600,110 T800,105" fill="none" stroke="#fb923c" stroke-dasharray="4" stroke-width="2"></path>
+<!-- Idealo Line -->
+<path d="M0,170 Q100,160 200,150 T400,140 T600,120 T800,130" fill="none" stroke="#34d399" stroke-dasharray="4" stroke-width="2"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center bg-slate-50/20 dark:bg-slate-900/20 pointer-events-none">
+<span class="text-xs font-bold text-slate-300 dark:text-slate-700">Visibility Score (Jan - June)</span>
+</div>
+</div>
+</div>
+<!-- SEO Strategy Insights -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
+<h3 class="font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+                            Strategy Insights
+                        </h3>
+<div class="space-y-4 flex-1">
+<div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border-l-4 border-primary">
+<p class="text-xs font-bold text-primary uppercase mb-1">Competitor Alert</p>
+<p class="text-sm"><strong>Google Shopping</strong> added 50k new indexable pages in the 'Laptops' category last week.</p>
+</div>
+<div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border-l-4 border-emerald-500">
+<p class="text-xs font-bold text-emerald-500 uppercase mb-1">Opportunity</p>
+<p class="text-sm">PriceRadar has 15% lower average price in 'Smart Home' than <strong>Idealo</strong>, but 20% less visibility.</p>
+</div>
+<div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border-l-4 border-orange-500">
+<p class="text-xs font-bold text-orange-500 uppercase mb-1">Content Gap</p>
+<p class="text-sm"><strong>Akakce</strong> is outranking us for "best cordless vacuum 2024" despite our better pricing index.</p>
+</div>
+</div>
+<button class="mt-4 w-full py-2 text-sm font-bold text-slate-500 hover:text-primary transition-colors border-t border-slate-100 dark:border-slate-800">
+                            View All Insights
+                        </button>
+</div>
+</div>
+<!-- Tables and Matrix Row -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Competitor Performance Table -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<h3 class="font-bold mb-6">Competitor Performance Breakdown</h3>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="border-b border-slate-100 dark:border-slate-800">
+<tr class="text-xs font-bold text-slate-400 uppercase">
+<th class="pb-3 pr-4">Competitor</th>
+<th class="pb-3 px-4">DA</th>
+<th class="pb-3 px-4">Indexed Pages</th>
+<th class="pb-3 px-4">Org. Traffic</th>
+<th class="pb-3 pl-4">Overlap</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="text-sm">
+<td class="py-4 pr-4 font-bold flex items-center gap-2">
+<div class="size-2 rounded-full bg-orange-400"></div> Google Shopping
+                                        </td>
+<td class="py-4 px-4 font-medium">94</td>
+<td class="py-4 px-4 text-slate-500">12.5M</td>
+<td class="py-4 px-4 text-slate-500">850M</td>
+<td class="py-4 pl-4">
+<div class="w-24 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="w-[85%] h-full bg-primary"></div>
+</div>
+<span class="text-[10px] text-slate-400">85% overlap</span>
+</td>
+</tr>
+<tr class="text-sm">
+<td class="py-4 pr-4 font-bold flex items-center gap-2">
+<div class="size-2 rounded-full bg-emerald-400"></div> Idealo
+                                        </td>
+<td class="py-4 px-4 font-medium">81</td>
+<td class="py-4 px-4 text-slate-500">4.2M</td>
+<td class="py-4 px-4 text-slate-500">120M</td>
+<td class="py-4 pl-4">
+<div class="w-24 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="w-[62%] h-full bg-primary"></div>
+</div>
+<span class="text-[10px] text-slate-400">62% overlap</span>
+</td>
+</tr>
+<tr class="text-sm">
+<td class="py-4 pr-4 font-bold flex items-center gap-2">
+<div class="size-2 rounded-full bg-indigo-400"></div> Akakce
+                                        </td>
+<td class="py-4 px-4 font-medium">68</td>
+<td class="py-4 px-4 text-slate-500">1.8M</td>
+<td class="py-4 px-4 text-slate-500">45M</td>
+<td class="py-4 pl-4">
+<div class="w-24 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="w-[44%] h-full bg-primary"></div>
+</div>
+<span class="text-[10px] text-slate-400">44% overlap</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Keyword Gap Matrix -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<h3 class="font-bold mb-6">Keyword Gap Matrix</h3>
+<div class="flex items-center justify-center py-8">
+<!-- Venn Diagram Style Visualization -->
+<div class="relative w-64 h-64">
+<div class="absolute inset-0 bg-primary/20 rounded-full border-2 border-primary flex flex-col items-center justify-start pt-12">
+<span class="text-xs font-black">OURS</span>
+<span class="text-sm">12.4k</span>
+</div>
+<div class="absolute inset-x-12 inset-y-0 bg-orange-400/20 rounded-full border-2 border-orange-400 flex flex-col items-center justify-end pb-12 mix-blend-multiply dark:mix-blend-lighten">
+<span class="text-xs font-black">THEIRS</span>
+<span class="text-sm">18.1k</span>
+</div>
+<div class="absolute inset-x-20 inset-y-20 flex flex-col items-center justify-center text-center z-10">
+<span class="text-[10px] font-bold uppercase text-slate-600 dark:text-slate-300">Shared</span>
+<span class="text-lg font-black">5.2k</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 text-center mt-4">
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase">Unique to Us</p>
+<p class="text-lg font-bold">7.2k</p>
+</div>
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase">Shared</p>
+<p class="text-lg font-bold">5.2k</p>
+</div>
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase">Unique to Them</p>
+<p class="text-lg font-bold text-rose-500">12.9k</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Row: Shared Categories & Detailed Comparison -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pb-8">
+<!-- Top Shared Categories Chart -->
+<div class="lg:col-span-2 bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<h3 class="font-bold mb-6">Competition Intensity by Category</h3>
+<div class="space-y-5">
+<div>
+<div class="flex justify-between text-sm mb-1.5">
+<span class="font-medium">Electronics</span>
+<span class="text-slate-500">High Intensity</span>
+</div>
+<div class="flex h-3 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+<div class="bg-primary w-[88%] h-full"></div>
+<div class="bg-orange-400 w-[12%] h-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1.5">
+<span class="font-medium">Home Appliances</span>
+<span class="text-slate-500">Moderate Intensity</span>
+</div>
+<div class="flex h-3 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+<div class="bg-primary w-[65%] h-full"></div>
+<div class="bg-orange-400 w-[35%] h-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1.5">
+<span class="font-medium">Fashion &amp; Accessories</span>
+<span class="text-slate-500">Low Intensity</span>
+</div>
+<div class="flex h-3 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+<div class="bg-primary w-[42%] h-full"></div>
+<div class="bg-orange-400 w-[58%] h-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1.5">
+<span class="font-medium">Beauty &amp; Personal Care</span>
+<span class="text-slate-500">Rising</span>
+</div>
+<div class="flex h-3 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+<div class="bg-primary w-[25%] h-full"></div>
+<div class="bg-orange-400 w-[75%] h-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pricing Competitiveness Index Detail -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center justify-center text-center">
+<div class="mb-4">
+<span class="material-symbols-outlined text-5xl text-primary/40">price_check</span>
+</div>
+<h3 class="font-bold mb-2">Pricing Dominance</h3>
+<p class="text-sm text-slate-500 mb-6">PriceRadar currently beats the top 4 competitors on price for 62% of tracked items.</p>
+<div class="relative size-32">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-slate-100 dark:text-slate-800" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="138.4" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="text-2xl font-black">62%</span>
+<span class="text-[8px] font-bold uppercase text-slate-400">Index</span>
+</div>
+</div>
+<div class="mt-6 flex gap-4 text-xs font-bold">
+<span class="text-emerald-500">We Lead: 62%</span>
+<span class="text-rose-500">They Lead: 38%</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

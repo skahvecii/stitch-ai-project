@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="flex min-h-screen">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary p-2 rounded-lg text-white">
+<span class="material-symbols-outlined block">radar</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight text-primary">PriceRadar</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Admin Dashboard</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard Overview
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                Products
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">storefront</span>
+                Stores
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">rss_feed</span>
+                Feeds &amp; Crawlers
+            </a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#"><span class="material-symbols-outlined">history_edu</span>Crawler Logs</a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#"><span class="material-symbols-outlined">map</span>Feed Mapping</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+                Analytics
+            </a>
+<div class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#"><span class="material-symbols-outlined">search_check</span>SEO Settings</a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#"><span class="material-symbols-outlined">contact_support</span>User Support</a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+</div>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
+<img alt="Admin Profile" class="size-10 rounded-full" data-alt="Professional headshot of a male administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrPRtzuElrqYxqzlTMGcKOgYrEZIVKnpgFivqWSmkTgcFPPx20AVD41N_EKEMuK6p9DnO8B5xNWVJuIGQH_hQ0ZyVpQ9N-fxex1v2UGauZkbhlGHlmJzI_RVL3KEEu_LtympoJLUak2ZHGdd-5XF0ttBNspL_8GHCoCTUJJTJuHGfv7NOV95ld_bUpXG2BitP4nN_X-GLK4GOMCXOd9Y1EybKPxiUPiUhm9J5iHdATo4qBa1owjRGPimdOnaDFBXVI0mwOQgmYLs-D"/>
+<div class="overflow-hidden">
+<p class="text-sm font-semibold truncate">Alex Rivera</p>
+<p class="text-xs text-slate-500 truncate">System Manager</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between px-8 z-10">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg focus:ring-2 focus:ring-primary text-sm" placeholder="Search products, stores or feed IDs..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+</button>
+<button class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-medium text-sm hover:bg-primary/90 transition-opacity">
+<span class="material-symbols-outlined text-lg">add</span>
+                    New Crawler
+                </button>
+</div>
+</header>
+<!-- Dashboard Body -->
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 rounded-lg">
+<span class="material-symbols-outlined">ads_click</span>
+</div>
+<span class="text-emerald-500 text-sm font-medium flex items-center">+12.5% <span class="material-symbols-outlined text-sm">trending_up</span></span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Total Clicks</p>
+<h3 class="text-2xl font-bold mt-1">1,248,392</h3>
+<div class="mt-4 h-8"><svg class="w-full h-full" viewbox="0 0 100 20"><path d="M0 15 Q 10 5, 20 18 T 40 10 T 60 15 T 80 5 T 100 12" fill="none" stroke="#10b981" stroke-width="2"></path></svg></div></div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-purple-50 dark:bg-purple-900/20 text-purple-600 rounded-lg">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<span class="text-rose-500 text-sm font-medium flex items-center">-2.1% <span class="material-symbols-outlined text-sm">trending_down</span></span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Active Products</p>
+<h3 class="text-2xl font-bold mt-1">458,203</h3>
+<div class="mt-4 h-8"><svg class="w-full h-full" viewbox="0 0 100 20"><path d="M0 5 Q 15 15, 30 10 T 60 18 T 90 12 T 100 20" fill="none" stroke="#f43f5e" stroke-width="2"></path></svg></div></div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-amber-50 dark:bg-amber-900/20 text-amber-600 rounded-lg">
+<span class="material-symbols-outlined">dynamic_feed</span>
+</div>
+<span class="text-emerald-500 text-sm font-medium flex items-center">+4.3% <span class="material-symbols-outlined text-sm">trending_up</span></span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Merchant Feeds</p>
+<h3 class="text-2xl font-bold mt-1">124</h3>
+<div class="mt-4 h-8"><svg class="w-full h-full" viewbox="0 0 100 20"><path d="M0 18 L 20 12 L 40 15 L 60 8 L 80 10 L 100 2" fill="none" stroke="#10b981" stroke-width="2"></path></svg></div></div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 rounded-lg">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="text-emerald-500 text-sm font-medium flex items-center">+8.7% <span class="material-symbols-outlined text-sm">trending_up</span></span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Est. Revenue</p>
+<h3 class="text-2xl font-bold mt-1">$45,290.00</h3>
+<div class="mt-4 h-8"><svg class="w-full h-full" viewbox="0 0 100 20"><path d="M0 10 C 20 10, 40 0, 60 10 S 80 20, 100 10" fill="none" stroke="#10b981" stroke-width="2"></path></svg></div></div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-6">
+<h4 class="text-lg font-bold">Revenue Trends</h4>
+<select class="bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-xs font-semibold py-1 px-3">
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+</select>
+</div>
+<div class="h-64 relative w-full flex items-end gap-2 px-2">
+<!-- Simplified SVG Chart placeholder -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 400 150">
+<path d="M0 130 C 50 120, 80 40, 120 60 S 180 100, 240 40 S 320 10, 400 50 L 400 150 L 0 150 Z" fill="url(#grad1)"></path>
+<path d="M0 130 C 50 120, 80 40, 120 60 S 180 100, 240 40 S 320 10, 400 50" fill="none" stroke="#1c74e9" stroke-width="3"></path>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#1c74e9;stop-opacity:0.2"></stop>
+<stop offset="100%" style="stop-color:#1c74e9;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-between w-full mt-auto pt-4 text-[10px] text-slate-400 font-bold uppercase tracking-tighter">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-6">
+<h4 class="text-lg font-bold">Daily Clicks</h4>
+<span class="text-sm font-medium text-slate-500">Avg. 172k / day</span>
+</div>
+<div class="h-64 flex items-end justify-between gap-3 px-2">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative group" style="height: 60%">
+<div class="absolute inset-0 bg-primary/40 rounded-t-lg transition-all"></div>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative group" style="height: 45%">
+<div class="absolute inset-0 bg-primary/40 rounded-t-lg transition-all"></div>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative group" style="height: 80%">
+<div class="absolute inset-0 bg-primary/40 rounded-t-lg transition-all"></div>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative group" style="height: 55%">
+<div class="absolute inset-0 bg-primary/40 rounded-t-lg transition-all"></div>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative group" style="height: 95%">
+<div class="absolute inset-0 bg-primary rounded-t-lg transition-all"></div>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative group" style="height: 30%">
+<div class="absolute inset-0 bg-primary/40 rounded-t-lg transition-all"></div>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative group" style="height: 40%">
+<div class="absolute inset-0 bg-primary/40 rounded-t-lg transition-all"></div>
+</div>
+</div>
+<div class="flex justify-between w-full mt-4 text-[10px] text-slate-400 font-bold uppercase">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+</div>
+<!-- Tables Section -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm mb-8"><div class="flex items-center justify-between mb-4"><h4 class="text-lg font-bold">Top Performing Categories</h4><span class="text-sm text-primary font-medium cursor-pointer">View Full Analytics</span></div><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg"><div><p class="text-xs text-slate-500 font-bold uppercase">Electronics</p><p class="text-xl font-bold">$1.2M</p></div><div class="text-emerald-500 text-sm font-bold">+14%</div></div><div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg"><div><p class="text-xs text-slate-500 font-bold uppercase">Home &amp; Garden</p><p class="text-xl font-bold">$840k</p></div><div class="text-emerald-500 text-sm font-bold">+8%</div></div><div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg"><div><p class="text-xs text-slate-500 font-bold uppercase">Fashion</p><p class="text-xl font-bold">$650k</p></div><div class="text-rose-500 text-sm font-bold">-2%</div></div></div></div><div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Store Management -->
+<div class="xl:col-span-2 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<h4 class="text-lg font-bold">Store Management</h4>
+<button class="text-primary text-sm font-semibold hover:underline">View All Stores</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 text-xs font-bold uppercase">
+<tr>
+<th class="px-6 py-4">Store Name</th>
+<th class="px-6 py-4">Trust Score</th>
+<th class="px-6 py-4">Products</th><th class="px-6 py-4">Last Sync</th><th class="px-6 py-4">Active Offers</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-primary">A</div>
+<span class="font-medium">Amazon US</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-amber-400 text-sm FILL-1">star</span>
+<span class="font-semibold">4.9</span>
+</div>
+</td>
+<td class="px-6 py-4 text-slate-500 font-medium text-sm">240,102</td><td class="px-6 py-4 text-slate-500 text-sm">2 mins ago</td><td class="px-6 py-4 text-slate-900 dark:text-white font-semibold text-sm">184,200</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase">Active</span>
+</td>
+<td class="px-6 py-4"><div class="flex gap-2"><button class="p-1.5 hover:bg-primary/10 rounded text-primary" title="Force Sync"><span class="material-symbols-outlined text-sm">sync</span></button><button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 rounded text-slate-400" title="Edit Mapping"><span class="material-symbols-outlined text-sm">edit_note</span></button></div></td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-primary">W</div>
+<span class="font-medium">Walmart</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-amber-400 text-sm FILL-1">star</span>
+<span class="font-semibold">4.7</span>
+</div>
+</td>
+<td class="px-6 py-4 text-slate-500 font-medium text-sm">112,450</td><td class="px-6 py-4 text-slate-500 text-sm">1 hour ago</td><td class="px-6 py-4 text-slate-900 dark:text-white font-semibold text-sm">98,450</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase">Active</span>
+</td>
+<td class="px-6 py-4"><div class="flex gap-2"><button class="p-1.5 hover:bg-primary/10 rounded text-primary" title="Force Sync"><span class="material-symbols-outlined text-sm">sync</span></button><button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 rounded text-slate-400" title="Edit Mapping"><span class="material-symbols-outlined text-sm">edit_note</span></button></div></td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-primary">E</div>
+<span class="font-medium">eBay Global</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-amber-400 text-sm FILL-1">star</span>
+<span class="font-semibold">4.2</span>
+</div>
+</td>
+<td class="px-6 py-4 text-slate-500 font-medium text-sm">89,320</td><td class="px-6 py-4 text-slate-500 text-sm">12 mins ago</td><td class="px-6 py-4 text-slate-900 dark:text-white font-semibold text-sm">64,120</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 text-xs font-bold uppercase">Maintenance</span>
+</td>
+<td class="px-6 py-4"><div class="flex gap-2"><button class="p-1.5 hover:bg-primary/10 rounded text-primary" title="Force Sync"><span class="material-symbols-outlined text-sm">sync</span></button><button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 rounded text-slate-400" title="Edit Mapping"><span class="material-symbols-outlined text-sm">edit_note</span></button></div></td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-primary">B</div>
+<span class="font-medium">Best Buy</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-amber-400 text-sm FILL-1">star</span>
+<span class="font-semibold">4.8</span>
+</div>
+</td>
+<td class="px-6 py-4 text-slate-500 font-medium text-sm">15,600</td><td class="px-6 py-4 text-slate-500 text-sm">Just now</td><td class="px-6 py-4 text-slate-900 dark:text-white font-semibold text-sm">12,300</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase">Active</span>
+</td>
+<td class="px-6 py-4"><div class="flex gap-2"><button class="p-1.5 hover:bg-primary/10 rounded text-primary" title="Force Sync"><span class="material-symbols-outlined text-sm">sync</span></button><button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 rounded text-slate-400" title="Edit Mapping"><span class="material-symbols-outlined text-sm">edit_note</span></button></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Product Feed Status -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col"><div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between"><h4 class="text-lg font-bold">Crawler &amp; Data Ingestion</h4><div class="flex gap-2"><span class="size-2 bg-emerald-500 rounded-full"></span><span class="text-[10px] font-bold text-slate-500 uppercase">Real-time</span></div></div><div class="p-0 flex-1 overflow-hidden"><div class="divide-y divide-slate-100 dark:divide-slate-800"><div class="p-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"><div class="flex items-center justify-between mb-1"><span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded">SUCCESS</span><span class="text-[10px] text-slate-400">14:20:05</span></div><p class="text-sm font-medium">Amazon US - Electronics Crawl</p><p class="text-[10px] text-slate-500">4,201 items updated • 0.8s avg/item</p></div><div class="p-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"><div class="flex items-center justify-between mb-1"><span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded animate-pulse">IN PROGRESS</span><span class="text-[10px] text-slate-400">14:18:12</span></div><p class="text-sm font-medium">Walmart API Sync</p><p class="text-[10px] text-slate-500">2,150 / 5,000 processed • 43%</p></div><div class="p-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"><div class="flex items-center justify-between mb-1"><span class="text-xs font-bold text-rose-600 dark:text-rose-400 bg-rose-100 dark:bg-rose-900/30 px-2 py-0.5 rounded">FAILED</span><span class="text-[10px] text-slate-400">14:05:33</span></div><p class="text-sm font-medium">eBay Global - Daily Refresh</p><p class="text-[10px] text-rose-500">Timeout Error: Proxy group #4 unreachable</p></div><div class="p-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"><div class="flex items-center justify-between mb-1"><span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded">SUCCESS</span><span class="text-[10px] text-slate-400">13:45:10</span></div><p class="text-sm font-medium">Best Buy Product Validation</p><p class="text-[10px] text-slate-500">120 new offers added • 100% data health</p></div></div></div><div class="p-4 border-t border-slate-200 dark:border-slate-800"><button class="w-full py-2 text-xs font-bold text-primary border border-primary/20 rounded-lg hover:bg-primary/5 transition-colors uppercase tracking-wider">View All Crawler Logs</button></div></div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

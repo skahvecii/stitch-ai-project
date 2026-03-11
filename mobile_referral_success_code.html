@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1c74e9",
+              "background-light": "#f6f7f8",
+              "background-dark": "#111821",
+            },
+            fontFamily: {
+              "display": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<title>PriceRadar - Claim Submitted</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex items-center justify-center p-0 sm:p-4">
+<!-- Mobile Container -->
+<div class="relative w-full max-w-[430px] min-h-screen sm:min-h-[844px] sm:max-h-[844px] bg-white dark:bg-slate-900 sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-slate-200 dark:border-slate-800">
+<!-- Header / App Bar -->
+<div class="flex items-center px-4 py-6 justify-between">
+<button class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center">Referral Success</h2>
+<div class="w-6"></div> <!-- Spacer for balance -->
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto px-6 pb-8">
+<!-- Celebration Header -->
+<div class="flex flex-col items-center text-center mt-4">
+<div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-6xl font-bold">check_circle</span>
+</div>
+<h2 class="text-2xl font-bold tracking-tight mb-3">Claim Submitted Successfully!</h2>
+<p class="text-slate-500 dark:text-slate-400 text-base leading-relaxed mb-8">
+                    Your reward is being processed and we've verified your referral.
+                </p>
+</div>
+<!-- Details Card -->
+<div class="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-5 border border-slate-100 dark:border-slate-800 mb-6">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Claim ID</span>
+<span class="text-slate-900 dark:text-slate-100 font-semibold text-sm">#PR-9928341</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Reward</span>
+<span class="text-primary font-bold text-sm">$60.00 Payout</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Est. Processing</span>
+<span class="text-slate-900 dark:text-slate-100 font-semibold text-sm">24-48 hours</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Delivery Method</span>
+<div class="flex items-center gap-2">
+<span class="text-slate-900 dark:text-slate-100 font-semibold text-sm text-right">PayPal</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Information Alert -->
+<div class="flex gap-3 bg-blue-50 dark:bg-primary/10 p-4 rounded-lg border border-blue-100 dark:border-primary/20 mb-8">
+<span class="material-symbols-outlined text-primary text-xl">info</span>
+<p class="text-primary text-sm font-medium leading-snug">
+                    You will receive an email confirmation once your reward has been dispatched.
+                </p>
+</div>
+<!-- Visual Decorative Element -->
+<div class="w-full h-32 rounded-xl mb-8 overflow-hidden bg-slate-200 dark:bg-slate-800">
+<div class="w-full h-full opacity-60 bg-gradient-to-br from-primary/30 via-transparent to-primary/20" data-alt="Abstract blue gradient pattern for reward confirmation"></div>
+</div>
+</div>
+<!-- Sticky Footer Buttons -->
+<div class="p-6 border-t border-slate-100 dark:border-slate-800 space-y-3">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-primary/20">
+                Refer More Friends
+            </button>
+<button class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold py-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
+                Return to Dashboard
+            </button>
+</div>
+</div>
+</body></html>

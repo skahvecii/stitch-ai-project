@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Error Analysis - PriceRadar Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">PriceRadar <span class="text-primary">Admin</span></h2>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Merchants</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Products</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors underline decoration-primary underline-offset-8" href="#">Error Logs</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="bg-slate-100 dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary w-64" placeholder="Search logs or stores..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg size-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg size-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="bg-primary/10 rounded-full p-0.5 border border-primary/20">
+<div class="size-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xs">AD</div>
+</div>
+</div>
+</header>
+<main class="flex-1 p-6 max-w-[1600px] mx-auto w-full">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+<div>
+<h1 class="text-3xl font-black tracking-tight text-slate-900 dark:text-white">Error Analysis</h1>
+<p class="text-slate-500 dark:text-slate-400">Diagnose system sync failures and crawler issues for the last 24 hours.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-200">
+<span class="material-symbols-outlined text-lg">delete_sweep</span> Clear Logs
+                    </button>
+<button class="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-200">
+<span class="material-symbols-outlined text-lg">download</span> Export Report
+                    </button>
+<button class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold flex items-center gap-2 shadow-lg shadow-primary/20 hover:brightness-110">
+<span class="material-symbols-outlined text-lg">refresh</span> Retry All Failed
+                    </button>
+</div>
+</div>
+<!-- Error Summary Overview -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<p class="text-sm font-medium text-slate-500">Total Errors (24h)</p>
+<span class="material-symbols-outlined text-red-500 bg-red-50 p-1 rounded">error</span>
+</div>
+<p class="text-3xl font-bold text-slate-900 dark:text-white">1,284</p>
+<div class="flex items-center gap-1 mt-2">
+<span class="text-red-500 font-bold text-sm">+12.5%</span>
+<span class="text-slate-400 text-xs">from yesterday</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<p class="text-sm font-medium text-slate-500">Avg. Error Rate</p>
+<span class="material-symbols-outlined text-orange-500 bg-orange-50 p-1 rounded">query_stats</span>
+</div>
+<p class="text-3xl font-bold text-slate-900 dark:text-white">4.2%</p>
+<div class="flex items-center gap-1 mt-2">
+<span class="text-green-500 font-bold text-sm">-0.8%</span>
+<span class="text-slate-400 text-xs">from avg</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm col-span-1 lg:col-span-2">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-medium text-slate-500">Common Error Types</p>
+</div>
+<div class="grid grid-cols-3 gap-4 mt-4">
+<div class="space-y-1">
+<p class="text-xs text-slate-400 uppercase font-bold tracking-wider">404 Not Found</p>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full">
+<div class="h-full bg-red-500 rounded-full" style="width: 70%"></div>
+</div>
+<p class="text-xs font-medium">422 instances</p>
+</div>
+<div class="space-y-1">
+<p class="text-xs text-slate-400 uppercase font-bold tracking-wider">Schema Mismatch</p>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full">
+<div class="h-full bg-primary rounded-full" style="width: 45%"></div>
+</div>
+<p class="text-xs font-medium">284 instances</p>
+</div>
+<div class="space-y-1">
+<p class="text-xs text-slate-400 uppercase font-bold tracking-wider">Timeouts</p>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full">
+<div class="h-full bg-orange-500 rounded-full" style="width: 30%"></div>
+</div>
+<p class="text-xs font-medium">156 instances</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Main Table Area -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Top Failed Stores -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<h3 class="font-bold text-slate-900 dark:text-white">Top Failed Stores</h3>
+<button class="text-primary text-sm font-bold">View All Merchants</button>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-8 items-end">
+<div class="flex-1 min-w-[300px]">
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-lg bg-slate-50 dark:bg-slate-800 flex items-center justify-center border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400">storefront</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-bold">TechGear Direct</span>
+<span class="text-sm text-red-500 font-bold">88% Failure</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-red-500" style="width: 88%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-lg bg-slate-50 dark:bg-slate-800 flex items-center justify-center border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400">storefront</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-bold">Global Fashions</span>
+<span class="text-sm text-orange-500 font-bold">42% Failure</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-orange-500" style="width: 42%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-lg bg-slate-50 dark:bg-slate-800 flex items-center justify-center border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400">storefront</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-bold">Home Essential Market</span>
+<span class="text-sm text-orange-400 font-bold">28% Failure</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-orange-400" style="width: 28%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden sm:block">
+<div class="size-32 rounded-full border-[10px] border-slate-100 dark:border-slate-800 relative flex items-center justify-center">
+<div class="absolute inset-0 rounded-full border-[10px] border-red-500" style="clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 50% 0%); transform: rotate(45deg);"></div>
+<div class="text-center">
+<p class="text-xl font-black">12</p>
+<p class="text-[10px] font-bold text-slate-400 uppercase">Stores Down</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Error Log Table -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50/50 dark:bg-slate-800/20">
+<h3 class="font-bold text-slate-900 dark:text-white">Detailed Error Log</h3>
+<div class="flex gap-2">
+<button class="p-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-bold hover:bg-slate-50">Filter</button>
+<button class="p-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-bold hover:bg-slate-50">Sort</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead>
+<tr class="text-slate-500 font-bold border-b border-slate-100 dark:border-slate-800">
+<th class="px-6 py-4">Timestamp</th>
+<th class="px-6 py-4">Store Name</th>
+<th class="px-6 py-4">Error Code</th>
+<th class="px-6 py-4">Resource URL</th>
+<th class="px-6 py-4 text-right">Impact</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50 dark:divide-slate-800">
+<tr class="hover:bg-primary/5 cursor-pointer bg-primary/5 group transition-colors">
+<td class="px-6 py-4 whitespace-nowrap text-slate-500">14:22:15</td>
+<td class="px-6 py-4 font-bold">TechGear Direct</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded text-xs font-bold uppercase">404 Found</span>
+</td>
+<td class="px-6 py-4 text-slate-400 truncate max-w-[200px]">/api/v1/feeds/products_2024...</td>
+<td class="px-6 py-4 text-right font-bold text-red-500">1,402 items</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors">
+<td class="px-6 py-4 whitespace-nowrap text-slate-500">14:18:02</td>
+<td class="px-6 py-4 font-bold">Global Fashions</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded text-xs font-bold uppercase">Schema Error</span>
+</td>
+<td class="px-6 py-4 text-slate-400 truncate max-w-[200px]">/data/sync/fall_collection.json</td>
+<td class="px-6 py-4 text-right font-bold">850 items</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors">
+<td class="px-6 py-4 whitespace-nowrap text-slate-500">14:05:44</td>
+<td class="px-6 py-4 font-bold">KitchenPro</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded text-xs font-bold uppercase">Timeout</span>
+</td>
+<td class="px-6 py-4 text-slate-400 truncate max-w-[200px]">https://kitchenpro.com/feeds/o...</td>
+<td class="px-6 py-4 text-right font-bold">412 items</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors">
+<td class="px-6 py-4 whitespace-nowrap text-slate-500">13:58:12</td>
+<td class="px-6 py-4 font-bold">Home Essential</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded text-xs font-bold uppercase">403 Forbidden</span>
+</td>
+<td class="px-6 py-4 text-slate-400 truncate max-w-[200px]">/private/affiliate/listing.xml</td>
+<td class="px-6 py-4 text-right font-bold text-red-500">2,911 items</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-bold text-slate-400 uppercase tracking-widest">
+<span>Showing 1-10 of 1,284 logs</span>
+<div class="flex gap-2">
+<button class="p-2 border border-slate-200 dark:border-slate-700 rounded bg-white dark:bg-slate-800 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="p-2 border border-slate-200 dark:border-slate-700 rounded bg-white dark:bg-slate-800">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar Diagnostic Panel -->
+<aside class="lg:col-span-1 space-y-6">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/30 shadow-xl shadow-primary/5 p-6 sticky top-24">
+<div class="flex items-center gap-3 mb-6">
+<div class="size-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-900 dark:text-white">Error Details</h3>
+<p class="text-xs text-slate-400">Incident ID: #ERR-8921-TX</p>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<label class="text-[10px] font-black uppercase text-slate-400 block mb-2 tracking-widest">Raw Error Message</label>
+<div class="bg-slate-950 text-slate-300 p-4 rounded-lg font-mono text-xs leading-relaxed border border-slate-800">
+<span class="text-red-400">Error:</span> Failed to fetch resource at '/api/v1/feeds/products_2024'. Server responded with status 404. Check if endpoint is deprecated or path has changed.
+                                </div>
+</div>
+<div>
+<label class="text-[10px] font-black uppercase text-slate-400 block mb-2 tracking-widest">Data Snippet (Failed JSON)</label>
+<div class="bg-slate-950 text-slate-400 p-4 rounded-lg font-mono text-xs overflow-x-auto border border-slate-800">
+<pre><code>{
+  "status": "error",
+  "code": 404,
+  "message": "Resource not found",
+  "requested_at": "2024-05-24T14:22:15Z",
+  <span class="text-slate-600">// ... truncated</span>
+}</code></pre>
+</div>
+</div>
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-5">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-xl">tips_and_updates</span>
+<h4 class="font-bold text-sm text-primary">Diagnostic Suggestions</h4>
+</div>
+<ul class="space-y-3">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+<p class="text-xs text-slate-600 dark:text-slate-400">The store may have migrated their API version. Verify the endpoint URL in <strong>Merchant Settings</strong>.</p>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+<p class="text-xs text-slate-600 dark:text-slate-400">Check store API key expiration. Last sync was successful 2 days ago.</p>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+<p class="text-xs text-slate-600 dark:text-slate-400">Verify CSS selectors if this is a web-crawled resource instead of an API feed.</p>
+</li>
+</ul>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+<button class="flex items-center justify-center gap-2 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-bold hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-base">forum</span> Chat Support
+                                </button>
+<button class="flex items-center justify-center gap-2 py-2.5 rounded-lg bg-primary text-white text-sm font-bold shadow-lg shadow-primary/10 hover:brightness-110 transition-all">
+<span class="material-symbols-outlined text-base">settings_backup_restore</span> Fix Store
+                                </button>
+</div>
+</div>
+</div>
+<div class="bg-orange-50 dark:bg-orange-900/10 border border-orange-200 dark:border-orange-900/30 rounded-xl p-5">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-orange-500">warning</span>
+<div>
+<p class="text-sm font-bold text-orange-800 dark:text-orange-300">Crawler Capacity Warning</p>
+<p class="text-xs text-orange-700 dark:text-orange-400 mt-1 leading-relaxed">Crawler node #4 is reaching 95% CPU load. Timeouts might increase in the next hour if load isn't balanced.</p>
+<button class="mt-3 text-xs font-black uppercase tracking-widest text-orange-600 dark:text-orange-500 hover:underline">Rebalance Load</button>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-6 px-8 mt-12">
+<div class="max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-400">© 2024 PriceRadar Monitoring System. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-xs font-bold text-slate-400 hover:text-primary uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="text-xs font-bold text-slate-400 hover:text-primary uppercase tracking-widest" href="#">System Status</a>
+<a class="text-xs font-bold text-slate-400 hover:text-primary uppercase tracking-widest" href="#">API Docs</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

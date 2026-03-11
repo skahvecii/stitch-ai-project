@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Competitor Comparison - PriceRadar SEO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center bg-background-light dark:bg-background-dark p-4 border-b border-slate-200 dark:border-slate-800 justify-between">
+<div class="flex items-center gap-3">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold tracking-tight">Competitor Analysis</h2>
+</div>
+<button class="flex items-center gap-1 text-primary font-bold px-3 py-1 rounded-lg hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Export</span>
+</button>
+</header>
+<main class="flex-1 pb-24">
+<!-- Summary KPIs -->
+<section class="flex flex-wrap gap-3 p-4">
+<div class="flex min-w-[140px] flex-1 flex-col gap-2 rounded-xl p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Global Visibility</p>
+<p class="text-2xl font-bold leading-tight">74.2%</p>
+<div class="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 text-sm font-semibold">
+<span class="material-symbols-outlined text-[18px]">trending_up</span>
+<span>+2.4%</span>
+</div>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-2 rounded-xl p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Pricing Dominance</p>
+<p class="text-2xl font-bold leading-tight">68.5%</p>
+<div class="flex items-center gap-1 text-rose-600 dark:text-rose-400 text-sm font-semibold">
+<span class="material-symbols-outlined text-[18px]">trending_down</span>
+<span>-1.2%</span>
+</div>
+</div>
+</section>
+<!-- Market Share Trend -->
+<section class="px-4 py-2">
+<div class="rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 shadow-sm">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h3 class="text-slate-500 dark:text-slate-400 text-sm font-medium">Market Share Trend</h3>
+<p class="text-3xl font-bold">15.8%</p>
+</div>
+<div class="text-right">
+<p class="text-emerald-600 dark:text-emerald-400 text-sm font-bold">+0.5%</p>
+<p class="text-slate-400 text-[10px] uppercase font-bold">vs last month</p>
+</div>
+</div>
+<div class="h-[140px] w-full relative">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 120">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#1c74e9" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#1c74e9" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,80 Q50,70 100,90 T200,60 T300,40 T400,30 L400,120 L0,120 Z" fill="url(#chartGradient)"></path>
+<path d="M0,80 Q50,70 100,90 T200,60 T300,40 T400,30" fill="none" stroke="#1c74e9" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+<div class="flex justify-between mt-2 px-1">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">W1</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">W2</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">W3</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">W4</span>
+</div>
+</div>
+</section>
+<!-- Top Competitor Performance -->
+<section class="p-4">
+<h3 class="text-base font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                    Top Competitors
+                </h3>
+<div class="flex flex-col gap-3">
+<!-- Competitor Card 1 -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold">G</div>
+<div>
+<p class="font-bold text-sm">Google Shopping</p>
+<p class="text-xs text-slate-500">Market Leader</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold">82.1% Viz</p>
+<p class="text-xs text-rose-500 font-medium">7.9% Gap</p>
+</div>
+</div>
+<!-- Competitor Card 2 -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-orange-100 flex items-center justify-center text-orange-600 font-bold">A</div>
+<div>
+<p class="font-bold text-sm">Akakce</p>
+<p class="text-xs text-slate-500">Local Rival</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold">64.5% Viz</p>
+<p class="text-xs text-emerald-500 font-medium">+9.7% Led</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Keyword Gap Summary -->
+<section class="p-4">
+<div class="rounded-xl bg-slate-100 dark:bg-slate-800/50 p-4 border border-dashed border-slate-300 dark:border-slate-700">
+<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase mb-4 tracking-widest">Keyword Gap</h3>
+<div class="flex items-center h-4 w-full rounded-full overflow-hidden bg-slate-200 dark:bg-slate-700 mb-4">
+<div class="bg-primary h-full w-[35%]" data-alt="Primary visibility segment color block"></div>
+<div class="bg-primary/40 h-full w-[45%]" data-alt="Shared visibility segment color block"></div>
+<div class="bg-slate-400 h-full w-[20%]" data-alt="Competitor unique visibility segment color block"></div>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<div class="size-2 rounded-full bg-primary"></div>
+<span class="text-[10px] font-bold uppercase text-slate-500">Ours</span>
+</div>
+<p class="text-lg font-bold leading-none">1.2k</p>
+</div>
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<div class="size-2 rounded-full bg-primary/40"></div>
+<span class="text-[10px] font-bold uppercase text-slate-500">Shared</span>
+</div>
+<p class="text-lg font-bold leading-none">2.8k</p>
+</div>
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<div class="size-2 rounded-full bg-slate-400"></div>
+<span class="text-[10px] font-bold uppercase text-slate-500">Theirs</span>
+</div>
+<p class="text-lg font-bold leading-none">840</p>
+</div>
+</div>
+</div>
+</section>
+<!-- High Intensity Categories -->
+<section class="p-4">
+<h3 class="text-base font-bold mb-4">High Intensity Categories</h3>
+<div class="space-y-5">
+<div>
+<div class="flex justify-between mb-1.5 text-sm">
+<span class="font-medium">Electronics</span>
+<span class="font-bold">92% Intense</span>
+</div>
+<div class="h-2 w-full bg-slate-200 dark:bg-slate-800 rounded-full">
+<div class="h-full bg-primary rounded-full w-[92%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1.5 text-sm">
+<span class="font-medium">Home &amp; Living</span>
+<span class="font-bold">74% Intense</span>
+</div>
+<div class="h-2 w-full bg-slate-200 dark:bg-slate-800 rounded-full">
+<div class="h-full bg-primary rounded-full w-[74%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1.5 text-sm">
+<span class="font-medium">Fashion</span>
+<span class="font-bold">48% Intense</span>
+</div>
+<div class="h-2 w-full bg-slate-200 dark:bg-slate-800 rounded-full">
+<div class="h-full bg-primary rounded-full w-[48%]"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-2 pb-6 pt-3">
+<div class="flex items-center justify-around">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Rankings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Research</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">bar_chart</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Reports</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Settings</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

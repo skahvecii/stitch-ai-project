@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>PriceRadar - iPhone 15 Pro</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative mx-auto flex min-h-screen max-w-md flex-col bg-white dark:bg-slate-900 shadow-xl overflow-x-hidden pb-20">
+<!-- Header -->
+<div class="sticky top-0 z-10 flex items-center bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-4 justify-between border-b border-slate-100 dark:border-slate-800">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">PriceRadar</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex items-center justify-center text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<!-- Product Hero -->
+<div class="px-4 py-4">
+<div class="w-full aspect-square bg-white border border-slate-100 dark:border-slate-800 rounded-xl flex items-center justify-center overflow-hidden">
+<img alt="Apple iPhone 15 Pro Titanium" class="w-full h-full object-contain p-4" data-alt="Front view of Apple iPhone 15 Pro in natural titanium color" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAW9TBmVQPt3oU_886_wSMXBCfvCU0BvOBbZvyI1mqZdz21tGuFiNCbWwoE-pEiiD2ISQm0B3Zw4rxedg5S_pdj9VGrBo7rX2c33kT3qmRYRSf1cdCVzTQcnVfoaVeUNN_8rhuXgMFOsuxxT5WYY1uJgGduZxn49ahdgRymuVbM5dpjEjt09l-zGpY2TBbtc9xscQgAJW-CAXTDqKSro83pHHiA1S9qQL5WRpn1MB0xpEpv_XFXtK8ejrCwxuyUv4MQB-bMsIeEmIC"/>
+</div>
+</div>
+<!-- Title & Rating -->
+<div class="px-4">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-primary text-sm font-semibold mb-1 uppercase tracking-wider">Apple</p>
+<h1 class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight mb-2">iPhone 15 Pro, 256GB, Natural Titanium</h1>
+</div>
+<div class="bg-primary/10 text-primary p-2 rounded-lg flex flex-col items-center min-w-[50px]">
+<span class="text-lg font-bold">4.8</span>
+<span class="material-symbols-outlined text-[16px] fill-1">star</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mt-4">
+<p class="text-3xl font-black text-slate-900 dark:text-slate-100">$999.00</p>
+<p class="text-slate-500 line-through text-sm font-medium">$1,099.00</p>
+<span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded ml-auto">Save 10%</span>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="px-4 py-6 flex gap-3">
+<button class="flex-1 bg-primary text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined fill-1">notifications</span>
+                Track Price Drop
+            </button>
+<button class="w-14 h-14 border-2 border-slate-100 dark:border-slate-800 rounded-xl flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<!-- Market Insight -->
+<div class="px-4 py-2">
+<div class="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-4 flex justify-around items-center border border-slate-100 dark:border-slate-800">
+<div class="text-center">
+<p class="text-slate-500 text-[10px] uppercase font-bold tracking-widest mb-1">Price status</p>
+<div class="flex items-center gap-1 text-green-600 font-bold">
+<span class="material-symbols-outlined text-sm">trending_down</span>
+<span>Great Price</span>
+</div>
+</div>
+<div class="w-px h-8 bg-slate-200 dark:bg-slate-700"></div>
+<div class="text-center">
+<p class="text-slate-500 text-[10px] uppercase font-bold tracking-widest mb-1">Availability</p>
+<div class="flex items-center gap-1 text-slate-900 dark:text-slate-100 font-bold">
+<span class="material-symbols-outlined text-sm">inventory_2</span>
+<span>In Stock</span>
+</div>
+</div>
+<div class="w-px h-8 bg-slate-200 dark:bg-slate-700"></div>
+<div class="text-center">
+<p class="text-slate-500 text-[10px] uppercase font-bold tracking-widest mb-1">Last Change</p>
+<div class="flex items-center gap-1 text-slate-900 dark:text-slate-100 font-bold">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>2h ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Price History Mini -->
+<div class="px-4 py-6">
+<div class="flex justify-between items-end mb-4">
+<h3 class="font-bold text-slate-900 dark:text-slate-100">30-Day Price Trend</h3>
+<a class="text-primary text-sm font-semibold" href="#">View Detail</a>
+</div>
+<div class="w-full h-24 flex items-end gap-1 px-1">
+<div class="bg-primary/20 w-full rounded-t-sm" style="height: 80%"></div>
+<div class="bg-primary/20 w-full rounded-t-sm" style="height: 75%"></div>
+<div class="bg-primary/20 w-full rounded-t-sm" style="height: 75%"></div>
+<div class="bg-primary/20 w-full rounded-t-sm" style="height: 90%"></div>
+<div class="bg-primary/20 w-full rounded-t-sm" style="height: 85%"></div>
+<div class="bg-primary/20 w-full rounded-t-sm" style="height: 80%"></div>
+<div class="bg-primary/20 w-full rounded-t-sm" style="height: 70%"></div>
+<div class="bg-primary/20 w-full rounded-t-sm" style="height: 60%"></div>
+<div class="bg-primary/20 w-full rounded-t-sm" style="height: 65%"></div>
+<div class="bg-primary/20 w-full rounded-t-sm" style="height: 62%"></div>
+<div class="bg-primary/20 w-full rounded-t-sm" style="height: 60%"></div>
+<div class="bg-primary w-full rounded-t-sm" style="height: 55%"></div>
+<div class="bg-primary w-full rounded-t-sm" style="height: 55%"></div>
+<div class="bg-primary w-full rounded-t-sm" style="height: 55%"></div>
+<div class="bg-primary w-full rounded-t-sm" style="height: 50%"></div>
+</div>
+</div>
+<!-- Price Comparison List -->
+<div class="px-4 py-4">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">bolt</span>
+                Live Price Comparison
+            </h3>
+<div class="space-y-3">
+<!-- Store 1 -->
+<div class="border border-slate-100 dark:border-slate-800 rounded-xl p-3 flex flex-col gap-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center justify-center p-1 overflow-hidden">
+<img alt="Amazon Logo" class="w-full h-auto" data-alt="Amazon marketplace logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCemUyqTpobuo92K7WNalkQXO2GoqCWLXRsmuhUpitKzZ-uLE5jXcmh4kroXqOPKwGytso3N7VCsMy2sHdiKDVKQlSaqENJDS3p_cyeik7TMXCZvOj8ESDqPgwtdNceh7NfK3o3Hw6Zwz9apKHGgg3YeH7-V8VZsHcrHPBMoYSBfkdvCwOeaLYTJgFSmdqsvVxxsCqr4l5rcYPr3Bz7mqsXJbU26ZF8eDWDxdFVsSZj4WRgndSyu4zD07-vGTQ2y7RJ6ZFUxu_eqf99"/>
+</div>
+<div>
+<p class="font-bold text-sm">Amazon</p>
+<div class="flex items-center gap-1">
+<span class="text-[10px] font-bold text-green-600 bg-green-50 px-1 rounded">Trusted</span>
+<span class="text-[10px] text-slate-500">9.8 Score</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-black text-slate-900 dark:text-slate-100">$999.00</p>
+<p class="text-[10px] text-green-600 font-medium">Free Shipping</p>
+</div>
+</div>
+<button class="w-full bg-slate-900 dark:bg-white dark:text-slate-900 text-white py-2 rounded-lg font-bold text-sm">Go to Store</button>
+</div>
+<!-- Store 2 -->
+<div class="border border-slate-100 dark:border-slate-800 rounded-xl p-3 flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center justify-center p-1 overflow-hidden">
+<img alt="Best Buy Logo" class="w-full h-auto" data-alt="Best Buy store logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYY9wRJg6iskhulpQyvmt-UjeR6Na6nexDKwEHLqVNdgXFLaGJnmT1cHoAQC8FMs7Q0vB9_GYmIK2i6zVa-nObB6kp0VWTIYnbPspHStioA_MOaZugTiga-1uQwNAcErRLOFR2ZVAGLhVQPT7LG6MP3q9e-SGqxtUWRVvB1s4dZ17SPzwhT67MRVuVAIzbAjyotPfqXNUNeN4dzXvnNGLKswpXtv4AA6MX_dsC4jzSuGEZ4vqIdChdrPlAaMvhfU7-4jGLzgJpq6rm"/>
+</div>
+<div>
+<p class="font-bold text-sm">Best Buy</p>
+<div class="flex items-center gap-1">
+<span class="text-[10px] font-bold text-green-600 bg-green-50 px-1 rounded">Trusted</span>
+<span class="text-[10px] text-slate-500">9.5 Score</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-black text-slate-900 dark:text-slate-100">$1,049.00</p>
+<p class="text-[10px] text-slate-500 font-medium">Store Pickup</p>
+</div>
+</div>
+<button class="w-full border border-slate-200 dark:border-slate-700 py-2 rounded-lg font-bold text-sm">Go to Store</button>
+</div>
+<!-- Store 3 -->
+<div class="border border-slate-100 dark:border-slate-800 rounded-xl p-3 flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center justify-center p-1 overflow-hidden">
+<img alt="Walmart Logo" class="w-full h-auto" data-alt="Walmart retail logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB53WheDH7qoXLrUWiaSCpnxJ0UTef6g7K3msz73pImcyYCvUZKfJ9-Fyx1INpdPDH3QVW2UMUtwbHxdZdA_78530Z48PnWVcfLrGh8yfzUmL5XVwtrLd02U3bchhLMkbSFjsTNm4EoYKwxiksb8pVpjGDjA4XVLfIWqRG8dX4qCiw4A0R619D90HO9KOuU38PVdXJ50qGt1Ic8yz5dDBilXnCQ4wHw3D6rwE139WyoL0HNTNlMeADxyezs-ex9JT1J878z96JeqJW1"/>
+</div>
+<div>
+<p class="font-bold text-sm">Walmart</p>
+<div class="flex items-center gap-1">
+<span class="text-[10px] font-bold text-blue-600 bg-blue-50 px-1 rounded">Partner</span>
+<span class="text-[10px] text-slate-500">9.2 Score</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-black text-slate-900 dark:text-slate-100">$1,059.00</p>
+<p class="text-[10px] text-slate-500 font-medium">+$5.99 Shipping</p>
+</div>
+</div>
+<button class="w-full border border-slate-200 dark:border-slate-700 py-2 rounded-lg font-bold text-sm">Go to Store</button>
+</div>
+</div>
+</div>
+<!-- Similar Products -->
+<div class="py-6">
+<h3 class="px-4 font-bold text-slate-900 dark:text-slate-100 mb-4">Similar Products</h3>
+<div class="flex overflow-x-auto gap-4 px-4 no-scrollbar">
+<!-- S-Product 1 -->
+<div class="min-w-[140px] flex-shrink-0">
+<div class="w-full aspect-square bg-white border border-slate-100 rounded-xl mb-2 flex items-center justify-center p-2">
+<img alt="iPhone 14 Pro" class="w-full h-full object-contain" data-alt="Front view of iPhone 14 Pro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQgwCVZiPdnF3tAbOzhW4jorp2yl03mpxzOsq8i_phZtvU3uQhjClw3AmkxLjH84vRtKonhbTfp-94qmxB0Rjb7IApyrNWdTcMgObpjn_Ea_KE4KgacPV6yCni0B344SqUkTl9gmINcPWY0MI5OYGfNWYh7c2ABOmW7QtZgyvQUkzKe1IKJl_mKsTThHGGuhUr5txVxZYcZgA3plcJN-b8UGLp_cdvPkFev5CSv3dBjSBbwRuDkNE8HVl_fLhA2JGWNjeMnHesx0ID"/>
+</div>
+<p class="text-xs font-bold line-clamp-1">iPhone 14 Pro</p>
+<p class="text-primary font-bold">$799.00</p>
+</div>
+<!-- S-Product 2 -->
+<div class="min-w-[140px] flex-shrink-0">
+<div class="w-full aspect-square bg-white border border-slate-100 rounded-xl mb-2 flex items-center justify-center p-2">
+<img alt="Samsung S24 Ultra" class="w-full h-full object-contain" data-alt="Samsung Galaxy S24 Ultra smartphone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwVSQdArjC3qt-JPAQRprJuwGFJxfmvnqnl_GsmETnl9TiASZKPxNnwD7X4zakTAHQ7GnrI63teolLHeD6QP2TRo9S5-6IubLG5ixQUvaLMyI4E523lQMeTYTIn0eKtg7Ndma0ed1k28H4HiBUolAkcVxvHDkmzML46TLxruGUCPWkNfIYMMP2OUi0X2xTG_QMSnJkLtjouTKnI-mHbjlclR8jfYB6UQcs4iDndN9zbixe_HQ4mVpWG9JFa2Abx_BacDBG9Wyp-SRl"/>
+</div>
+<p class="text-xs font-bold line-clamp-1">Samsung S24 Ultra</p>
+<p class="text-primary font-bold">$1,199.00</p>
+</div>
+<!-- S-Product 3 -->
+<div class="min-w-[140px] flex-shrink-0">
+<div class="w-full aspect-square bg-white border border-slate-100 rounded-xl mb-2 flex items-center justify-center p-2">
+<img alt="iPhone 15" class="w-full h-full object-contain" data-alt="Blue iPhone 15 standard model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFPCbV-hYtrNgMKgtp6qko36pV8AFAQe0VIER9GtxeDf_W33RWoSjz4laeSrl9kkD2I3VBlNpqOn22PqGhlFSlELTXB7cMJmcH9iyfnk0dQUDC5FK1lxp0HoZrBtm8TCB7qsPfq5ectbk_2x6unY_IXEl5cMJCY_eyLg3pzdEf7aW8FSkzoJI7pb7Df7jHaOXPUKvA0DKjNIZFnUWCaAxGtc4cy7jXTdWf-ehcsuI0bdEvz2G-RhiYZWqGFi81-mMPrY-mniziSuRJ"/>
+</div>
+<p class="text-xs font-bold line-clamp-1">iPhone 15</p>
+<p class="text-primary font-bold">$699.00</p>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md border-t border-slate-100 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-6 pb-6 pt-3 flex justify-between items-center z-20">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="text-[10px] font-medium">Categories</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<div class="relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+</div>
+<span class="text-[10px] font-medium">Alerts</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .fill-1 {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</body></html>

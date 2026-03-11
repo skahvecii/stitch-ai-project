@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1c74e9",
+              "background-light": "#f6f7f8",
+              "background-dark": "#111821",
+            },
+            fontFamily: {
+              "display": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 md:px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">PriceRadar</h2>
+</div>
+<div class="hidden md:flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Categories</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Alerts</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-4 md:gap-8">
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-400 flex border-none bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4 rounded-l-lg" data-icon="search">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-0 h-full placeholder:text-slate-400 px-4 rounded-r-lg pl-2 text-sm font-normal" placeholder="Search prices..." value=""/>
+</div>
+</label>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile avatar circle" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCEHzEaPf9nQfRAVagc4isnjkP04o_SNZUMshBBP0vq3jlyUfptvUBXcUpSRhWUqXZJ1Klx7PoxiKY6g2TwbMkBO3ioLZPxEb-6902WNfIkpvdLh_i191uTMrUmPxlz0NAe4n7TGgaLkT3sK8AqQkMHGzZXj5gL4XnlsFG_Zu5fcCBrot5gsK_0ioIk405J_rqWjlo88z8LQPC2ELpEQVUmRaK2z81FbohDyUB0xGt2lq0Yl2RwtYFZ__0jTMBPqKRTxYomDB9QT0vJ");'></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center justify-center px-4 py-12 md:py-20 max-w-[1200px] mx-auto w-full">
+<!-- 404 Illustration Area -->
+<div class="relative w-full max-w-md aspect-square mb-8 flex items-center justify-center">
+<!-- Radar Circle Visual -->
+<div class="absolute inset-0 rounded-full border-2 border-primary/10 animate-pulse"></div>
+<div class="absolute inset-10 rounded-full border-2 border-primary/20"></div>
+<div class="absolute inset-20 rounded-full border-2 border-primary/30"></div>
+<div class="z-10 text-center">
+<h1 class="text-primary text-[120px] md:text-[160px] font-black leading-none tracking-tighter opacity-90">404</h1>
+<div class="bg-white dark:bg-slate-900 px-6 py-2 rounded-full shadow-xl border border-slate-100 dark:border-slate-800 inline-flex items-center gap-2 -mt-4">
+<span class="material-symbols-outlined text-primary animate-spin">radar</span>
+<span class="font-bold text-slate-700 dark:text-slate-200">Scanning for lost pages...</span>
+</div>
+</div>
+</div>
+<!-- Text Content -->
+<div class="text-center max-w-2xl mb-12">
+<h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Oops! This product went off radar.</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg mb-8">The page you're looking for might have been moved, deleted, or never existed. Let's find you a better deal instead.</p>
+<!-- Central Search Bar -->
+<div class="w-full max-w-xl mx-auto mb-8">
+<label class="flex flex-col h-14 w-full shadow-lg rounded-xl overflow-hidden">
+<div class="flex w-full flex-1 items-stretch h-full bg-white dark:bg-slate-800 border-2 border-primary/20 focus-within:border-primary transition-all">
+<div class="text-primary flex items-center justify-center pl-5">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent text-slate-900 dark:text-white focus:ring-0 h-full placeholder:text-slate-400 px-4 text-lg" placeholder="What are you looking for today?"/>
+<button class="bg-primary text-white px-8 font-bold hover:bg-primary/90 transition-colors">Search</button>
+</div>
+</label>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-4">
+<a class="bg-primary text-white px-8 py-3 rounded-lg font-bold shadow-md hover:bg-primary/90 transition-all flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">home</span>
+                        Back to Home
+                    </a>
+<a class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-8 py-3 rounded-lg font-bold hover:bg-slate-300 dark:hover:bg-slate-700 transition-all" href="#">
+                        View Today's Deals
+                    </a>
+</div>
+</div>
+<!-- Trending Section -->
+<div class="w-full border-t border-slate-200 dark:border-slate-800 pt-12 mt-8">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 text-center">Popular Categories</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="group cursor-pointer bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-all text-center">
+<div class="size-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">devices</span>
+</div>
+<span class="font-semibold block">Electronics</span>
+</div>
+<div class="group cursor-pointer bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-all text-center">
+<div class="size-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">checkroom</span>
+</div>
+<span class="font-semibold block">Fashion</span>
+</div>
+<div class="group cursor-pointer bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-all text-center">
+<div class="size-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">chair</span>
+</div>
+<span class="font-semibold block">Home &amp; Decor</span>
+</div>
+<div class="group cursor-pointer bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-all text-center">
+<div class="size-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">fitness_center</span>
+</div>
+<span class="font-semibold block">Sports</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 px-6 md:px-10">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">radar</span>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold">PriceRadar</h2>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                        Helping millions find the best prices across the web. Never overpay again with our real-time tracking.
+                    </p>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase text-xs tracking-widest">Company</h4>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">How it Works</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Press</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase text-xs tracking-widest">Resources</h4>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Price Guides</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<h4 class="font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">contact_support</span>
+                        Need Help?
+                    </h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Can't find what you're looking for? Our support team is here to assist.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:underline" href="mailto:support@priceradar.com">
+                        Contact Support
+                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-slate-400 text-xs">© 2024 PriceRadar. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">brand_family</span></a>
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">language</span></a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

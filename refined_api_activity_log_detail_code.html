@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>API Activity Detail | PriceRadar Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .code-block { font-family: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 lg:px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">PriceRadar</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-semibold border-b-2 border-primary py-4 -mb-4" href="#">API Logs</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Stores</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-1.5 border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400 text-lg">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder-slate-500" placeholder="Search logs..." type="text"/>
+</div>
+<button class="p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xs overflow-hidden border border-primary/30">
+<img alt="Admin Avatar" data-alt="Abstract colorful user avatar circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqV9fCf9c9D76DiiAqWHIsrEctFUYWdbpo9LRIQQHjYOhlpcvhEFYMIVFDvGiwFWqb_xywuwf7C6YI6ts489gzFr1m3vSihfS18RjhQ9HqgRVsMEM-5VIay-6o1ebI6ghcPDVU9IkgKUVfu_fRRhKLmYobOlfsx4aDMGn2vV5j8X9lrp0pWZ3gdwm8gX2SdhnOSGMMhUJK3GDhm2NVUjMHqvT34VlGpCco_9JmBtjavC1JGxgCj17RHrCZ3k7Urgo-MwswpXCuqgWr"/>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col lg:flex-row">
+<!-- Sidebar Navigation -->
+<aside class="w-full lg:w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 space-y-1 hidden lg:block">
+<div class="pb-4 mb-4 border-b border-slate-100 dark:border-slate-800">
+<p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider px-3 mb-2">Diagnostic Tools</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary font-semibold" href="#">
+<span class="material-symbols-outlined text-xl">list_alt</span>
+<span class="text-sm">Live Logs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span class="text-sm">Performance</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">vpn_key</span>
+<span class="text-sm">API Keys</span>
+</a>
+</div>
+<div class="pb-4">
+<p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider px-3 mb-2">Context</p>
+<div class="px-3 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+<p class="text-xs text-slate-500 mb-1">Active Store</p>
+<p class="text-sm font-bold text-slate-900 dark:text-white truncate">Global Electronics Co.</p>
+<a class="text-[11px] text-primary hover:underline mt-2 inline-block" href="#">View Store Details →</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 overflow-y-auto bg-slate-50 dark:bg-background-dark p-4 lg:p-8">
+<!-- Breadcrumbs & Actions -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+<nav class="flex items-center gap-2 text-sm text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Admin</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">API Activity</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-slate-900 dark:text-white font-medium">Log #req_842912734</span>
+</nav>
+<div class="flex items-center gap-2 w-full md:w-auto">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-50 transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">share</span> Share
+                        </button>
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-50 transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">replay</span> Replay
+                        </button>
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">terminal</span> Copy cURL
+                        </button>
+</div>
+</div>
+<!-- Header Info Card -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm mb-6">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-md font-bold text-lg border border-green-200 dark:border-green-800">
+                                200
+                            </div>
+<div>
+<h1 class="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 tracking-tight">
+<span class="text-slate-400 font-mono font-medium">POST</span> /v1/products/sync
+                                </h1>
+<p class="text-slate-500 text-sm mt-1">
+                                    Request ID: <span class="font-mono text-slate-700 dark:text-slate-300">req_842912734</span> • Oct 24, 2023 14:20:15.004
+                                </p>
+</div>
+</div>
+<div class="flex items-center gap-8 border-t lg:border-t-0 pt-4 lg:pt-0 lg:border-l border-slate-100 dark:border-slate-800 lg:pl-8">
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Total Latency</p>
+<p class="text-xl font-bold text-slate-900 dark:text-white">142ms</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400 mb-1">API Key</p>
+<p class="text-sm font-medium text-primary hover:underline cursor-pointer">pk_live_49f...2a</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Source IP</p>
+<p class="text-sm font-medium text-slate-900 dark:text-white">192.168.1.42</p>
+</div>
+</div>
+</div>
+<!-- Performance Visualizer -->
+<div class="mt-8">
+<p class="text-[10px] uppercase font-bold text-slate-400 mb-3">Request Timing</p>
+<div class="flex h-3 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-blue-400" style="width: 8%" title="DNS: 12ms"></div>
+<div class="h-full bg-indigo-400" style="width: 12%" title="TCP/SSL: 18ms"></div>
+<div class="h-full bg-primary" style="width: 70%" title="Server Processing: 98ms"></div>
+<div class="h-full bg-teal-400" style="width: 10%" title="Transfer: 14ms"></div>
+</div>
+<div class="flex flex-wrap gap-4 mt-3 text-[11px] font-medium text-slate-500">
+<div class="flex items-center gap-1.5"><span class="size-2 rounded-full bg-blue-400"></span> DNS (12ms)</div>
+<div class="flex items-center gap-1.5"><span class="size-2 rounded-full bg-indigo-400"></span> SSL (18ms)</div>
+<div class="flex items-center gap-1.5"><span class="size-2 rounded-full bg-primary"></span> Processing (98ms)</div>
+<div class="flex items-center gap-1.5"><span class="size-2 rounded-full bg-teal-400"></span> Transfer (14ms)</div>
+</div>
+</div>
+</div>
+<!-- Details Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+<!-- REQUEST SECTION -->
+<div class="flex flex-col gap-6">
+<h3 class="flex items-center gap-2 text-sm font-bold text-slate-400 uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">upload</span> Request Details
+                        </h3>
+<!-- Headers & Params -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+<div class="flex border-b border-slate-100 dark:border-slate-800">
+<button class="px-4 py-3 text-xs font-bold text-primary border-b-2 border-primary">Headers</button>
+<button class="px-4 py-3 text-xs font-bold text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">Query Params</button>
+<button class="px-4 py-3 text-xs font-bold text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">Auth</button>
+</div>
+<div class="p-4 space-y-2 overflow-x-auto">
+<table class="w-full text-xs code-block">
+<tbody class="divide-y divide-slate-50 dark:divide-slate-800/50">
+<tr class="py-1">
+<td class="py-2 text-slate-400 w-1/3">Content-Type</td>
+<td class="py-2 text-slate-700 dark:text-slate-300">application/json</td>
+</tr>
+<tr class="py-1">
+<td class="py-2 text-slate-400">User-Agent</td>
+<td class="py-2 text-slate-700 dark:text-slate-300">priceradar-node/v2.4.0</td>
+</tr>
+<tr class="py-1">
+<td class="py-2 text-slate-400">Accept-Encoding</td>
+<td class="py-2 text-slate-700 dark:text-slate-300">gzip, deflate, br</td>
+</tr>
+<tr class="py-1">
+<td class="py-2 text-slate-400">X-Store-ID</td>
+<td class="py-2 text-primary font-bold">st_923847</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Request Body -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm flex-1">
+<div class="flex items-center justify-between px-4 py-3 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/20">
+<span class="text-xs font-bold text-slate-500 uppercase">Request Body</span>
+<span class="text-[10px] bg-slate-200 dark:bg-slate-700 px-1.5 py-0.5 rounded text-slate-600 dark:text-slate-400">JSON</span>
+</div>
+<div class="p-4 bg-slate-950 text-slate-300 text-xs code-block h-64 overflow-y-auto leading-relaxed">
+<pre>{
+  <span class="text-teal-400">"sync_type"</span>: <span class="text-orange-400">"delta"</span>,
+  <span class="text-teal-400">"products"</span>: [
+    {
+      <span class="text-teal-400">"id"</span>: <span class="text-orange-400">"prod_7721"</span>,
+      <span class="text-teal-400">"sku"</span>: <span class="text-orange-400">"ELEC-TV-4K-65"</span>,
+      <span class="text-teal-400">"price"</span>: <span class="text-blue-400">899.99</span>,
+      <span class="text-teal-400">"currency"</span>: <span class="text-orange-400">"USD"</span>,
+      <span class="text-teal-400">"stock_status"</span>: <span class="text-orange-400">"in_stock"</span>
+    },
+    {
+      <span class="text-teal-400">"id"</span>: <span class="text-orange-400">"prod_7722"</span>,
+      <span class="text-teal-400">"sku"</span>: <span class="text-orange-400">"ELEC-SND-BAR"</span>,
+      <span class="text-teal-400">"price"</span>: <span class="text-blue-400">249.00</span>,
+      <span class="text-teal-400">"currency"</span>: <span class="text-orange-400">"USD"</span>
+    }
+  ],
+  <span class="text-teal-400">"metadata"</span>: {
+    <span class="text-teal-400">"batch_id"</span>: <span class="text-orange-400">"bth_oct_24_901"</span>,
+    <span class="text-teal-400">"triggered_by"</span>: <span class="text-orange-400">"cron_service"</span>
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+<!-- RESPONSE SECTION -->
+<div class="flex flex-col gap-6">
+<h3 class="flex items-center gap-2 text-sm font-bold text-slate-400 uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">download</span> Response Details
+                        </h3>
+<!-- Headers -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+<div class="flex border-b border-slate-100 dark:border-slate-800">
+<button class="px-4 py-3 text-xs font-bold text-primary border-b-2 border-primary">Headers</button>
+<button class="px-4 py-3 text-xs font-bold text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">Events</button>
+</div>
+<div class="p-4 space-y-2 overflow-x-auto">
+<table class="w-full text-xs code-block">
+<tbody class="divide-y divide-slate-50 dark:divide-slate-800/50">
+<tr class="py-1">
+<td class="py-2 text-slate-400 w-1/3">Server</td>
+<td class="py-2 text-slate-700 dark:text-slate-300">cloudflare</td>
+</tr>
+<tr class="py-1">
+<td class="py-2 text-slate-400">X-RateLimit-Remaining</td>
+<td class="py-2 text-slate-700 dark:text-slate-300">4,992</td>
+</tr>
+<tr class="py-1">
+<td class="py-2 text-slate-400">X-Response-Time</td>
+<td class="py-2 text-slate-700 dark:text-slate-300">98ms</td>
+</tr>
+<tr class="py-1">
+<td class="py-2 text-slate-400">X-Trace-ID</td>
+<td class="py-2 text-slate-700 dark:text-slate-300">tr_aa91023jj91283</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Response Body -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm flex-1">
+<div class="flex items-center justify-between px-4 py-3 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/20">
+<span class="text-xs font-bold text-slate-500 uppercase">Response Body</span>
+<div class="flex items-center gap-2">
+<span class="text-[10px] text-green-600 font-bold bg-green-100 px-1.5 py-0.5 rounded">Success</span>
+<span class="text-[10px] bg-slate-200 dark:bg-slate-700 px-1.5 py-0.5 rounded text-slate-600 dark:text-slate-400">JSON</span>
+</div>
+</div>
+<div class="p-4 bg-slate-950 text-slate-300 text-xs code-block h-64 overflow-y-auto leading-relaxed">
+<pre>{
+  <span class="text-teal-400">"status"</span>: <span class="text-orange-400">"success"</span>,
+  <span class="text-teal-400">"data"</span>: {
+    <span class="text-teal-400">"processed"</span>: <span class="text-blue-400">2</span>,
+    <span class="text-teal-400">"created"</span>: <span class="text-blue-400">0</span>,
+    <span class="text-teal-400">"updated"</span>: <span class="text-blue-400">2</span>,
+    <span class="text-teal-400">"errors"</span>: [],
+    <span class="text-teal-400">"batch_token"</span>: <span class="text-orange-400">"tk_8832a823b1"</span>
+  },
+  <span class="text-teal-400">"server_id"</span>: <span class="text-orange-400">"node-us-east-1a"</span>,
+  <span class="text-teal-400">"processing_time_ms"</span>: <span class="text-blue-400">98</span>
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<!-- Debugging & History Context -->
+<div class="mt-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+<div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white">Recent Activity for this Endpoint</h4>
+<button class="text-xs text-primary font-bold">View Full Endpoint History</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm">
+<thead class="bg-slate-50 dark:bg-slate-800/50 text-[11px] uppercase tracking-wider text-slate-400 font-bold">
+<tr>
+<th class="px-6 py-3 text-left">Status</th>
+<th class="px-6 py-3 text-left">Request ID</th>
+<th class="px-6 py-3 text-left">Time</th>
+<th class="px-6 py-3 text-left">Latency</th>
+<th class="px-6 py-3 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="px-6 py-4"><span class="flex items-center gap-1.5 text-green-600 font-bold"><span class="size-1.5 rounded-full bg-green-500"></span> 200</span></td>
+<td class="px-6 py-4 font-mono text-xs">req_842912730</td>
+<td class="px-6 py-4 text-slate-500">Oct 24, 14:18:02</td>
+<td class="px-6 py-4 text-slate-500">121ms</td>
+<td class="px-6 py-4 text-right"><button class="text-primary material-symbols-outlined text-lg">visibility</button></td>
+</tr>
+<tr>
+<td class="px-6 py-4"><span class="flex items-center gap-1.5 text-red-600 font-bold"><span class="size-1.5 rounded-full bg-red-500"></span> 500</span></td>
+<td class="px-6 py-4 font-mono text-xs">req_842912728</td>
+<td class="px-6 py-4 text-slate-500">Oct 24, 14:15:44</td>
+<td class="px-6 py-4 text-slate-500">4,102ms</td>
+<td class="px-6 py-4 text-right"><button class="text-primary material-symbols-outlined text-lg">visibility</button></td>
+</tr>
+<tr>
+<td class="px-6 py-4"><span class="flex items-center gap-1.5 text-green-600 font-bold"><span class="size-1.5 rounded-full bg-green-500"></span> 200</span></td>
+<td class="px-6 py-4 font-mono text-xs">req_842912725</td>
+<td class="px-6 py-4 text-slate-500">Oct 24, 14:12:10</td>
+<td class="px-6 py-4 text-slate-500">138ms</td>
+<td class="px-6 py-4 text-right"><button class="text-primary material-symbols-outlined text-lg">visibility</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

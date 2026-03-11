@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar - Compare Products</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<!-- Header Navigation -->
+<header class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between border-b border-primary/10">
+<div class="flex items-center gap-3">
+<button class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold leading-tight tracking-tight">Compare Devices</h1>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add</span>
+</button>
+</header>
+<!-- Product Cards Grid/Scroll -->
+<main class="flex-1">
+<div class="flex overflow-x-auto no-scrollbar gap-4 p-4">
+<!-- Product 1 -->
+<div class="min-w-[160px] flex-1 flex flex-col gap-3 bg-white dark:bg-slate-800/50 p-3 rounded-xl border border-primary/5 shadow-sm">
+<div class="relative w-full aspect-square bg-slate-100 dark:bg-slate-700 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Titanium gray flagship smartphone front view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhdr4lSVUNKtclKc0SUiBtDA2EnAIxln1WW2kCa0WIhgAoay5RycmUW3t_ktXDim2PHqz0bKJQvSHzasU06w-_FanQox_se4Os_88y4kOiBxRV_xCp7GGddH1Sa8FhNeBeBwLBK6zh1He4m-Lc-e5IynoroZ7ZEOGgMP8vsIn7Rv_qqKXJy_CV922KlBrhjZIpUgtgdnXwrLWQV6LPlQA9KA8Qs0FKPwWfFT5NtxZZMZTHZiFjB0TiBpxu7DtV0sVzcxuOw3sJNtex"/>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-sm font-bold truncate">iPhone 15 Pro</h3>
+<p class="text-primary text-base font-bold">$999</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">12 stores</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="min-w-[160px] flex-1 flex flex-col gap-3 bg-white dark:bg-slate-800/50 p-3 rounded-xl border border-primary/5 shadow-sm">
+<div class="relative w-full aspect-square bg-slate-100 dark:bg-slate-700 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Modern dark gray android smartphone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW4QTEh0jPz3F874NnIAXYAo1W72Q2yANcLxpsCQVsI4UHUlKrFy2ycCQX7J4Ku67EdIidGcG7ufrQlLTnGx13x7hcnCEu6YCK9NFRr6fgyIvJMpsmSU8tZ6zq1RezXk1He32ZWPrP8AT47-tfp6x0vJKUOgXGJLIHDHbcIU6nTGLmO56d9um6IH4ssh0JOL2cHrqu3HR1SnI8H5SFdTq2T3oAFka4ydFhlwlV_ah90egETkAw5IeX1IK2FCfmtVmRdDnGl6VJEKEC"/>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-sm font-bold truncate">Galaxy S24 Ultra</h3>
+<p class="text-primary text-base font-bold">$1,199</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">8 stores</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="min-w-[160px] flex-1 flex flex-col gap-3 bg-white dark:bg-slate-800/50 p-3 rounded-xl border border-primary/5 shadow-sm">
+<div class="relative w-full aspect-square bg-slate-100 dark:bg-slate-700 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Blueish modern mobile phone screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj4NgAq4ShmX16tOu296d8PGpBHqTNdSgJJ1PKNWqnC1TlKS-d4QR-E5lttApVDqxQAGznGIc6_upWhVnm0GIM2psRaIbGJDCywVSFgiPB0JwHGPSW11F8GIda7aGAxw1llrO0La33hq40y1t0oQTqmlD_-DlReIrT4MArUAm-DABYu4bxgUZccFtRt_tNc7JUKzFr3JT2byWKyckLTZ5sw_rl7ZNZ6149YanOBoKSbngX_bzrTxD4tyY3GErVpMWYgFuKRZVVr7cI"/>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-sm font-bold truncate">Pixel 8 Pro</h3>
+<p class="text-primary text-base font-bold">$899</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">10 stores</p>
+</div>
+</div>
+</div>
+<!-- Comparison Tabs -->
+<div class="px-4">
+<div class="flex border-b border-primary/10 gap-6">
+<button class="border-b-2 border-primary text-primary pb-3 pt-2 text-sm font-bold">Specs</button>
+<button class="border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 text-sm font-bold">Reviews</button>
+<button class="border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 text-sm font-bold">Prices</button>
+</div>
+</div>
+<!-- Comparison Table -->
+<section class="p-4 flex flex-col gap-1">
+<div class="grid grid-cols-4 bg-primary/5 rounded-t-lg p-3">
+<div class="col-span-1 text-[10px] uppercase tracking-wider font-bold text-slate-500">Feature</div>
+<div class="col-span-1 text-[10px] uppercase font-bold text-center">iP 15 Pro</div>
+<div class="col-span-1 text-[10px] uppercase font-bold text-center">S24 Ultra</div>
+<div class="col-span-1 text-[10px] uppercase font-bold text-center">P8 Pro</div>
+</div>
+<div class="grid grid-cols-4 border-b border-primary/5 p-3 items-center">
+<div class="col-span-1 text-xs font-medium text-slate-500">Battery</div>
+<div class="col-span-1 text-xs text-center">23h video</div>
+<div class="col-span-1 text-xs text-center">30h video</div>
+<div class="col-span-1 text-xs text-center">24h+</div>
+</div>
+<div class="grid grid-cols-4 border-b border-primary/5 p-3 items-center">
+<div class="col-span-1 text-xs font-medium text-slate-500">Camera</div>
+<div class="col-span-1 text-xs text-center">48MP Main</div>
+<div class="col-span-1 text-xs text-center">200MP Main</div>
+<div class="col-span-1 text-xs text-center">50MP Main</div>
+</div>
+<div class="grid grid-cols-4 border-b border-primary/5 p-3 items-center">
+<div class="col-span-1 text-xs font-medium text-slate-500">Display</div>
+<div class="col-span-1 text-xs text-center">6.1" OLED</div>
+<div class="col-span-1 text-xs text-center">6.8" AMOLED</div>
+<div class="col-span-1 text-xs text-center">6.7" LTPO</div>
+</div>
+<!-- CTA Row -->
+<div class="grid grid-cols-4 p-3 items-center mt-2">
+<div class="col-span-1"></div>
+<div class="col-span-1 px-1">
+<button class="w-full bg-primary text-white text-[10px] font-bold py-2 rounded-lg shadow-sm">Shop Now</button>
+</div>
+<div class="col-span-1 px-1">
+<button class="w-full bg-primary text-white text-[10px] font-bold py-2 rounded-lg shadow-sm">Shop Now</button>
+</div>
+<div class="col-span-1 px-1">
+<button class="w-full bg-primary text-white text-[10px] font-bold py-2 rounded-lg shadow-sm">Shop Now</button>
+</div>
+</div>
+</section>
+<!-- Recommended Section -->
+<section class="mt-8 pb-24">
+<div class="px-4 flex items-center justify-between mb-4">
+<h2 class="text-lg font-bold">Recommended For You</h2>
+<a class="text-primary text-xs font-bold" href="#">View All</a>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar px-4">
+<div class="min-w-[140px] bg-white dark:bg-slate-800 p-3 rounded-xl border border-primary/5 shadow-sm flex flex-col gap-2">
+<img class="w-full aspect-video object-cover rounded-lg" data-alt="Sleek modern tablet on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXZEmoz6SovfxQC34w5lWWH32u-tNyE935hy9oircR2UxC19kUY_2RWpQa_eHcmmY6c7YOzXNpg8GeftrYsZxOezTJw6JWwU0W6eXltfvUDllg2FSWC3WhdaLbrLKAlsEVxzJx8bk27Lu1RzuSbIooKbr86Xy5RiNuJXdA8noSWqEmLhxe75bSJVns14dbFCk_thMZDwTnue-xYene9LFDImxW1kHWSh7uRNKdTPI70HUNgpjIVj86K-JCEysijwgcB9sOo3w4eFvZ"/>
+<p class="text-xs font-bold">iPad Pro M2</p>
+<p class="text-primary text-sm font-bold">$799</p>
+</div>
+<div class="min-w-[140px] bg-white dark:bg-slate-800 p-3 rounded-xl border border-primary/5 shadow-sm flex flex-col gap-2">
+<img class="w-full aspect-video object-cover rounded-lg" data-alt="Wireless noise-canceling headphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhOzUAtUlKbQX3Ybm2KLE-_YxzC2UbPmkW8k0GI-vj9hYS6AaQ0O6tlah5db17knrTDGgoysV-mPK5DbXzlC-JW1-VTlD3pX7Y4A3VPT4SS6D23vkwKIpYDQ6u7xLEclS93dw7hp1rQKmLQLtBUnuUlUIXrze01aMZBjG0ji2AUQ1UP32uBERouR3y0Knx4zy4y46yDj3e0PGWox4JWuD3kYZgseZtcMt5l-TmItHnZHTCDhaVxS1xr2i2aejVvou2zIHvtcUC_aR5"/>
+<p class="text-xs font-bold">Sony XM5</p>
+<p class="text-primary text-sm font-bold">$348</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full border-t border-primary/10 bg-background-light dark:bg-background-dark px-4 pb-6 pt-2 flex justify-between items-center z-20">
+<a class="flex flex-1 flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-medium">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">search</span>
+<p class="text-[10px] font-medium">Search</p>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">compare_arrows</span>
+<p class="text-[10px] font-medium">Compare</p>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<p class="text-[10px] font-medium">Alerts</p>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-medium">Profile</p>
+</a>
+</nav>
+</div>
+</body></html>

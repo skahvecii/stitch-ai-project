@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin API Key Management | PriceRadar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hidden lg:flex flex-col sticky top-0 h-screen">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary text-white p-2 rounded-lg">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<div>
+<h1 class="font-bold text-lg leading-tight tracking-tight">PriceRadar</h1>
+<p class="text-xs text-slate-500 font-medium uppercase tracking-wider">Management</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-sm font-medium">Price Alerts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 bg-primary/10 text-primary rounded-lg" href="#">
+<span class="material-symbols-outlined fill-1">key</span>
+<span class="text-sm font-semibold">API Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-sm font-medium">System Logs</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2">
+<div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden" data-alt="User profile avatar circle">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIrSAEJd44zYIZ7sn-K5JW0jPao0YDkhhlhp7CEq33FLplpjuPV_4tdDRO4yFCs8-h2WAeVm6iqlS7JiHN9J-iccohJjtUTdJdfcUx6NWqJ-XxAL-m0WX1EPekpdEQ2J67AGXBzeaK-6I15CMP7YVo0zFzyUa30_z5yR2mh_kIxQvGzThWyLVKbdjmiaclU6LGQvMbz3TdKuvleldIYgdP5v_mqigZ9je0-6zRrjejb73VOyasA8qsTf1ijseX79EMQlP6gCbGfObM"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-sm font-semibold truncate">Felix Admin</p>
+<p class="text-xs text-slate-500 truncate">Super Administrator</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">unfold_more</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- Top Header -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-10 px-8 flex items-center justify-between">
+<div class="flex items-center gap-4 w-1/3">
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20" placeholder="Search keys, logs, or endpoints..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-all shadow-lg shadow-primary/25">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Generate New API Key
+                </button>
+<div class="h-6 w-px bg-slate-200 dark:border-slate-800"></div>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+</button>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-8 space-y-8 max-w-7xl mx-auto w-full">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tight">API Key Management</h2>
+<p class="text-slate-500 mt-1">Configure and monitor programmatic access to PriceRadar data.</p>
+</div>
+<!-- Health & Usage Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500">Total Active Keys</p>
+<span class="material-symbols-outlined text-primary bg-primary/10 p-1.5 rounded-lg text-xl">key</span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div>
+<h3 class="text-2xl font-bold">128</h3>
+<p class="text-xs text-green-600 font-semibold mt-1 flex items-center">
+<span class="material-symbols-outlined text-sm">trending_up</span> +12%
+                            </p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500">API Requests (24h)</p>
+<span class="material-symbols-outlined text-primary bg-primary/10 p-1.5 rounded-lg text-xl">swap_calls</span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div class="flex-1">
+<h3 class="text-2xl font-bold">1.2M</h3>
+<div class="h-10 mt-2 flex items-end gap-0.5">
+<div class="bg-primary/20 w-full h-1/2 rounded-t"></div>
+<div class="bg-primary/20 w-full h-2/3 rounded-t"></div>
+<div class="bg-primary/40 w-full h-full rounded-t"></div>
+<div class="bg-primary/20 w-full h-3/4 rounded-t"></div>
+<div class="bg-primary/60 w-full h-1/3 rounded-t"></div>
+<div class="bg-primary/20 w-full h-1/2 rounded-t"></div>
+<div class="bg-primary w-full h-5/6 rounded-t"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500">Avg. Latency</p>
+<span class="material-symbols-outlined text-primary bg-primary/10 p-1.5 rounded-lg text-xl">timer</span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div>
+<h3 class="text-2xl font-bold">42ms</h3>
+<p class="text-xs text-green-600 font-semibold mt-1 flex items-center">
+<span class="material-symbols-outlined text-sm">arrow_downward</span> 2ms faster
+                            </p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500">Error Rate</p>
+<span class="material-symbols-outlined text-red-500 bg-red-50 dark:bg-red-500/10 p-1.5 rounded-lg text-xl">warning</span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div>
+<h3 class="text-2xl font-bold">0.04%</h3>
+<p class="text-xs text-red-600 font-semibold mt-1 flex items-center">
+<span class="material-symbols-outlined text-sm">trending_up</span> +0.01%
+                            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- API Keys Table Section -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<h3 class="font-bold text-lg">Active &amp; Revoked Keys</h3>
+<div class="flex gap-2">
+<button class="p-2 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-xl">filter_list</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 text-xs font-bold uppercase tracking-wider">
+<tr>
+<th class="px-6 py-4">Key Label</th>
+<th class="px-6 py-4">Scopes</th>
+<th class="px-6 py-4">Created Date</th>
+<th class="px-6 py-4">Last Used</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-semibold text-sm">Internal Analytics</span>
+<span class="text-xs text-slate-400 font-mono">pk_live_48...a9b2</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded text-[10px] font-bold uppercase">Read:Products</span>
+<span class="px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded text-[10px] font-bold uppercase">Read:Stores</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Oct 12, 2023</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">2 mins ago</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-400">
+                                        Active
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 rounded text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 rounded text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">sync_lock</span>
+</button>
+<button class="p-1.5 hover:bg-red-50 dark:hover:bg-red-900/20 rounded text-slate-400 hover:text-red-600 transition-colors">
+<span class="material-symbols-outlined text-lg">block</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-semibold text-sm">Amazon Affiliate Feed</span>
+<span class="text-xs text-slate-400 font-mono">pk_live_21...c3f7</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded text-[10px] font-bold uppercase">Update:Prices</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Aug 05, 2023</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">14 hours ago</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 dark:bg-amber-900/20 text-amber-800 dark:text-amber-400">
+                                        Expiring soon
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 rounded text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 rounded text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">sync_lock</span>
+</button>
+<button class="p-1.5 hover:bg-red-50 dark:hover:bg-red-900/20 rounded text-slate-400 hover:text-red-600 transition-colors">
+<span class="material-symbols-outlined text-lg">block</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 opacity-50">
+<div class="flex flex-col">
+<span class="font-semibold text-sm">Mobile App (Legacy)</span>
+<span class="text-xs text-slate-400 font-mono text-strikethrough">pk_live_99...z0x1</span>
+</div>
+</td>
+<td class="px-6 py-4 opacity-50">
+<span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded text-[10px] font-bold uppercase">Full Access</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-400 opacity-50">Jan 12, 2022</td>
+<td class="px-6 py-4 text-sm text-slate-400 opacity-50">7 months ago</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                                        Revoked
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 rounded text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">settings_backup_restore</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Create/Edit Section -->
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800">
+<h3 class="font-bold text-lg">Key Configuration</h3>
+<p class="text-sm text-slate-500">Define the core settings for new API access.</p>
+</div>
+<div class="p-6 space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-semibold">Key Name / Label</label>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 p-2.5" placeholder="e.g. Price Comparison Widget" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold">Expiration Period</label>
+<select class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 p-2.5">
+<option>30 Days</option>
+<option selected="">90 Days</option>
+<option>365 Days</option>
+<option>Never (Not recommended)</option>
+</select>
+</div>
+</div>
+<div class="space-y-4">
+<label class="text-sm font-semibold">Permissions &amp; Scopes</label>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<label class="flex items-center gap-3 p-3 border border-slate-200 dark:border-slate-800 rounded-lg cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<input checked="" class="rounded text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-xs font-medium">Products</span>
+</label>
+<label class="flex items-center gap-3 p-3 border border-slate-200 dark:border-slate-800 rounded-lg cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<input checked="" class="rounded text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-xs font-medium">Stores</span>
+</label>
+<label class="flex items-center gap-3 p-3 border border-slate-200 dark:border-slate-800 rounded-lg cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<input class="rounded text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-xs font-medium">Payouts</span>
+</label>
+<label class="flex items-center gap-3 p-3 border border-slate-200 dark:border-slate-800 rounded-lg cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<input class="rounded text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-xs font-medium">SEO API</span>
+</label>
+</div>
+</div>
+<div class="pt-4 flex justify-end gap-3 border-t border-slate-200 dark:border-slate-800">
+<button class="px-4 py-2 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">Reset</button>
+<button class="px-6 py-2 bg-primary text-white text-sm font-bold rounded-lg shadow-lg shadow-primary/20">Save Key Changes</button>
+</div>
+</div>
+</div>
+<!-- Security Controls -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800">
+<h3 class="font-bold text-lg">Security &amp; Governance</h3>
+<p class="text-sm text-slate-500">Global and per-key security constraints.</p>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">security</span>
+<h4 class="text-sm font-bold">IP Whitelisting</h4>
+</div>
+<p class="text-xs text-slate-500">Limit API access to specific CIDR blocks or IP addresses.</p>
+<textarea class="w-full h-24 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-xs font-mono p-3 focus:ring-2 focus:ring-primary/20" placeholder="192.168.1.1/32, 10.0.0.0/24"></textarea>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">speed</span>
+<h4 class="text-sm font-bold">Rate Limiting</h4>
+</div>
+<p class="text-xs text-slate-500">Requests allowed per minute per key.</p>
+<div class="flex items-center gap-3">
+<input class="flex-1 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm p-2.5 focus:ring-2 focus:ring-primary/20" type="number" value="1000"/>
+<span class="text-xs font-medium text-slate-500 whitespace-nowrap">Req / Min</span>
+</div>
+<div class="flex items-center gap-2 p-3 bg-primary/5 rounded-lg border border-primary/10">
+<span class="material-symbols-outlined text-primary text-sm">info</span>
+<span class="text-[10px] text-primary/80 font-medium">Default global limit is 50,000 req/day.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Log -->
+<div class="space-y-6">
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm h-full flex flex-col">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<h3 class="font-bold text-lg">Live API Activity</h3>
+<span class="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-4 max-h-[600px]">
+<!-- Log Entry -->
+<div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800 text-[11px] font-mono group">
+<div class="flex justify-between mb-1">
+<span class="text-green-600 font-bold">200 OK</span>
+<span class="text-slate-400">12:45:01</span>
+</div>
+<div class="text-slate-700 dark:text-slate-300">GET /v1/products/67219/prices</div>
+<div class="mt-2 text-slate-400 flex items-center justify-between">
+<span class="truncate">Key: Internal Analytics</span>
+<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 cursor-pointer">open_in_new</span>
+</div>
+</div>
+<!-- Log Entry -->
+<div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800 text-[11px] font-mono group">
+<div class="flex justify-between mb-1">
+<span class="text-green-600 font-bold">200 OK</span>
+<span class="text-slate-400">12:44:55</span>
+</div>
+<div class="text-slate-700 dark:text-slate-300">POST /v1/alerts/subscriptions</div>
+<div class="mt-2 text-slate-400 flex items-center justify-between">
+<span class="truncate">Key: Internal Analytics</span>
+<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 cursor-pointer">open_in_new</span>
+</div>
+</div>
+<!-- Log Entry (Error) -->
+<div class="p-3 bg-red-50 dark:bg-red-900/10 rounded-lg border border-red-100 dark:border-red-900/20 text-[11px] font-mono group">
+<div class="flex justify-between mb-1">
+<span class="text-red-600 font-bold">429 RATE_LIMIT</span>
+<span class="text-slate-400">12:44:32</span>
+</div>
+<div class="text-slate-700 dark:text-slate-300">GET /v1/search?q=iphone15</div>
+<div class="mt-2 text-slate-400 flex items-center justify-between">
+<span class="truncate">Key: Amazon Affiliat...</span>
+<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 cursor-pointer">open_in_new</span>
+</div>
+</div>
+<!-- Log Entry -->
+<div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800 text-[11px] font-mono group">
+<div class="flex justify-between mb-1">
+<span class="text-green-600 font-bold">200 OK</span>
+<span class="text-slate-400">12:44:10</span>
+</div>
+<div class="text-slate-700 dark:text-slate-300">GET /v1/stores/all</div>
+<div class="mt-2 text-slate-400 flex items-center justify-between">
+<span class="truncate">Key: Internal Analytics</span>
+<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 cursor-pointer">open_in_new</span>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
+<button class="w-full py-2 text-xs font-bold text-primary hover:underline">View All Traffic Logs</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Info -->
+<footer class="mt-auto px-8 py-6 border-t border-slate-200 dark:border-slate-800 text-slate-400 text-xs flex justify-between items-center">
+<p>© 2024 PriceRadar Infrastructure. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="hover:text-primary transition-colors" href="#">Documentation</a>
+<a class="hover:text-primary transition-colors" href="#">API Status</a>
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+</div>
+</footer>
+</main>
+</body></html>

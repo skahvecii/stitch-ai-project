@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PriceRadar - Store Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-4 justify-between max-w-md mx-auto w-full">
+<button class="text-slate-900 dark:text-slate-100 flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold flex-1 text-center">Store Profile</h2>
+<div class="flex items-center justify-end">
+<button class="text-slate-900 dark:text-slate-100 flex items-center justify-center">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-md mx-auto overflow-y-auto pb-24">
+<div class="p-4 flex flex-col gap-6">
+<div class="flex w-full flex-col gap-4">
+<div class="flex gap-4 items-center">
+<div class="bg-primary/10 rounded-xl size-20 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary text-4xl">store</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<h1 class="text-xl font-bold">PriceRadar Official</h1>
+<span class="material-symbols-outlined text-primary text-sm fill-icon">verified</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Verified Merchant since 2021</p>
+</div>
+<div class="ml-auto">
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold">Follow</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Trust Score</p>
+<div class="flex items-end gap-1 mt-1">
+<p class="text-2xl font-bold text-primary">9.2</p>
+<p class="text-slate-400 text-sm mb-1">/10</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Response Time</p>
+<div class="flex items-end gap-1 mt-1">
+<p class="text-2xl font-bold text-green-500">&lt;2h</p>
+<p class="text-slate-400 text-sm mb-1">avg</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-2">
+<button class="flex shrink-0 items-center gap-2 rounded-full bg-primary/10 text-primary px-4 py-1.5 text-sm font-semibold border border-primary/20">
+<span class="material-symbols-outlined text-sm">sell</span> Deals
+                </button>
+<button class="flex shrink-0 items-center gap-2 rounded-full bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-1.5 text-sm font-semibold border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-sm">reviews</span> Reviews
+                </button>
+<button class="flex shrink-0 items-center gap-2 rounded-full bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-1.5 text-sm font-semibold border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-sm">policy</span> Policies
+                </button>
+<button class="flex shrink-0 items-center gap-2 rounded-full bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-1.5 text-sm font-semibold border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-sm">info</span> About
+                </button>
+</div>
+<section>
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-bold">Top Deals from this Store</h3>
+<a class="text-primary text-sm font-semibold" href="#">View All</a>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-700 flex flex-col">
+<div class="relative aspect-square bg-slate-100 dark:bg-slate-900 flex items-center justify-center p-4">
+<img class="object-contain w-full h-full" data-alt="Premium wireless noise cancelling headphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHuqxsQ94d5OrlALfgTR-U3ohGT7A261mu95XWcD9fF37tKOaArtIYhyJZJRCr7J5DBx2CqCUFvc-F6cMZnDm3zzdlWSgF5jt5lL6ughBP9_Cv_y7T3mMslQsOjrGgvTweouuzQzmP-rpVADJbxsy0pkdPCPtCVZgMar9ZcVInmupwTZ4FQFy48UPk-zEBZhTMNIXiKM9DeasqwHp5a5OrUp8ZWm2-1cfOxl1E8qPdqQ9yKjsSMzn84LuCzt7pyLMEELPx9JAXwO5c"/>
+<div class="absolute top-2 left-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Best Price</div>
+</div>
+<div class="p-3">
+<h4 class="text-sm font-medium line-clamp-1">Pro Sound Headphones</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-primary font-bold">$199.00</span>
+<span class="text-slate-400 text-xs line-through">$249.00</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-700 flex flex-col">
+<div class="relative aspect-square bg-slate-100 dark:bg-slate-900 flex items-center justify-center p-4">
+<img class="object-contain w-full h-full" data-alt="Modern minimalist smart watch white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsBMjNoC8osOpLl9-9Y7Jh5pis0USpUnYnQKV0A_8yuaGaueZOiqiWPpzie5atP9iSxd4NcV7BvBglsmebLNycQCw3_p4QSbPwI6ym2X5uVTUm0uV2qG5B5cu4zr0uG2DLOQ8A7tIgJMSZQkJJac5aFy7GWxbSgrY5-mmUcwiKJHs5GfRJxEiKqKfGWnN5hY0FPF1GP0h72DfvmE00rKtxhhsBxyPky2-tggc8NxwYsIxFlvLOMIeSsNguWVEtolk7gEAB_9rtDWUE"/>
+<div class="absolute top-2 left-2 bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Trending</div>
+</div>
+<div class="p-3">
+<h4 class="text-sm font-medium line-clamp-1">Series 8 Smart Watch</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-primary font-bold">$349.00</span>
+<span class="text-slate-400 text-xs line-through">$399.00</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Verified Reviews</h3>
+<div class="flex items-center text-orange-400">
+<span class="material-symbols-outlined fill-icon text-sm">star</span>
+<span class="material-symbols-outlined fill-icon text-sm">star</span>
+<span class="material-symbols-outlined fill-icon text-sm">star</span>
+<span class="material-symbols-outlined fill-icon text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star_half</span>
+<span class="text-slate-900 dark:text-slate-100 text-xs font-bold ml-1">4.8</span>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs font-medium mb-1.5">
+<span class="text-slate-500">Shipping Speed</span>
+<span class="text-slate-900 dark:text-slate-100">Excellent</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[95%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-medium mb-1.5">
+<span class="text-slate-500">Service Quality</span>
+<span class="text-slate-900 dark:text-slate-100">Very Good</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[88%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-medium mb-1.5">
+<span class="text-slate-500">Authenticity</span>
+<span class="text-slate-900 dark:text-slate-100">100% Guaranteed</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-full"></div>
+</div>
+</div>
+</div>
+<div class="mt-6 p-3 bg-primary/5 rounded-lg border border-primary/10">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-lg">psychology</span>
+<span class="text-xs font-bold text-primary uppercase">Sentiment Analysis</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed italic">
+                        "Most buyers praise the fast dispatch and original packaging. High satisfaction noted for electronics category."
+                    </p>
+</div>
+</section>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="flex items-center justify-around max-w-md mx-auto h-16">
+<a class="flex flex-col items-center gap-0.5 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-slate-400" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-medium">Categories</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-slate-400" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-medium">Alerts</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-primary" href="#">
+<span class="material-symbols-outlined fill-icon">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

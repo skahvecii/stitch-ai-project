@@ -90,7 +90,7 @@ canvas { display:block; border-radius:12px; }
 /* Joystick */
 #joystickArea { display:flex; align-items:center; justify-content:center; position:relative; }
 #jBase { width:130px; height:130px; border-radius:50%; background:rgba(255,255,255,.04); border:2px solid rgba(255,255,255,.08); position:relative; display:flex; align-items:center; justify-content:center; }
-#jThumb { width:54px; height:54px; border-radius:50%; background:rgba(255,255,255,.14); border:2px solid rgba(255,255,255,.22); position:absolute; transition:transform .05s; box-shadow:0 0 16px rgba(0,255,136,.2); }
+#jThumb { width:54px; height:54px; border-radius:50%; background:rgba(255,255,255,.14); border:2px solid rgba(255,255,255,.22); position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); transition:transform .05s; box-shadow:0 0 16px rgba(0,255,136,.2); }
 .j-hint { position:absolute; font-size:14px; color:rgba(255,255,255,.18); pointer-events:none; }
 .j-hint-up    { top:8px;    left:50%; transform:translateX(-50%); }
 .j-hint-down  { bottom:8px; left:50%; transform:translateX(-50%); }
@@ -294,9 +294,10 @@ function startGame(baseSpeed) {
   setupCanvas();
 
   // initial snake (length 3, center)
+  // snake[0] = head (rightmost), moving right
   const cx = Math.floor(G.cols/2), cy = Math.floor(G.cols/2);
-  for (let i=2; i>=0; i--)
-    G.snake.push({x:cx-i, y:cy, px:cx-i-1, py:cy});
+  for (let i=0; i<3; i++)
+    G.snake.push({x:cx+1-i, y:cy, px:cx-i, py:cy});
 
   spawnRegular();
   updateHUD();
